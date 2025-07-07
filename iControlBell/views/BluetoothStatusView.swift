@@ -9,62 +9,32 @@ struct BluetoothStatusView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    private var isIPad: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
-    }
-    
-    private var isCompact: Bool {
-        horizontalSizeClass == .compact
-    }
-    
     private var statusFont: Font {
-        if isIPad {
-            return .title3
-        } else if isCompact {
-            return .caption
-        } else {
-            return .body
-        }
+        DeviceUtils.dynamicFont(
+            compact: .caption,
+            regular: .body,
+            iPad: .title3
+        )
     }
     
     private var buttonFont: Font {
-        if isIPad {
-            return .title3
-        } else if isCompact {
-            return .footnote
-        } else {
-            return .body
-        }
+        DeviceUtils.dynamicFont(
+            compact: .footnote,
+            regular: .body,
+            iPad: .title3
+        )
     }
     
     private var circleSize: CGFloat {
-        if isIPad {
-            return 20
-        } else if isCompact {
-            return 12
-        } else {
-            return 16
-        }
+        DeviceUtils.dynamicSpacing(compact: 12, regular: 16, iPad: 20)
     }
     
     private var buttonPadding: CGFloat {
-        if isIPad {
-            return 16
-        } else if isCompact {
-            return 8
-        } else {
-            return 12
-        }
+        DeviceUtils.dynamicSpacing(compact: 8, regular: 12, iPad: 16)
     }
     
     private var cornerRadius: CGFloat {
-        if isIPad {
-            return 12
-        } else if isCompact {
-            return 6
-        } else {
-            return 8
-        }
+        DeviceUtils.dynamicSpacing(compact: 6, regular: 8, iPad: 12)
     }
     
     var body: some View {

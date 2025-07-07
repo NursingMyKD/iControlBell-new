@@ -10,42 +10,20 @@ struct ToastView: View {
     let isError: Bool
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    private var isIPad: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
-    }
-    
-    private var isCompact: Bool {
-        horizontalSizeClass == .compact
-    }
-    
     private var toastFont: Font {
-        if isIPad {
-            return .title3
-        } else if isCompact {
-            return .caption
-        } else {
-            return .body
-        }
+        DeviceUtils.dynamicFont(
+            compact: .caption,
+            regular: .body,
+            iPad: .title3
+        )
     }
     
     private var horizontalPadding: CGFloat {
-        if isIPad {
-            return 24
-        } else if isCompact {
-            return 12
-        } else {
-            return 16
-        }
+        DeviceUtils.dynamicSpacing(compact: 12, regular: 16, iPad: 24)
     }
     
     private var verticalPadding: CGFloat {
-        if isIPad {
-            return 16
-        } else if isCompact {
-            return 8
-        } else {
-            return 12
-        }
+        DeviceUtils.dynamicSpacing(compact: 8, regular: 12, iPad: 16)
     }
     
     private var cornerRadius: CGFloat {

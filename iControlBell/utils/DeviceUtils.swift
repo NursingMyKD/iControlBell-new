@@ -54,6 +54,22 @@ struct DeviceUtils {
         }
     }
     
+    /// Adaptive grid columns based on device and category
+    static func adaptiveColumns(for category: String = "default") -> Int {
+        switch screenSize {
+        case .iPhoneSmall:
+            return category == "soundboard" ? 2 : 3
+        case .iPhoneRegular:
+            return category == "soundboard" ? 3 : 4
+        case .iPhoneLarge:
+            return category == "soundboard" ? 4 : 5
+        case .iPadRegular:
+            return category == "soundboard" ? 5 : 6
+        case .iPadLarge:
+            return category == "soundboard" ? 6 : 7
+        }
+    }
+    
     /// Safe area insets
     static var safeAreaInsets: UIEdgeInsets {
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

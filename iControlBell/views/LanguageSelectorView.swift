@@ -9,42 +9,20 @@ struct LanguageSelectorView: View {
     @Binding var selectedLanguage: Language
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     
-    private var isIPad: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
-    }
-    
-    private var isCompact: Bool {
-        horizontalSizeClass == .compact
-    }
-    
     private var pickerFont: Font {
-        if isIPad {
-            return .title3
-        } else if isCompact {
-            return .body
-        } else {
-            return .body
-        }
+        DeviceUtils.dynamicFont(
+            compact: .body,
+            regular: .body,
+            iPad: .title3
+        )
     }
     
     private var horizontalPadding: CGFloat {
-        if isIPad {
-            return 24
-        } else if isCompact {
-            return 12
-        } else {
-            return 16
-        }
+        DeviceUtils.dynamicSpacing(compact: 12, regular: 16, iPad: 24)
     }
     
     private var verticalPadding: CGFloat {
-        if isIPad {
-            return 12
-        } else if isCompact {
-            return 6
-        } else {
-            return 8
-        }
+        DeviceUtils.dynamicSpacing(compact: 6, regular: 8, iPad: 12)
     }
     
     var body: some View {

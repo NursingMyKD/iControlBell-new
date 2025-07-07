@@ -92,6 +92,22 @@ struct AccessibilityUtils {
             height: max(height, minimumTouchTargetSize)
         )
     }
+    
+    /// Accessibility scale factor for spacing and sizing
+    static var accessibilityScaleFactor: CGFloat {
+        if isVoiceOverRunning {
+            return 1.5
+        } else if isAccessibilitySize {
+            return 1.3
+        } else {
+            return 1.0
+        }
+    }
+    
+    /// Scale a value based on accessibility preferences
+    static func scaledValue(_ value: CGFloat) -> CGFloat {
+        return value * accessibilityScaleFactor
+    }
 }
 
 /// View modifier for accessibility-aware styling
