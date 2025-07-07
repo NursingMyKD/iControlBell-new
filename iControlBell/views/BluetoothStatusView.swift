@@ -7,35 +7,153 @@ import SwiftUI
 struct BluetoothStatusView: View {
     @ObservedObject var bluetooth: BluetoothManager
     @EnvironmentObject var appState: AppState
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    
+    private var isIPad: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
+    }
+    
+    private var isCompact: Bool {
+        horizontalSizeClass == .compact
+    }
+    
+    private var statusFont: Font {
+        if isIPad {
+            return .title3
+        } else if isCompact {
+            return .caption
+        } else {
+            return .body
+        }
+    }
+    
+    private var buttonFont: Font {
+        if isIPad {
+            return .title3
+        } else if isCompact {
+            return .footnote
+        } else {
+            return .body
+        }
+    }
+    
+    private var circleSize: CGFloat {
+        if isIPad {
+            return 20
+        } else if isCompact {
+            return 12
+        } else {
+            return 16
+        }
+    }
+    
+    private var buttonPadding: CGFloat {
+        if isIPad {
+            return 16
+        } else if isCompact {
+            return 8
+        } else {
+            return 12
+        }
+    }
+    
+    private var cornerRadius: CGFloat {
+        if isIPad {
+            return 12
+        } else if isCompact {
+            return 6
+        } else {
+            return 8
+        }
+    }
     
     var body: some View {
-        VStack(spacing: 16) {
-            HStack {
+        VStack(spacing: isIPad ? 20 : (isCompact ? 12 : 16)) {
+            // Connection status indicator
+            HStack(spacing: isIPad ? 12 : 8) {
                 Circle()
                     .fill(bluetooth.isConnected ? Color.green : Color.red)
-                    .frame(width: 16, height: 16)
+                    .frame(width: circleSize, height: circleSize)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white, lineWidth: 2)
+                            .opacity(bluetooth.isConnected ? 1 : 0)
+                            .scaleEffect(bluetooth.isConnected ? 1.2 : 1.0)
+                            .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: bluetooth.isConnected)
+                    )
+                
                 Text(bluetooth.isConnected ? "bluetooth_connected".localized : "bluetooth_not_connected".localized)
+                    .font(statusFont)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
                     .accessibilityLabel(bluetooth.isConnected ? "bluetooth_connected_accessibility".localized : "bluetooth_not_connected_accessibility".localized)
             }
+            
+            // Call bell trigger button
             Button(action: {
                 bluetooth.triggerCallBell()
+                SoundManager.shared.playConfirmationSound()
+                appState.showToast("Call bell activated!")
             }) {
-                Text("trigger_call_bell".localized)
-                    .padding()
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
+                HStack(spacing: 8) {
+                    Image(systemName: "bell.fill")
+                        .font(.system(size: isIPad ? 20 : (isCompact ? 14 : 16)))
+                    
+                    Text("trigger_call_bell".localized)
+                        .font(buttonFont)
+                        .fontWeight(.semibold)
+                }
+                .padding(.horizontal, buttonPadding * 1.5)
+                .padding(.vertical, buttonPadding)
+                .background(
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(bluetooth.isConnected ? Color.accentColor : Color.gray)
+                        .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
+                )
+                .foregroundColor(.white)
+                .opacity(bluetooth.isConnected ? 1.0 : 0.6)
             }
             .disabled(!bluetooth.isConnected)
+            .buttonStyle(ScaleButtonStyle())
+            .accessibilityLabel("trigger_call_bell".localized)
+            .accessibilityHint(bluetooth.isConnected ? "Double tap to activate call bell" : "Call bell unavailable - Bluetooth not connected")
+            
+            // Error display
             if let error = bluetooth.lastError {
-                Text("Error: \(error)")
-                    .foregroundColor(.red)
-                    .onAppear {
-                        appState.showBluetoothError(error)
-                    }
+                HStack(spacing: 8) {
+                    Image(systemName: "exclamationmark.triangle.fill")
+                        .foregroundColor(.red)
+                        .font(.system(size: isIPad ? 16 : 12))
+                    
+                    Text("Bluetooth Error: \(error)")
+                        .font(isCompact ? .caption2 : .caption)
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.leading)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(Color.red.opacity(0.1))
+                .cornerRadius(8)
+                .onAppear {
+                    appState.showBluetoothError(error)
+                }
+            }
+            
+            // Scanning indicator
+            if !bluetooth.isConnected {
+                HStack(spacing: 8) {
+                    ProgressView()
+                        .scaleEffect(isCompact ? 0.8 : 1.0)
+                    
+                    Text("Scanning for devices...")
+                        .font(isCompact ? .caption2 : .caption)
+                        .foregroundColor(.secondary)
+                }
             }
         }
-        .padding()
+        .padding(isIPad ? 20 : (isCompact ? 12 : 16))
+        .background(Color(.systemGray6))
+        .cornerRadius(isIPad ? 16 : 12)
         .onAppear {
             bluetooth.startScanning()
         }
