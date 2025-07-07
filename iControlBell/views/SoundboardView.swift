@@ -3,6 +3,7 @@
 
 import SwiftUI
 import AVFoundation
+import Foundation
 
 /// Displays a soundboard for speaking phrases in the selected language.
 struct SoundboardView: View {

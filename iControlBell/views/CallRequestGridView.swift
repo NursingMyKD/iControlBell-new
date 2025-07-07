@@ -2,6 +2,7 @@
 // Grid of call request buttons
 
 import SwiftUI
+import Foundation
 
 /// Displays a grid of call request buttons for the patient UI.
 struct CallRequestGridView: View {

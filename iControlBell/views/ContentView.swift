@@ -2,6 +2,7 @@
 // Main Home Screen for iControlBell
 
 import SwiftUI
+import Foundation
 
 /// The main home screen for iControlBell, displaying logo, language selector, Bluetooth status, call requests, and soundboard.
 struct ContentView: View {

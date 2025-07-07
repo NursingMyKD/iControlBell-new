@@ -2,6 +2,7 @@
 // Language picker for iControlBell
 
 import SwiftUI
+import Foundation
 
 /// Displays a language picker for selecting the app's language.
 struct LanguageSelectorView: View {

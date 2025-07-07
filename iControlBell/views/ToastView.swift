@@ -2,6 +2,7 @@
 // Toast/notification UI
 
 import SwiftUI
+import Foundation
 
 /// Displays a toast notification with a message and error/success color.
 struct ToastView: View {
