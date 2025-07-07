@@ -9,10 +9,12 @@ Based on the Apple App Store Senior Reviewer assessment, the following critical 
 ## 1. **🖼️ APP ICON - CRITICAL FIX REQUIRED**
 
 ### **Current Issue:**
+
 - App icon is 2816x1536px (rectangular)
 - Not App Store compliant
 
 ### **Required Fix:**
+
 ```bash
 # Create a 1024x1024px square app icon
 # - Must be exactly 1024x1024 pixels
@@ -22,6 +24,7 @@ Based on the Apple App Store Senior Reviewer assessment, the following critical 
 ```
 
 ### **Action Steps:**
+
 1. Design new 1024x1024px square icon
 2. Replace `Assets.xcassets/AppIcon.appiconset/AppIcon.png`
 3. Update `Contents.json` to include all required sizes
@@ -30,11 +33,13 @@ Based on the Apple App Store Senior Reviewer assessment, the following critical 
 
 ## 2. **🔧 XCODE PROJECT BUILD - CRITICAL**
 
-### **Current Issue:**
+### **Current Build Issue:**
+
 - DeviceUtils.swift and AccessibilityUtils.swift not in build target
 - App will not compile in clean environment
 
-### **Required Fix:**
+### **Required Build Fix:**
+
 1. Open `iControlBell.xcodeproj` in Xcode
 2. Right-click `iControlBell/utils/` folder
 3. Select "Add Files to 'iControlBell'"
@@ -46,18 +51,21 @@ Based on the Apple App Store Senior Reviewer assessment, the following critical 
 ## 3. **📋 APP STORE CONNECT METADATA - CRITICAL**
 
 ### **Missing Requirements:**
+
 - App description (minimum 170 characters)
 - Privacy policy URL
 - App Store screenshots
 - Keywords and promotional text
 
 ### **Required Actions:**
+
 1. **Create Privacy Policy:**
    - Write comprehensive privacy policy
    - Host on publicly accessible URL
    - Include in App Store Connect
 
 2. **Write App Description:**
+
    ```text
    iControlBell is a healthcare communication app designed for hospital 
    environments. It enables patients to communicate with medical staff 
@@ -130,18 +138,21 @@ Last Updated: July 7, 2025
 ## 6. **✅ IMMEDIATE CHECKLIST**
 
 ### **Day 1 Priority:**
+
 - [ ] Create 1024x1024px app icon
 - [ ] Add utility files to Xcode project
 - [ ] Test clean build
 - [ ] Write privacy policy
 
 ### **Day 2 Priority:**
+
 - [ ] Complete App Store Connect metadata
 - [ ] Generate all required screenshots
 - [ ] Add healthcare disclaimers
 - [ ] Test on physical devices
 
 ### **Day 3 Priority:**
+
 - [ ] Final testing on all devices
 - [ ] Verify all metadata complete
 - [ ] Submit for App Store review
@@ -166,7 +177,7 @@ Once these critical issues are resolved, the app has **excellent chances of appr
 
 1. **Fix Critical Issues** (1-2 days)
 2. **Complete Testing** (1 day)
-3. **Resubmit to App Store** 
+3. **Resubmit to App Store**
 4. **Expected Approval** (5-7 days review)
 
-**Total Timeline to Approval: ~10 days**
+### Total Timeline to Approval: ~10 days
