@@ -15,6 +15,9 @@ struct CallRequestGridView: View {
             HStack(spacing: 16) {
                 ForEach(callRequests.prefix(5)) { option in
                     Button(action: {
+                        // Play confirmation sound
+                        SoundManager.shared.playConfirmationSound()
+                        
                         let message = option.label(for: selectedLanguage) + " request sent!"
                         appState.showToast(message)
                     }) {

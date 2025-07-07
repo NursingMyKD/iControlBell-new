@@ -10,7 +10,7 @@ struct ContentView: View {
     @StateObject private var callRequestData = CallRequestData(language: .english)
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 // Dark background to match the image
                 Color(red: 0.2, green: 0.2, blue: 0.2)

@@ -25,6 +25,8 @@
 		29ECF7AA2E1B5511007678F2 /* SoundboardCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7852E1B5511007678F2 /* SoundboardCategories.plist */; };
 		29ECF7AB2E1B5511007678F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7832E1B5511007678F2 /* Localizable.strings */; };
 		29ECF7AE2E1B5511007678F2 /* CallRequestOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7822E1B5511007678F2 /* CallRequestOptions.plist */; };
+		29ECF7B02E1B5511007678F2 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7B12E1B5511007678F2 /* SoundManager.swift */; };
+		29ECF7B22E1B5511007678F2 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7B32E1B5511007678F2 /* success.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		29ECF7972E1B5511007678F2 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		29ECF7992E1B5511007678F2 /* iControlBellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iControlBellApp.swift; sourceTree = "<group>"; };
 		29ECF7AF2E1B5585007678F2 /* iControlbell.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iControlbell.entitlements; sourceTree = "<group>"; };
+		29ECF7B12E1B5511007678F2 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		29ECF7B32E1B5511007678F2 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -146,6 +150,7 @@
 				29ECF7832E1B5511007678F2 /* Localizable.strings */,
 				29ECF7842E1B5511007678F2 /* PRIVACY_SECURITY.md */,
 				29ECF7852E1B5511007678F2 /* SoundboardCategories.plist */,
+				29ECF7B42E1B5511007678F2 /* Sounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -180,8 +185,17 @@
 			isa = PBXGroup;
 			children = (
 				29ECF78F2E1B5511007678F2 /* PlistLoader.swift */,
+				29ECF7B12E1B5511007678F2 /* SoundManager.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		29ECF7B42E1B5511007678F2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7B32E1B5511007678F2 /* success.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		29ECF7982E1B5511007678F2 /* views */ = {
@@ -335,6 +349,7 @@
 				29ECF7AA2E1B5511007678F2 /* SoundboardCategories.plist in Resources */,
 				29ECF7AB2E1B5511007678F2 /* Localizable.strings in Resources */,
 				29ECF7AE2E1B5511007678F2 /* CallRequestOptions.plist in Resources */,
+				29ECF7B22E1B5511007678F2 /* success.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +388,7 @@
 				29ECF7A62E1B5511007678F2 /* LogoView.swift in Sources */,
 				29ECF7A72E1B5511007678F2 /* Language.swift in Sources */,
 				29ECF7A82E1B5511007678F2 /* BluetoothStatusView.swift in Sources */,
+				29ECF7B02E1B5511007678F2 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -517,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -591,7 +607,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J7RK9VBR28;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iControlBellTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -610,7 +626,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J7RK9VBR28;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iControlBellTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
