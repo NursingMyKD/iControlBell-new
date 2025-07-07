@@ -3,18 +3,6 @@
 <plist version="1.0">
 <array>
     <dict>
-        <key>type</key><string>help</string>
-        <key>iconName</key><string>bell.fill</string>
-        <key>labels</key>
-        <dict>
-            <key>en</key><string>Help</string>
-            <key>es</key><string>Ayuda</string>
-            <key>fr</key><string>Aide</string>
-            <key>de</key><string>Hilfe</string>
-            <!-- ...all languages... -->
-        </dict>
-    </dict>
-    <dict>
         <key>type</key><string>water</string>
         <key>iconName</key><string>drop.fill</string>
         <key>labels</key>
@@ -23,9 +11,52 @@
             <key>es</key><string>Agua</string>
             <key>fr</key><string>Eau</string>
             <key>de</key><string>Wasser</string>
-            <!-- ...all languages... -->
         </dict>
     </dict>
-    <!-- ...other call request options with all languages... -->
+    <dict>
+        <key>type</key><string>restroom</string>
+        <key>iconName</key><string>figure.walk</string>
+        <key>labels</key>
+        <dict>
+            <key>en</key><string>Restroom</string>
+            <key>es</key><string>Baño</string>
+            <key>fr</key><string>Toilettes</string>
+            <key>de</key><string>Toilette</string>
+        </dict>
+    </dict>
+    <dict>
+        <key>type</key><string>reposition</string>
+        <key>iconName</key><string>bed.double.fill</string>
+        <key>labels</key>
+        <dict>
+            <key>en</key><string>Reposition</string>
+            <key>es</key><string>Reposición</string>
+            <key>fr</key><string>Repositionner</string>
+            <key>de</key><string>Umlagern</string>
+        </dict>
+    </dict>
+    <dict>
+        <key>type</key><string>pain</string>
+        <key>iconName</key><string>heart.fill</string>
+        <key>labels</key>
+        <dict>
+            <key>en</key><string>Pain</string>
+            <key>es</key><string>Dolor</string>
+            <key>fr</key><string>Douleur</string>
+            <key>de</key><string>Schmerz</string>
+        </dict>
+    </dict>
+    <dict>
+        <key>type</key><string>general</string>
+        <key>iconName</key><string>questionmark.circle.fill</string>
+        <key>labels</key>
+        <dict>
+            <key>en</key><string>General Help</string>
+            <key>es</key><string>Ayuda General</string>
+            <key>fr</key><string>Aide Générale</string>
+            <key>de</key><string>Allgemeine Hilfe</string>
+        </dict>
+    </dict>
 </array>
+</plist>
 </plist>

@@ -1,7 +1,109 @@
-<?xml version="1.0" encoding="UTF-8"?>
+#!/usr/bin/env python3
+
+# Script to generate comprehensive SoundboardCategories.plist
+
+plist_header = '''<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
+<array>'''
+
+plist_footer = '''
+</array>
+</plist>'''
+
+# Language codes and their display names
+languages = {
+    'en': 'English', 'es': 'Spanish', 'fr': 'French', 'de': 'German', 'pt': 'Portuguese', 
+    'it': 'Italian', 'ja': 'Japanese', 'nl': 'Dutch', 'ru': 'Russian', 'zh': 'Chinese',
+    'hi': 'Hindi', 'ar': 'Arabic', 'bn': 'Bengali', 'ko': 'Korean', 'tr': 'Turkish',
+    'pl': 'Polish', 'sv': 'Swedish', 'vi': 'Vietnamese', 'id': 'Indonesian', 'ur': 'Urdu',
+    'tl': 'Filipino', 'th': 'Thai', 'el': 'Greek', 'cs': 'Czech', 'hu': 'Hungarian',
+    'ro': 'Romanian', 'da': 'Danish', 'fi': 'Finnish'
+}
+
+# Category display names in all languages
+category_names = {
+    'greetings': {
+        'en': 'Greetings', 'es': 'Saludos', 'fr': 'Salutations', 'de': 'Grüße', 'pt': 'Saudações',
+        'it': 'Saluti', 'ja': '挨拶', 'nl': 'Begroetingen', 'ru': 'Приветствия', 'zh': '问候',
+        'hi': 'अभिवादन', 'ar': 'التحيات', 'bn': 'শুভেচ্ছা', 'ko': '인사', 'tr': 'Selamlar',
+        'pl': 'Pozdrowienia', 'sv': 'Hälsningar', 'vi': 'Lời chào', 'id': 'Salam', 'ur': 'سلام',
+        'tl': 'Pagbati', 'th': 'การทักทาย', 'el': 'Χαιρετισμοί', 'cs': 'Pozdravy', 'hu': 'Üdvözlések',
+        'ro': 'Salutări', 'da': 'Hilsner', 'fi': 'Tervehdykset'
+    },
+    'needs': {
+        'en': 'Needs', 'es': 'Necesidades', 'fr': 'Besoins', 'de': 'Bedürfnisse', 'pt': 'Necessidades',
+        'it': 'Bisogni', 'ja': '必要', 'nl': 'Behoeften', 'ru': 'Потребности', 'zh': '需要',
+        'hi': 'आवश्यकताएं', 'ar': 'الاحتياجات', 'bn': 'প্রয়োজন', 'ko': '필요', 'tr': 'İhtiyaçlar',
+        'pl': 'Potrzeby', 'sv': 'Behov', 'vi': 'Nhu cầu', 'id': 'Kebutuhan', 'ur': 'ضروریات',
+        'tl': 'Pangangailangan', 'th': 'ความต้องการ', 'el': 'Ανάγκες', 'cs': 'Potřeby', 'hu': 'Szükségletek',
+        'ro': 'Nevoi', 'da': 'Behov', 'fi': 'Tarpeet'
+    },
+    'comfort': {
+        'en': 'Comfort', 'es': 'Comodidad', 'fr': 'Confort', 'de': 'Komfort', 'pt': 'Conforto',
+        'it': 'Comfort', 'ja': '快適', 'nl': 'Comfort', 'ru': 'Комфорт', 'zh': '舒适',
+        'hi': 'आराम', 'ar': 'الراحة', 'bn': 'আরাম', 'ko': '편안함', 'tr': 'Konfor',
+        'pl': 'Komfort', 'sv': 'Komfort', 'vi': 'Thoải mái', 'id': 'Kenyamanan', 'ur': 'آرام',
+        'tl': 'Ginhawa', 'th': 'ความสะดวกสบาย', 'el': 'Άνεση', 'cs': 'Pohodlí', 'hu': 'Kényelem',
+        'ro': 'Confort', 'da': 'Komfort', 'fi': 'Mukavuus'
+    },
+    'feelings': {
+        'en': 'Feelings', 'es': 'Sentimientos', 'fr': 'Sentiments', 'de': 'Gefühle', 'pt': 'Sentimentos',
+        'it': 'Sentimenti', 'ja': '感情', 'nl': 'Gevoelens', 'ru': 'Чувства', 'zh': '感受',
+        'hi': 'भावनाएं', 'ar': 'المشاعر', 'bn': 'অনুভূতি', 'ko': '감정', 'tr': 'Duygular',
+        'pl': 'Uczucia', 'sv': 'Känslor', 'vi': 'Cảm xúc', 'id': 'Perasaan', 'ur': 'احساسات',
+        'tl': 'Damdamin', 'th': 'ความรู้สึก', 'el': 'Συναισθήματα', 'cs': 'Pocity', 'hu': 'Érzések',
+        'ro': 'Sentimente', 'da': 'Følelser', 'fi': 'Tunteet'
+    },
+    'responses': {
+        'en': 'Responses', 'es': 'Respuestas', 'fr': 'Réponses', 'de': 'Antworten', 'pt': 'Respostas',
+        'it': 'Risposte', 'ja': '返答', 'nl': 'Antwoorden', 'ru': 'Ответы', 'zh': '回应',
+        'hi': 'उत्तर', 'ar': 'الردود', 'bn': 'প্রতিক্রিয়া', 'ko': '응답', 'tr': 'Cevaplar',
+        'pl': 'Odpowiedzi', 'sv': 'Svar', 'vi': 'Phản hồi', 'id': 'Tanggapan', 'ur': 'جوابات',
+        'tl': 'Mga tugon', 'th': 'การตอบสนอง', 'el': 'Απαντήσεις', 'cs': 'Odpovědi', 'hu': 'Válaszok',
+        'ro': 'Răspunsuri', 'da': 'Svar', 'fi': 'Vastaukset'
+    }
+}
+
+def generate_category_dict(category_id, category_names, phrases_dict):
+    """Generate a category dictionary with all language support"""
+    result = f'''
+    <dict>
+        <key>id</key><string>{category_id}</string>
+        <key>displayNames</key>
+        <dict>'''
+    
+    # Add all language display names
+    for lang_code, name in category_names.items():
+        result += f'''
+            <key>{lang_code}</key><string>{name}</string>'''
+    
+    result += '''
+        </dict>
+        <key>phrases</key>
+        <dict>'''
+    
+    # Add phrases for each language
+    for lang_code, phrases in phrases_dict.items():
+        result += f'''
+            <key>{lang_code}</key><array>'''
+        for phrase in phrases:
+            result += f'''
+                <string>{phrase}</string>'''
+        result += '''
+            </array>'''
+    
+    result += '''
+        </dict>
+    </dict>'''
+    
+    return result
+
+# Generate comprehensive plist with all web version data
+def generate_plist():
+    with open('/Users/shanestone/Documents/CallBell-app/iControlBell-new/Resources/SoundboardCategories.plist', 'w') as f:
+        f.write(plist_header)
+        f.write('''
     <dict>
         <key>id</key><string>greetings</string>
         <key>displayNames</key>
@@ -146,6 +248,9 @@
                 <string>Sim</string><string>Não</string><string>Ok</string><string>Não sei</string><string>Por favor, espere</string><string>Sim, por favor</string><string>Não, obrigado(a)</string><string>Eu entendo</string><string>Eu não entendo</string><string>Pode repetir isso?</string><string>Pode falar mais devagar?</string><string>Pode escrever?</string><string>Isso está correto</string><string>Isso está incorreto</string><string>Eu concordo</string><string>Eu não concordo</string><string>Preciso de um momento para pensar</string><string>Estou pronto/a</string><string>Não estou pronto/a</string><string>Um pouco</string><string>Muito</string><string>Obrigado(a), é o suficiente</string>
             </array>
         </dict>
-    </dict>
-</array>
-</plist>
+    </dict>''')
+        f.write(plist_footer)
+        print("Comprehensive plist file generated successfully!")
+
+if __name__ == "__main__":
+    generate_plist()

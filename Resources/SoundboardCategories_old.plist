@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>id</key><string>greetings</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Greetings</string>
+            <key>es</key><string>Saludos</string>
+            <key>fr</key><string>Salutations</string>
+            <key>de</key><string>Grüße</string>
+            <!-- ...all languages... -->
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array><string>Hello</string><string>Good morning</string><string>Good evening</string></array>
+            <key>es</key><array><string>Hola</string><string>Buenos días</string><string>Buenas noches</string></array>
+            <key>fr</key><array><string>Bonjour</string><string>Bonsoir</string><string>Salut</string></array>
+            <key>de</key><array><string>Hallo</string><string>Guten Morgen</string><string>Guten Abend</string></array>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>needs</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Needs</string>
+            <key>es</key><string>Necesidades</string>
+            <key>fr</key><string>Besoins</string>
+            <key>de</key><string>Bedürfnisse</string>
+            <!-- ...all languages... -->
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array><string>I need help</string><string>I need water</string><string>I need the bathroom</string></array>
+            <key>es</key><array><string>Necesito ayuda</string><string>Necesito agua</string><string>Necesito ir al baño</string></array>
+            <key>fr</key><array><string>J'ai besoin d'aide</string><string>J'ai besoin d'eau</string><string>J'ai besoin d'aller aux toilettes</string></array>
+            <key>de</key><array><string>Ich brauche Hilfe</string><string>Ich brauche Wasser</string><string>Ich muss zur Toilette</string></array>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>comfort</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Comfort</string>
+            <key>es</key><string>Confort</string>
+            <key>fr</key><string>Confort</string>
+            <key>de</key><string>Komfort</string>
+            <!-- ...all languages... -->
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array><string>I'm cold</string><string>I'm hot</string><string>I'm tired</string></array>
+            <key>es</key><array><string>Tengo frío</string><string> Tengo calor</string><string>Estoy cansado</string></array>
+            <key>fr</key><array><string>J'ai froid</string><string>J'ai chaud</string><string>Je suis fatigué</string></array>
+            <key>de</key><array><string>Mir ist kalt</string><string>Mir ist heiß</string><string>Ich bin müde</string></array>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>feelings</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Feelings</string>
+            <key>es</key><string>Sentimientos</string>
+            <key>fr</key><string>Sentiments</string>
+            <key>de</key><string>Gefühle</string>
+            <!-- ...all languages... -->
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array><string>I'm happy</string><string>I'm sad</string><string>I'm angry</string></array>
+            <key>es</key><array><string>Estoy feliz</string><string>Estoy triste</string><string>Estoy enojado</string></array>
+            <key>fr</key><array><string>Je suis heureux</string><string>Je suis triste</string><string>Je suis en colère</string></array>
+            <key>de</key><array><string>Ich bin glücklich</string><string>Ich bin traurig</string><string>Ich bin wütend</string></array>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>responses</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Responses</string>
+            <key>es</key><string>Respuestas</string>
+            <key>fr</key><string>Réponses</string>
+            <key>de</key><string>Antworten</string>
+            <!-- ...all languages... -->
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array><string>Yes</string><string>No</string><string>Maybe</string></array>
+            <key>es</key><array><string>Sí</string><string>No</string><string>Quizás</string></array>
+            <key>fr</key><array><string>Oui</string><string>Non</string><string>Peut-être</string></array>
+            <key>de</key><array><string>Ja</string><string>Nein</string><string>Vielleicht</string></array>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+</array>
+</plist>

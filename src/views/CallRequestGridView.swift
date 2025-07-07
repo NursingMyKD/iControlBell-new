@@ -10,30 +10,30 @@ struct CallRequestGridView: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("call_request_grid_title".localized)
-                .font(.headline)
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 120), spacing: 16)], spacing: 16) {
-                ForEach(callRequests) { option in
+        VStack(spacing: 16) {
+            // Five call request buttons in a horizontal row
+            HStack(spacing: 16) {
+                ForEach(callRequests.prefix(5)) { option in
                     Button(action: {
                         let message = option.label(for: selectedLanguage) + " request sent!"
                         appState.showToast(message)
                     }) {
-                        VStack {
+                        VStack(spacing: 8) {
                             Image(systemName: option.iconName)
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .padding(.bottom, 8)
-                                .accessibilityIdentifier("icon_\(option.id)")
+                                .font(.system(size: 32))
+                                .foregroundColor(.white)
                             Text(option.label(for: selectedLanguage))
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
                                 .multilineTextAlignment(.center)
-                                .accessibilityIdentifier("label_\(option.id)")
                         }
-                        .padding()
-                        .frame(maxWidth: .infinity, minHeight: 100)
-                        .background(Color(.secondarySystemBackground))
+                        .padding(.vertical, 24)
+                        .padding(.horizontal, 16)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 120)
+                        .background(Color(red: 0.0, green: 0.6, blue: 0.6)) // Teal color matching image
                         .cornerRadius(16)
-                        .shadow(radius: 2)
                     }
                     .accessibilityLabel(option.label(for: selectedLanguage))
                     .accessibilityAddTraits(.isButton)
@@ -41,7 +41,7 @@ struct CallRequestGridView: View {
                     .accessibilityIdentifier("button_\(option.id)")
                 }
             }
+            .padding(.horizontal, 16)
         }
-        .padding(.vertical)
     }
 }

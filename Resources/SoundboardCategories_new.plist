@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>id</key><string>greetings</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Greetings</string>
+            <key>es</key><string>Saludos</string>
+            <key>fr</key><string>Salutations</string>
+            <key>de</key><string>Grüße</string>
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array>
+                <string>Hello</string>
+                <string>Goodbye</string>
+                <string>My name is...</string>
+                <string>You're welcome</string>
+                <string>What is your name?</string>
+            </array>
+            <key>es</key><array>
+                <string>Hola</string>
+                <string>Adiós</string>
+                <string>Mi nombre es...</string>
+                <string>De nada</string>
+                <string>¿Cuál es tu nombre?</string>
+            </array>
+            <key>fr</key><array>
+                <string>Bonjour</string>
+                <string>Au revoir</string>
+                <string>Je m'appelle...</string>
+                <string>De rien</string>
+                <string>Comment vous appelez-vous?</string>
+            </array>
+            <key>de</key><array>
+                <string>Hallo</string>
+                <string>Auf Wiedersehen</string>
+                <string>Ich heiße...</string>
+                <string>Bitte schön</string>
+                <string>Wie heißen Sie?</string>
+            </array>
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>needs</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Needs</string>
+            <key>es</key><string>Necesidades</string>
+            <key>fr</key><string>Besoins</string>
+            <key>de</key><string>Bedürfnisse</string>
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array>
+                <string>Good morning</string>
+                <string>Good afternoon</string>
+                <string>Good evening</string>
+                <string>Good night</string>
+                <string>Excuse me</string>
+            </array>
+            <key>es</key><array>
+                <string>Buenos días</string>
+                <string>Buenas tardes</string>
+                <string>Buenas noches</string>
+                <string>Buenas noches</string>
+                <string>Disculpe</string>
+            </array>
+            <key>fr</key><array>
+                <string>Bonjour</string>
+                <string>Bon après-midi</string>
+                <string>Bonsoir</string>
+                <string>Bonne nuit</string>
+                <string>Excusez-moi</string>
+            </array>
+            <key>de</key><array>
+                <string>Guten Morgen</string>
+                <string>Guten Tag</string>
+                <string>Guten Abend</string>
+                <string>Gute Nacht</string>
+                <string>Entschuldigung</string>
+            </array>
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>comfort</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Comfort</string>
+            <key>es</key><string>Confort</string>
+            <key>fr</key><string>Confort</string>
+            <key>de</key><string>Komfort</string>
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array>
+                <string>Thank you</string>
+                <string>Please</string>
+                <string>I'm sorry</string>
+                <string>I appreciate it</string>
+                <string>Thank you for your help</string>
+            </array>
+            <key>es</key><array>
+                <string>Gracias</string>
+                <string>Por favor</string>
+                <string>Lo siento</string>
+                <string>Lo aprecio</string>
+                <string>Gracias por tu ayuda</string>
+            </array>
+            <key>fr</key><array>
+                <string>Merci</string>
+                <string>S'il vous plaît</string>
+                <string>Je suis désolé</string>
+                <string>Je l'apprécie</string>
+                <string>Merci pour votre aide</string>
+            </array>
+            <key>de</key><array>
+                <string>Danke</string>
+                <string>Bitte</string>
+                <string>Es tut mir leid</string>
+                <string>Ich schätze es</string>
+                <string>Danke für Ihre Hilfe</string>
+            </array>
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>feelings</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Feelings</string>
+            <key>es</key><string>Sentimientos</string>
+            <key>fr</key><string>Sentiments</string>
+            <key>de</key><string>Gefühle</string>
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array>
+                <string>How are you?</string>
+                <string>Nice to meet you</string>
+                <string>Have a good day</string>
+                <string>See you later</string>
+                <string>You too</string>
+            </array>
+            <key>es</key><array>
+                <string>¿Cómo estás?</string>
+                <string>Encantado de conocerte</string>
+                <string>Que tengas un buen día</string>
+                <string>Hasta luego</string>
+                <string>Tú también</string>
+            </array>
+            <key>fr</key><array>
+                <string>Comment allez-vous?</string>
+                <string>Ravi de vous rencontrer</string>
+                <string>Passez une bonne journée</string>
+                <string>À bientôt</string>
+                <string>Vous aussi</string>
+            </array>
+            <key>de</key><array>
+                <string>Wie geht es Ihnen?</string>
+                <string>Freut mich, Sie kennenzulernen</string>
+                <string>Haben Sie einen schönen Tag</string>
+                <string>Bis später</string>
+                <string>Sie auch</string>
+            </array>
+        </dict>
+    </dict>
+    <dict>
+        <key>id</key><string>responses</string>
+        <key>displayNames</key>
+        <dict>
+            <key>en</key><string>Responses</string>
+            <key>es</key><string>Respuestas</string>
+            <key>fr</key><string>Réponses</string>
+            <key>de</key><string>Antworten</string>
+        </dict>
+        <key>phrases</key>
+        <dict>
+            <key>en</key><array>
+                <string>Yes, please</string>
+                <string>No, thank you</string>
+            </array>
+            <key>es</key><array>
+                <string>Sí, por favor</string>
+                <string>No, gracias</string>
+            </array>
+            <key>fr</key><array>
+                <string>Oui, s'il vous plaît</string>
+                <string>Non, merci</string>
+            </array>
+            <key>de</key><array>
+                <string>Ja, bitte</string>
+                <string>Nein, danke</string>
+            </array>
+        </dict>
+    </dict>
+</array>
+</plist>

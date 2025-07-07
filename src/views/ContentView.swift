@@ -11,33 +11,60 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView { // Use ScrollView for large screens
-                VStack(spacing: 24) {
-                    LogoView()
-                        .accessibilityHidden(true)
-                    Text("app_title".localized)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .accessibilityAddTraits(.isHeader)
-                    Text("app_description".localized)
-                        .font(.title3)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                    LanguageSelectorView(selectedLanguage: $appState.selectedLanguage)
-                    Divider()
-                    BluetoothStatusView(bluetooth: BluetoothManager.shared).environmentObject(appState)
-                    Divider()
-                    CallRequestGridView(selectedLanguage: appState.selectedLanguage, callRequests: callRequestData.options)
-                        .environmentObject(appState)
-                    Divider()
-                    SoundboardView(selectedLanguage: appState.selectedLanguage, categories: soundboardData.categories)
-                    Spacer()
+            ZStack {
+                // Dark background to match the image
+                Color(red: 0.2, green: 0.2, blue: 0.2)
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 32) {
+                        // Header Section
+                        VStack(spacing: 16) {
+                            // Logo and title
+                            VStack(spacing: 8) {
+                                Image(systemName: "phone.fill")
+                                    .font(.system(size: 40))
+                                    .foregroundColor(.white)
+                                
+                                Text("iControlBell")
+                                    .font(.largeTitle)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                            }
+                            
+                            // Description
+                            Text("Focus your gaze on the button below that best describes your need to call for assistance, or use the soundboard to speak.")
+                                .font(.body)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 32)
+                            
+                            // Language selector
+                            VStack(spacing: 8) {
+                                Text("Select Language:")
+                                    .font(.body)
+                                    .foregroundColor(.white)
+                                
+                                LanguageSelectorView(selectedLanguage: $appState.selectedLanguage)
+                            }
+                        }
+                        
+                        // Call Request Grid - exactly 5 buttons in a row
+                        CallRequestGridView(selectedLanguage: appState.selectedLanguage, callRequests: callRequestData.options)
+                            .environmentObject(appState)
+                        
+                        // Soundboard
+                        SoundboardView(selectedLanguage: appState.selectedLanguage, categories: soundboardData.categories)
+                        
+                        Spacer()
+                    }
+                    .padding()
                 }
-                .padding()
             }
+            .navigationBarHidden(true)
             .onChange(of: appState.selectedLanguage) { newLanguage in
-                soundboardData.language = newLanguage
-                callRequestData.loadOptions(for: newLanguage)
+                soundboardData.updateLanguage(newLanguage)
+                callRequestData.updateLanguage(newLanguage)
             }
             .overlay(
                 Group {

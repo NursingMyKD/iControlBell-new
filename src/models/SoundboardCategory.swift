@@ -18,11 +18,16 @@ struct SoundboardCategory: Identifiable, Hashable, Decodable {
 @MainActor
 class SoundboardData: ObservableObject {
     @Published private(set) var categories: [SoundboardCategory] = []
-    private(set) var language: Language
+    @Published private(set) var language: Language
 
     init(language: Language) {
         self.language = language
         loadCategories(for: language)
+    }
+
+    /// Public method to update the language and reload categories
+    func updateLanguage(_ newLanguage: Language) {
+        loadCategories(for: newLanguage)
     }
 
     /// Loads soundboard categories for the given language from the Plist.

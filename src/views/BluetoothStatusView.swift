@@ -5,7 +5,7 @@ import SwiftUI
 
 /// Displays Bluetooth connection status and allows triggering the call bell.
 struct BluetoothStatusView: View {
-    @ObservedObject var bluetooth: BluetoothManaging
+    @ObservedObject var bluetooth: BluetoothManager
     @EnvironmentObject var appState: AppState
     
     var body: some View {

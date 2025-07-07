@@ -24,11 +24,16 @@ struct CallRequestOption: Identifiable, Decodable, Equatable, Hashable {
 @MainActor
 class CallRequestData: ObservableObject {
     @Published private(set) var options: [CallRequestOption] = []
-    private(set) var language: Language
+    @Published private(set) var language: Language
 
     init(language: Language) {
         self.language = language
         loadOptions(for: language)
+    }
+
+    /// Public method to update the language and reload options
+    func updateLanguage(_ newLanguage: Language) {
+        loadOptions(for: newLanguage)
     }
 
     /// Loads call request options for the given language from the Plist.
