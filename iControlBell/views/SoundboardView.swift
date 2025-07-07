@@ -15,39 +15,30 @@ struct SoundboardView: View {
     @State private var isSpeaking = false
     @State private var speechSynth = AVSpeechSynthesizer()
     
-    // Dynamic layout properties
+    // Dynamic layout properties using DeviceUtils
     private var gridColumns: Int {
-        if isIPad {
-            return 6
-        } else if isCompact {
-            return 3
-        } else {
-            return 4
-        }
+        DeviceUtils.adaptiveColumns(for: "soundboard")
     }
     
     private var buttonHeight: CGFloat {
-        if isIPad {
-            return 120
-        } else if isCompact {
-            return 80
-        } else {
-            return 100
-        }
+        DeviceUtils.dynamicSpacing(compact: 80, regular: 100, iPad: 120)
     }
     
     private var titleFont: Font {
-        if isIPad {
-            return .largeTitle
-        } else if isCompact {
-            return .title3
-        } else {
-            return .title2
-        }
+        DeviceUtils.dynamicFont(
+            compact: .title3,
+            regular: .title2,
+            iPad: .largeTitle
+        )
     }
     
     private var bodyFont: Font {
-        if isIPad {
+        DeviceUtils.dynamicFont(
+            compact: .caption2,
+            regular: .caption,
+            iPad: .body
+        )
+    }
             return .title3
         } else if isCompact {
             return .caption
@@ -189,7 +180,8 @@ struct SoundboardView: View {
     @ViewBuilder
     private func phraseButton(for phrase: String) -> some View {
         Button(action: {
-            HapticUtils.selection()
+            let selection = UISelectionFeedbackGenerator()
+            selection.selectionChanged()
             speak(phrase)
         }) {
             VStack(spacing: isIPad ? 8 : 4) {
@@ -197,7 +189,7 @@ struct SoundboardView: View {
                     .font(.system(size: iconSize))
                     .foregroundColor(.primary)
                     .frame(height: iconSize)
-                    .accessibleAnimation(.easeInOut(duration: 0.3), value: isSpeaking)
+                    .animation(.easeInOut(duration: 0.3), value: isSpeaking)
                 
                 Text(phrase)
                     .font(buttonFont)
@@ -211,7 +203,7 @@ struct SoundboardView: View {
             .frame(maxWidth: .infinity)
             .frame(height: buttonHeight)
             .background(
-                AccessibilityUtils.prefersIncreasedContrast ? 
+                UIAccessibility.isDarkerSystemColorsEnabled ? 
                 Color(.systemGray4) : Color(.systemGray6)
             )
             .cornerRadius(isIPad ? 16 : (isCompact ? 8 : 12))
@@ -221,18 +213,15 @@ struct SoundboardView: View {
                         isSpeaking ? Color.accentColor : Color.clear, 
                         lineWidth: isSpeaking ? 3 : 0
                     )
-                    .accessibleAnimation(.easeInOut(duration: 0.2), value: isSpeaking)
+                    .animation(.easeInOut(duration: 0.2), value: isSpeaking)
             )
         }
-        .accessibleTouchTarget(minSize: max(buttonHeight, AccessibilityUtils.minimumTouchTargetSize))
-        .voiceOverLabel(
-            "Speak: \(phrase)",
-            hint: isSpeaking ? "Currently speaking this phrase" : "Double tap to speak this phrase aloud"
-        )
+        .frame(minWidth: max(buttonHeight, 44), minHeight: max(buttonHeight, 44)) // Ensure minimum touch target
+        .accessibilityLabel("Speak: \(phrase)")
+        .accessibilityHint(isSpeaking ? "Currently speaking this phrase" : "Double tap to speak this phrase aloud")
         .accessibilityIdentifier("sound_button_\(phrase.replacingOccurrences(of: " ", with: "_"))")
         .accessibilityAddTraits(.isButton)
         .buttonStyle(ScaleButtonStyle())
-        .accessibilityAware()
     }
     
     /// Speaks the given phrase using AVSpeechSynthesizer.
@@ -256,7 +245,7 @@ struct SoundboardView: View {
         }
         
         // Set speech properties for better healthcare use
-        utterance.rate = AccessibilityUtils.isVoiceOverRunning ? 0.4 : 0.5 // Slower for VoiceOver users
+        utterance.rate = UIAccessibility.isVoiceOverRunning ? 0.4 : 0.5 // Slower for VoiceOver users
         utterance.volume = 1.0
         utterance.pitchMultiplier = 1.0
         
@@ -264,14 +253,17 @@ struct SoundboardView: View {
         speechSynth.delegate = SpeechDelegate { [weak self] in
             DispatchQueue.main.async {
                 self?.isSpeaking = false
-                HapticUtils.success() // Haptic feedback when speech completes
+                // Success haptic feedback
+                let success = UINotificationFeedbackGenerator()
+                success.notificationOccurred(.success)
             }
         }
         
         speechSynth.speak(utterance)
         
         // Immediate haptic feedback for button press
-        HapticUtils.buttonTap()
+        let impact = UIImpactFeedbackGenerator(style: .medium)
+        impact.impactOccurred()
     }
 }
 

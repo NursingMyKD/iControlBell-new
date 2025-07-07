@@ -12,42 +12,26 @@ struct CallRequestGridView: View {
     var isCompact: Bool
     @EnvironmentObject var appState: AppState
     
-    // Dynamic layout properties
+    // Dynamic layout properties using DeviceUtils
     private var columns: Int {
-        if isIPad {
-            return 5 // Always 5 columns on iPad
-        } else if isCompact {
-            return min(3, callRequests.count) // Max 3 columns on compact iPhone
-        } else {
-            return min(5, callRequests.count) // Up to 5 columns on regular iPhone
-        }
+        DeviceUtils.adaptiveColumns(for: "callRequests")
     }
     
     private var buttonHeight: CGFloat {
-        if isIPad {
-            return 140
-        } else if isCompact {
-            return 100
-        } else {
-            return 120
-        }
+        DeviceUtils.dynamicSpacing(compact: 100, regular: 120, iPad: 140)
     }
     
     private var iconSize: CGFloat {
-        if isIPad {
-            return 40
-        } else if isCompact {
-            return 24
-        } else {
-            return 32
-        }
+        DeviceUtils.dynamicSpacing(compact: 24, regular: 32, iPad: 40)
     }
     
     private var buttonFont: Font {
-        if isIPad {
-            return .title3
-        } else if isCompact {
-            return .caption
+        DeviceUtils.dynamicFont(
+            compact: .caption,
+            regular: .body,
+            iPad: .title3
+        )
+    }
         } else {
             return .body
         }
@@ -101,8 +85,9 @@ struct CallRequestGridView: View {
     @ViewBuilder
     private func callRequestButton(for option: CallRequestOption) -> some View {
         Button(action: {
-            // Haptic feedback
-            HapticUtils.buttonTap()
+            // Simple haptic feedback
+            let impact = UIImpactFeedbackGenerator(style: .medium)
+            impact.impactOccurred()
             
             // Play confirmation sound
             SoundManager.shared.playConfirmationSound()
@@ -112,7 +97,8 @@ struct CallRequestGridView: View {
             
             // Success haptic
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                HapticUtils.success()
+                let success = UINotificationFeedbackGenerator()
+                success.notificationOccurred(.success)
             }
         }) {
             VStack(spacing: isCompact ? 4 : 8) {
@@ -136,9 +122,9 @@ struct CallRequestGridView: View {
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [
-                        AccessibilityUtils.prefersIncreasedContrast ? 
+                        UIAccessibility.isDarkerSystemColorsEnabled ? 
                             Color(red: 0.0, green: 0.5, blue: 0.6) : Color(red: 0.0, green: 0.7, blue: 0.7),
-                        AccessibilityUtils.prefersIncreasedContrast ? 
+                        UIAccessibility.isDarkerSystemColorsEnabled ? 
                             Color(red: 0.0, green: 0.3, blue: 0.4) : Color(red: 0.0, green: 0.5, blue: 0.6)
                     ]),
                     startPoint: .top,
@@ -147,21 +133,18 @@ struct CallRequestGridView: View {
             )
             .cornerRadius(isIPad ? 20 : (isCompact ? 12 : 16))
             .shadow(
-                color: .black.opacity(AccessibilityUtils.prefersIncreasedContrast ? 0.5 : 0.2), 
+                color: .black.opacity(UIAccessibility.isDarkerSystemColorsEnabled ? 0.5 : 0.2), 
                 radius: isIPad ? 8 : 4, 
                 x: 0, 
                 y: 2
             )
         }
-        .accessibleTouchTarget(minSize: max(buttonHeight, AccessibilityUtils.minimumTouchTargetSize))
-        .voiceOverLabel(
-            "\(option.label(for: selectedLanguage)) request button",
-            hint: "Double tap to send \(option.label(for: selectedLanguage).lowercased()) assistance request"
-        )
+        .frame(minWidth: 44, minHeight: max(buttonHeight, 44)) // Ensure minimum touch target
+        .accessibilityLabel("\(option.label(for: selectedLanguage)) request button")
+        .accessibilityHint("Double tap to send \(option.label(for: selectedLanguage).lowercased()) assistance request")
         .accessibilityIdentifier("button_\(option.id)")
         .accessibilityAddTraits(.isButton)
         .buttonStyle(ScaleButtonStyle())
-        .accessibilityAware()
     }
 }
 

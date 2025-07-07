@@ -10,16 +10,17 @@ struct ContentView: View {
     @StateObject private var soundboardData = SoundboardData(language: .english)
     @StateObject private var callRequestData = CallRequestData(language: .english)
     
-    // Device type detection
+    // Environment values for responsive design
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     
+    // Device utilities for responsive design
     private var isIPad: Bool {
-        UIDevice.current.userInterfaceIdiom == .pad
+        DeviceUtils.isIPad
     }
     
     private var isCompact: Bool {
-        horizontalSizeClass == .compact
+        horizontalSizeClass == .compact || DeviceUtils.screenSize == .iPhoneSmall
     }
     
     private var isLandscape: Bool {
@@ -168,76 +169,44 @@ struct ContentView: View {
     // MARK: - Dynamic Properties
     
     private var dynamicSpacing: CGFloat {
-        let baseSpacing: CGFloat
-        if isIPad {
-            baseSpacing = 40
-        } else if isCompact {
-            baseSpacing = 20
-        } else {
-            baseSpacing = 32
-        }
-        return AccessibilityUtils.accessibleSpacing(base: baseSpacing)
+        DeviceUtils.dynamicSpacing(compact: 20, regular: 32, iPad: 40) *
+        (AccessibilityUtils.isVoiceOverRunning ? 1.5 : 1.0)
     }
     
     private var headerSpacing: CGFloat {
-        let baseSpacing: CGFloat = isIPad ? 20 : 16
-        return AccessibilityUtils.accessibleSpacing(base: baseSpacing)
+        DeviceUtils.dynamicSpacing(compact: 12, regular: 16, iPad: 20) *
+        (AccessibilityUtils.isVoiceOverRunning ? 1.5 : 1.0)
     }
     
     private var horizontalPadding: CGFloat {
-        let basePadding: CGFloat
-        if isIPad {
-            basePadding = 40
-        } else if isCompact {
-            basePadding = 16
-        } else {
-            basePadding = 20
-        }
-        return AccessibilityUtils.accessibleSpacing(base: basePadding)
+        DeviceUtils.dynamicSpacing(compact: 16, regular: 20, iPad: 40) *
+        (AccessibilityUtils.isVoiceOverRunning ? 1.5 : 1.0)
     }
     
     private var verticalPadding: CGFloat {
-        let basePadding: CGFloat
-        if isIPad {
-            basePadding = 30
-        } else if isCompact {
-            basePadding = 12
-        } else {
-            basePadding = 20
-        }
-        return AccessibilityUtils.accessibleSpacing(base: basePadding)
+        DeviceUtils.dynamicSpacing(compact: 12, regular: 20, iPad: 30) *
+        (AccessibilityUtils.isVoiceOverRunning ? 1.5 : 1.0)
     }
     
     private var logoSize: CGFloat {
-        let baseSize: CGFloat
-        if isIPad {
-            baseSize = 60
-        } else if isCompact {
-            baseSize = 30
-        } else {
-            baseSize = 40
-        }
-        return AccessibilityUtils.accessibleFontSize(base: baseSize)
+        let baseSize = DeviceUtils.dynamicSpacing(compact: 30, regular: 40, iPad: 60)
+        return baseSize * (AccessibilityUtils.isVoiceOverRunning ? 1.2 : 1.0)
     }
     
     private var titleFont: Font {
-        if isIPad {
-            return .system(size: AccessibilityUtils.accessibleFontSize(base: 34), weight: .bold)
-        } else if isCompact {
-            return .system(size: AccessibilityUtils.accessibleFontSize(base: 22), weight: .bold)
-        } else {
-            return .system(size: AccessibilityUtils.accessibleFontSize(base: 28), weight: .bold)
-        }
+        DeviceUtils.dynamicFont(
+            compact: .system(size: 22, weight: .bold),
+            regular: .system(size: 28, weight: .bold),
+            iPad: .system(size: 34, weight: .bold)
+        )
     }
     
     private var bodyFont: Font {
-        if isIPad {
-            return .system(size: AccessibilityUtils.accessibleFontSize(base: 20))
-        } else if isCompact {
-            return .system(size: AccessibilityUtils.accessibleFontSize(base: 13))
-        } else {
-            return .system(size: AccessibilityUtils.accessibleFontSize(base: 17))
-        }
+        DeviceUtils.dynamicFont(
+            compact: .system(size: 13),
+            regular: .system(size: 17),
+            iPad: .system(size: 20)
+        )
     }
 }
 
