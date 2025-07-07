@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <dict>
+        <key>type</key><string>help</string>
+        <key>iconName</key><string>bell.fill</string>
+        <key>labels</key>
+        <dict>
+            <key>en</key><string>Help</string>
+            <key>es</key><string>Ayuda</string>
+            <key>fr</key><string>Aide</string>
+            <key>de</key><string>Hilfe</string>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+    <dict>
+        <key>type</key><string>water</string>
+        <key>iconName</key><string>drop.fill</string>
+        <key>labels</key>
+        <dict>
+            <key>en</key><string>Water</string>
+            <key>es</key><string>Agua</string>
+            <key>fr</key><string>Eau</string>
+            <key>de</key><string>Wasser</string>
+            <!-- ...all languages... -->
+        </dict>
+    </dict>
+    <!-- ...other call request options with all languages... -->
+</array>
+</plist>

@@ -1,0 +1,29 @@
+/* UI Strings for iControlBell - English and all supported languages */
+"app_title" = "iControlBell";
+"app_description" = "Eye-tracking accessible call bell app";
+"language_selector_label" = "Select Language";
+"soundboard_title" = "Soundboard";
+"call_request_grid_title" = "Call Requests";
+
+/* Spanish */
+"app_title" = "iControlBell";
+"app_description" = "Aplicación de timbre accesible con seguimiento ocular";
+"language_selector_label" = "Seleccionar idioma";
+"soundboard_title" = "Tablero de sonidos";
+"call_request_grid_title" = "Solicitudes de llamada";
+
+/* French */
+"app_title" = "iControlBell";
+"app_description" = "Application de sonnette accessible par suivi oculaire";
+"language_selector_label" = "Choisir la langue";
+"soundboard_title" = "Tableau sonore";
+"call_request_grid_title" = "Demandes d'appel";
+
+/* German */
+"app_title" = "iControlBell";
+"app_description" = "Barrierefreie Klingel-App mit Augensteuerung";
+"language_selector_label" = "Sprache wählen";
+"soundboard_title" = "Soundboard";
+"call_request_grid_title" = "Rufanfragen";
+
+/* ...repeat for all 28 languages... */
