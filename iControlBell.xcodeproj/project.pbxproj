@@ -190,14 +190,6 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		29ECF7B42E1B5511007678F2 /* Sounds */ = {
-			isa = PBXGroup;
-			children = (
-				29ECF7B32E1B5511007678F2 /* success.mp3 */,
-			);
-			path = Sounds;
-			sourceTree = "<group>";
-		};
 		29ECF7982E1B5511007678F2 /* views */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +215,14 @@
 				29ECF7992E1B5511007678F2 /* iControlBellApp.swift */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		29ECF7B42E1B5511007678F2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7B32E1B5511007678F2 /* success.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
