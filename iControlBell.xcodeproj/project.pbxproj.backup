@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29ECF79B2E1B5511007678F2 /* CallRequestOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7892E1B5511007678F2 /* CallRequestOption.swift */; };
+		29ECF79C2E1B5511007678F2 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF78D2E1B5511007678F2 /* AppState.swift */; };
+		29ECF79D2E1B5511007678F2 /* iControlBellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7992E1B5511007678F2 /* iControlBellApp.swift */; };
+		29ECF79E2E1B5511007678F2 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7972E1B5511007678F2 /* ToastView.swift */; };
+		29ECF79F2E1B5511007678F2 /* SoundboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7962E1B5511007678F2 /* SoundboardView.swift */; };
+		29ECF7A02E1B5511007678F2 /* SoundboardCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF78B2E1B5511007678F2 /* SoundboardCategory.swift */; };
+		29ECF7A12E1B5511007678F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7932E1B5511007678F2 /* ContentView.swift */; };
+		29ECF7A22E1B5511007678F2 /* CallRequestGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7922E1B5511007678F2 /* CallRequestGridView.swift */; };
+		29ECF7A32E1B5511007678F2 /* PlistLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF78F2E1B5511007678F2 /* PlistLoader.swift */; };
+		29ECF7A42E1B5511007678F2 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7872E1B5511007678F2 /* BluetoothManager.swift */; };
+		29ECF7A52E1B5511007678F2 /* LanguageSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7942E1B5511007678F2 /* LanguageSelectorView.swift */; };
+		29ECF7A62E1B5511007678F2 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7952E1B5511007678F2 /* LogoView.swift */; };
+		29ECF7A72E1B5511007678F2 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF78A2E1B5511007678F2 /* Language.swift */; };
+		29ECF7A82E1B5511007678F2 /* BluetoothStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7912E1B5511007678F2 /* BluetoothStatusView.swift */; };
+		29ECF7A92E1B5511007678F2 /* PRIVACY_SECURITY.md in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7842E1B5511007678F2 /* PRIVACY_SECURITY.md */; };
+		29ECF7AA2E1B5511007678F2 /* SoundboardCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7852E1B5511007678F2 /* SoundboardCategories.plist */; };
+		29ECF7AB2E1B5511007678F2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7832E1B5511007678F2 /* Localizable.strings */; };
+		29ECF7AE2E1B5511007678F2 /* CallRequestOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7822E1B5511007678F2 /* CallRequestOptions.plist */; };
+		29ECF7B02E1B5511007678F2 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29ECF7B12E1B5511007678F2 /* SoundManager.swift */; };
+		29ECF7B22E1B5511007678F2 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29ECF7B32E1B5511007678F2 /* success.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +50,48 @@
 		29ECF7552E1B3F5A007678F2 /* iControlBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iControlBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ECF7622E1B3F5B007678F2 /* iControlBellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iControlBellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29ECF76C2E1B3F5B007678F2 /* iControlBellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iControlBellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29ECF7572E1B3F5A007678F2 /* iControlBell */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = iControlBell; sourceTree = "<group>"; };
-		29ECF7652E1B3F5B007678F2 /* iControlBellTests */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = iControlBellTests; sourceTree = "<group>"; };
-		29ECF76F2E1B3F5B007678F2 /* iControlBellUITests */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = iControlBellUITests; sourceTree = "<group>"; };
-		29ECF7801E1B5511007678F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29ECF7811E1B5511007678F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		29ECF7861E1B5511007678F2 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Resources; sourceTree = "<group>"; };
-		29ECF7AF1E1B5585007678F2 /* iControlbell.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iControlbell.entitlements; sourceTree = "<group>"; };
+		29ECF7802E1B5511007678F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		29ECF7812E1B5511007678F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29ECF7822E1B5511007678F2 /* CallRequestOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CallRequestOptions.plist; sourceTree = "<group>"; };
+		29ECF7832E1B5511007678F2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		29ECF7842E1B5511007678F2 /* PRIVACY_SECURITY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY_SECURITY.md; sourceTree = "<group>"; };
+		29ECF7852E1B5511007678F2 /* SoundboardCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SoundboardCategories.plist; sourceTree = "<group>"; };
+		29ECF7872E1B5511007678F2 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		29ECF7892E1B5511007678F2 /* CallRequestOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRequestOption.swift; sourceTree = "<group>"; };
+		29ECF78A2E1B5511007678F2 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		29ECF78B2E1B5511007678F2 /* SoundboardCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundboardCategory.swift; sourceTree = "<group>"; };
+		29ECF78D2E1B5511007678F2 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		29ECF78F2E1B5511007678F2 /* PlistLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistLoader.swift; sourceTree = "<group>"; };
+		29ECF7912E1B5511007678F2 /* BluetoothStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothStatusView.swift; sourceTree = "<group>"; };
+		29ECF7922E1B5511007678F2 /* CallRequestGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallRequestGridView.swift; sourceTree = "<group>"; };
+		29ECF7932E1B5511007678F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		29ECF7942E1B5511007678F2 /* LanguageSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectorView.swift; sourceTree = "<group>"; };
+		29ECF7952E1B5511007678F2 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		29ECF7962E1B5511007678F2 /* SoundboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundboardView.swift; sourceTree = "<group>"; };
+		29ECF7972E1B5511007678F2 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		29ECF7992E1B5511007678F2 /* iControlBellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iControlBellApp.swift; sourceTree = "<group>"; };
+		29ECF7AF2E1B5585007678F2 /* iControlbell.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iControlbell.entitlements; sourceTree = "<group>"; };
+		29ECF7B12E1B5511007678F2 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		29ECF7B32E1B5511007678F2 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		29ECF7572E1B3F5A007678F2 /* iControlBell */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = iControlBell;
+			sourceTree = "<group>";
+		};
+		29ECF7652E1B3F5B007678F2 /* iControlBellTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = iControlBellTests;
+			sourceTree = "<group>";
+		};
+		29ECF76F2E1B3F5B007678F2 /* iControlBellUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = iControlBellUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		29ECF7522E1B3F5A007678F2 /* Frameworks */ = {
@@ -67,14 +121,15 @@
 		29ECF74C2E1B3F5A007678F2 = {
 			isa = PBXGroup;
 			children = (
-				29ECF7801E1B5511007678F2 /* Assets.xcassets */,
-				29ECF7811E1B5511007678F2 /* Info.plist */,
-				29ECF7AF1E1B5585007678F2 /* iControlbell.entitlements */,
-				29ECF7861E1B5511007678F2 /* Resources */,
+				29ECF7802E1B5511007678F2 /* Assets.xcassets */,
+				29ECF7812E1B5511007678F2 /* Info.plist */,
+				29ECF7862E1B5511007678F2 /* Resources */,
+				29ECF79A2E1B5511007678F2 /* src */,
 				29ECF7572E1B3F5A007678F2 /* iControlBell */,
 				29ECF7652E1B3F5B007678F2 /* iControlBellTests */,
 				29ECF76F2E1B3F5B007678F2 /* iControlBellUITests */,
 				29ECF7562E1B3F5A007678F2 /* Products */,
+				29ECF7AF2E1B5585007678F2 /* iControlbell.entitlements */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +141,88 @@
 				29ECF76C2E1B3F5B007678F2 /* iControlBellUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		29ECF7862E1B5511007678F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7822E1B5511007678F2 /* CallRequestOptions.plist */,
+				29ECF7832E1B5511007678F2 /* Localizable.strings */,
+				29ECF7842E1B5511007678F2 /* PRIVACY_SECURITY.md */,
+				29ECF7852E1B5511007678F2 /* SoundboardCategories.plist */,
+				29ECF7B42E1B5511007678F2 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29ECF7882E1B5511007678F2 /* bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7872E1B5511007678F2 /* BluetoothManager.swift */,
+			);
+			path = bluetooth;
+			sourceTree = "<group>";
+		};
+		29ECF78C2E1B5511007678F2 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7892E1B5511007678F2 /* CallRequestOption.swift */,
+				29ECF78A2E1B5511007678F2 /* Language.swift */,
+				29ECF78B2E1B5511007678F2 /* SoundboardCategory.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		29ECF78E2E1B5511007678F2 /* state */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF78D2E1B5511007678F2 /* AppState.swift */,
+			);
+			path = state;
+			sourceTree = "<group>";
+		};
+		29ECF7902E1B5511007678F2 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF78F2E1B5511007678F2 /* PlistLoader.swift */,
+				29ECF7B12E1B5511007678F2 /* SoundManager.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		29ECF7B42E1B5511007678F2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7B32E1B5511007678F2 /* success.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		29ECF7982E1B5511007678F2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7912E1B5511007678F2 /* BluetoothStatusView.swift */,
+				29ECF7922E1B5511007678F2 /* CallRequestGridView.swift */,
+				29ECF7932E1B5511007678F2 /* ContentView.swift */,
+				29ECF7942E1B5511007678F2 /* LanguageSelectorView.swift */,
+				29ECF7952E1B5511007678F2 /* LogoView.swift */,
+				29ECF7962E1B5511007678F2 /* SoundboardView.swift */,
+				29ECF7972E1B5511007678F2 /* ToastView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		29ECF79A2E1B5511007678F2 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				29ECF7882E1B5511007678F2 /* bluetooth */,
+				29ECF78C2E1B5511007678F2 /* models */,
+				29ECF78E2E1B5511007678F2 /* state */,
+				29ECF7902E1B5511007678F2 /* utils */,
+				29ECF7982E1B5511007678F2 /* views */,
+				29ECF7992E1B5511007678F2 /* iControlBellApp.swift */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,7 +242,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				29ECF7572E1B3F5A007678F2 /* iControlBell */,
-				29ECF7861E1B5511007678F2 /* Resources */,
 			);
 			name = iControlBell;
 			packageProductDependencies = (
@@ -167,18 +303,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					29ECF7542E1B3F5A007678F2 = {
-						CreatedOnToolsVersion = 16.0;
+						CreatedOnToolsVersion = 16.4;
 					};
 					29ECF7612E1B3F5B007678F2 = {
-						CreatedOnToolsVersion = 16.0;
+						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 29ECF7542E1B3F5A007678F2;
 					};
 					29ECF76B2E1B3F5B007678F2 = {
-						CreatedOnToolsVersion = 16.0;
+						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 29ECF7542E1B3F5A007678F2;
 					};
 				};
@@ -209,6 +345,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29ECF7A92E1B5511007678F2 /* PRIVACY_SECURITY.md in Resources */,
+				29ECF7AA2E1B5511007678F2 /* SoundboardCategories.plist in Resources */,
+				29ECF7AB2E1B5511007678F2 /* Localizable.strings in Resources */,
+				29ECF7AE2E1B5511007678F2 /* CallRequestOptions.plist in Resources */,
+				29ECF7B22E1B5511007678F2 /* success.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +374,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29ECF79B2E1B5511007678F2 /* CallRequestOption.swift in Sources */,
+				29ECF79C2E1B5511007678F2 /* AppState.swift in Sources */,
+				29ECF79D2E1B5511007678F2 /* iControlBellApp.swift in Sources */,
+				29ECF79E2E1B5511007678F2 /* ToastView.swift in Sources */,
+				29ECF79F2E1B5511007678F2 /* SoundboardView.swift in Sources */,
+				29ECF7A02E1B5511007678F2 /* SoundboardCategory.swift in Sources */,
+				29ECF7A12E1B5511007678F2 /* ContentView.swift in Sources */,
+				29ECF7A22E1B5511007678F2 /* CallRequestGridView.swift in Sources */,
+				29ECF7A32E1B5511007678F2 /* PlistLoader.swift in Sources */,
+				29ECF7A42E1B5511007678F2 /* BluetoothManager.swift in Sources */,
+				29ECF7A52E1B5511007678F2 /* LanguageSelectorView.swift in Sources */,
+				29ECF7A62E1B5511007678F2 /* LogoView.swift in Sources */,
+				29ECF7A72E1B5511007678F2 /* Language.swift in Sources */,
+				29ECF7A82E1B5511007678F2 /* BluetoothStatusView.swift in Sources */,
+				29ECF7B02E1B5511007678F2 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +457,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = J7RK9VBR28;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -364,6 +521,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = J7RK9VBR28;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -390,17 +548,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = iControlbell.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iControlBell/Preview Content\"";
+				DEVELOPMENT_TEAM = 5YNWU8G993;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -421,17 +576,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = iControlbell.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"iControlBell/Preview Content\"";
+				DEVELOPMENT_TEAM = 5YNWU8G993;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,10 +605,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7RK9VBR28;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShaneStone.iControlBellTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iControlBellTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -471,10 +624,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7RK9VBR28;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShaneStone.iControlBellTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iControlBellTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -488,9 +642,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7RK9VBR28;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShaneStone.iControlBellUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iControlBellUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -504,9 +659,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7RK9VBR28;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShaneStone.iControlBellUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iControlBellUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
