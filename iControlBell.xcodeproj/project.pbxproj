@@ -212,6 +212,7 @@
 				29ECF78E2E1B5511007678F2 /* state */,
 				29ECF7902E1B5511007678F2 /* utils */,
 				29ECF7982E1B5511007678F2 /* views */,
+				29ECF7B42E1B5511007678F2 /* Sounds */,
 				29ECF7992E1B5511007678F2 /* iControlBellApp.swift */,
 			);
 			path = src;
