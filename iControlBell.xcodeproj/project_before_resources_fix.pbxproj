@@ -33,6 +33,7 @@
 		29ECF7572E1B3F5A007678F2 /* iControlBell */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = iControlBell; sourceTree = "<group>"; };
 		29ECF7652E1B3F5B007678F2 /* iControlBellTests */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = iControlBellTests; sourceTree = "<group>"; };
 		29ECF76F2E1B3F5B007678F2 /* iControlBellUITests */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = iControlBellUITests; sourceTree = "<group>"; };
+		29ECF7801E1B5511007678F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29ECF7811E1B5511007678F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		29ECF7861E1B5511007678F2 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Resources; sourceTree = "<group>"; };
 		29ECF7AF1E1B5585007678F2 /* iControlbell.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iControlbell.entitlements; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		29ECF74C2E1B3F5A007678F2 = {
 			isa = PBXGroup;
 			children = (
+				29ECF7801E1B5511007678F2 /* Assets.xcassets */,
 				29ECF7811E1B5511007678F2 /* Info.plist */,
 				29ECF7AF1E1B5585007678F2 /* iControlbell.entitlements */,
 				29ECF7861E1B5511007678F2 /* Resources */,
