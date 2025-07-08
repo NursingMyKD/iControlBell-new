@@ -37,8 +37,20 @@
         <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>This app uses Bluetooth to connect to hospital call bell systems for patient communication.</string>
+    <string>Bluetooth is used to connect with hospital call bell systems and medical devices for enhanced patient-staff communication.</string>
     <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>This app uses Bluetooth to connect to hospital call bell systems for patient communication.</string>
+    <string>Bluetooth connectivity enables integration with hospital communication systems.</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>This app does not access health data. It provides communication tools for healthcare environments.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>This app does not access or update health data.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Microphone access is not required. This app uses text-to-speech for communication assistance.</string>
+    <key>NSLocationUsageDescription</key>
+    <string>Location access is not required for app functionality.</string>
+    <key>CFBundleDisplayName</key>
+    <string>iControlBell</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>© 2025 Shane Stone. Healthcare communication assistant. Not a medical device.</string>
 </dict>
 </plist>
