@@ -47,8 +47,11 @@
 		2930EB1D2E1E620D00BE3DF5 /* Exceptions for "src" folder in "iControlBell" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				connectivity/NetworkService.swift,
+				connectivity/RaulandAPIManager.swift,
 				models/CallRequestOption.swift,
 				models/Language.swift,
+				models/RaulandModels.swift,
 				models/SoundboardCategory.swift,
 				state/AppState.swift,
 				utils/AccessibilityUtils.swift,
