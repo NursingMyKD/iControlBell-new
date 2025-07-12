@@ -99,11 +99,11 @@ struct SoundboardView: View {
                 // Voice selector (simplified for now)
                 if !isCompact {
                     VStack(spacing: 8) {
-                        Text("select_voice".localized)
+                        Text("Select Voice".localized)
                             .font(bodyFont)
                             .foregroundColor(.primary)
                         
-                        Text("\("system_voice".localized) (\(selectedLanguage.rawValue.uppercased()))")
+                        Text("\("Voice".localized) (\(selectedLanguage.rawValue.uppercased()))")
                             .font(bodyFont)
                             .foregroundColor(.secondary)
                             .padding(.horizontal, horizontalPadding)
