@@ -33,7 +33,7 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     static let shared = RaulandAPIManager(networkService: MockNetworkService())
 
     // MARK: - Core Properties
-    private var configuration: RaulandConfiguration = .default
+    var configuration: RaulandConfiguration = .default
     private var sessionToken: String? {
         get { KeychainHelper.shared.get("rauland_session_token") }
         set {

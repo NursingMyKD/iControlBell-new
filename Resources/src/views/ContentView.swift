@@ -262,9 +262,6 @@ struct ContentView: View {
     }
 }
 
-extension String {
-    var localized: String { NSLocalizedString(self, comment: "") }
-}
 
 #Preview {
     let mockManager = RaulandAPIManager(networkService: MockNetworkService())

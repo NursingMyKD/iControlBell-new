@@ -1,3 +1,4 @@
+import UIKit
 //
 //  RaulandModels.swift
 //  iControlBell - Rauland Responder 5 Integration Models
@@ -284,8 +285,3 @@ enum RaulandHealthcareError: LocalizedError, CaseIterable {
 /// Result type for Rauland API operations
 typealias RaulandResult<T> = Result<T, RaulandHealthcareError>
 
-extension String {
-    var localized: String {
-        NSLocalizedString(self, comment: "")
-    }
-}
