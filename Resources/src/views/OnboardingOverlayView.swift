@@ -1,4 +1,5 @@
 // OnboardingOverlayView.swift
+// Ensure this file is included in the main app target
 // Simple onboarding/help overlay for first-time users
 
 import SwiftUI

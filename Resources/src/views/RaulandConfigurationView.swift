@@ -1,5 +1,6 @@
 //
 //  RaulandConfigurationView.swift
+// Ensure this file is included in the main app target
 //  iControlBell - Rauland Responder 5 Configuration View
 //
 //  Created by GitHub Copilot on 12/25/24.

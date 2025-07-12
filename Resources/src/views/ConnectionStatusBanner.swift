@@ -1,4 +1,5 @@
 // ConnectionStatusBanner.swift
+// Ensure this file is included in the main app target
 // Prominent Rauland connection status indicator
 
 import SwiftUI

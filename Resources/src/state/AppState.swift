@@ -90,8 +90,9 @@ class AppState: ObservableObject {
 
     /// Send a call request through Rauland API
     func sendRaulandCallRequest(_ callType: RaulandCallType, message: String? = nil) async {
+        let config = await (raulandManager as? RaulandAPIManager)?.configuration ?? RaulandConfiguration.default
         let request = RaulandCallRequest(
-            config: (raulandManager as? RaulandAPIManager)?.configuration ?? RaulandConfiguration.default,
+            config: config,
             callType: callType,
             message: message
         )
@@ -137,11 +138,15 @@ class AppState: ObservableObject {
         var sentCount = 0
         var failedCount = 0
         for req in queue {
-            let result = await raulandManager.sendCallRequest(req.callType, message: req.message)
-            switch result {
-            case .success:
-                sentCount += 1
-            case .failure:
+            if let callType = RaulandCallType(rawValue: req.callType) {
+                let result = await raulandManager.sendCallRequest(callType, message: req.message)
+                switch result {
+                case .success:
+                    sentCount += 1
+                case .failure:
+                    failedCount += 1
+                }
+            } else {
                 failedCount += 1
             }
         }

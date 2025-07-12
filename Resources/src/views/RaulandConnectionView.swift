@@ -1,5 +1,6 @@
 //
 //  RaulandConnectionView.swift
+// Ensure this file is included in the main app target
 //  iControlBell - Rauland Responder 5 Connection Status View
 //
 //  Created by GitHub Copilot on 12/25/24.

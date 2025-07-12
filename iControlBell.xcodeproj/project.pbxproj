@@ -66,9 +66,13 @@
 				views/BluetoothStatusView.swift,
 				views/CallRequestGridView.swift,
 				views/ConfirmationBanner.swift,
+				views/ConnectionStatusBanner.swift,
 				views/ContentView.swift,
 				views/LanguageSelectorView.swift,
 				views/LogoView.swift,
+				views/OnboardingOverlayView.swift,
+				views/RaulandConfigurationView.swift,
+				views/RaulandConnectionView.swift,
 				views/SoundboardView.swift,
 				views/ToastView.swift,
 			);

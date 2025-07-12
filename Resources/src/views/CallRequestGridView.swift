@@ -16,6 +16,7 @@ struct CallRequestGridView: View {
     // Dynamic layout properties using DeviceUtils
     private var columns: Int {
         DeviceUtils.adaptiveColumns(for: "callRequests")
+    }
     
     private var buttonHeight: CGFloat {
         DeviceUtils.dynamicSpacing(compact: 100, regular: 120, iPad: 140)
@@ -175,7 +176,6 @@ struct CallRequestGridView: View {
         }
     }
     }
-}
 
 // Custom button style for better touch feedback
 struct ScaleButtonStyle: ButtonStyle {

@@ -242,6 +242,8 @@ struct SoundboardView: View {
                 .accessibilityHint("Tap to hear the English translation")
             }
         }
+    }
+
     /// Returns the English translation for a phrase in the current category, if available.
     private func englishTranslation(for phrase: String) -> String? {
         guard selectedLanguage != .english,
@@ -256,12 +258,12 @@ struct SoundboardView: View {
 
     /// Speaks the given phrase in English using AVSpeechSynthesizer.
     private func speakEnglish(_ phrase: String) {
-        if speechSynth.isSpeaking {
-            speechSynth.stopSpeaking(at: .immediate)
-            isSpeakingEnglish = false
+        if self.speechSynth.isSpeaking {
+            self.speechSynth.stopSpeaking(at: .immediate)
+            self.isSpeakingEnglish = false
             return
         }
-        isSpeakingEnglish = true
+        self.isSpeakingEnglish = true
         let utterance = AVSpeechUtterance(string: phrase)
         utterance.voice = AVSpeechSynthesisVoice(language: "en") ?? AVSpeechSynthesisVoice.speechVoices().first
         utterance.rate = UIAccessibility.isVoiceOverRunning ? 0.4 : 0.5
@@ -275,38 +277,37 @@ struct SoundboardView: View {
             }
         }
         self.speechDelegate = delegate
-        speechSynth.delegate = delegate
-        speechSynth.speak(utterance)
+        self.speechSynth.delegate = delegate
+        self.speechSynth.speak(utterance)
         let impact = UIImpactFeedbackGenerator(style: .medium)
         impact.impactOccurred()
     }
-    }
-    
+
     /// Speaks the given phrase using AVSpeechSynthesizer.
-    func speak(_ phrase: String) {
+    private func speak(_ phrase: String) {
         // Stop any current speech
-        if speechSynth.isSpeaking {
-            speechSynth.stopSpeaking(at: .immediate)
-            isSpeaking = false
+        if self.speechSynth.isSpeaking {
+            self.speechSynth.stopSpeaking(at: .immediate)
+            self.isSpeaking = false
             return
         }
-        
-        isSpeaking = true
+
+        self.isSpeaking = true
         let utterance = AVSpeechUtterance(string: phrase)
-        
+
         // Try to get a voice for the selected language, fallback to system default
-        if let voice = AVSpeechSynthesisVoice(language: selectedLanguage.rawValue) {
+        if let voice = AVSpeechSynthesisVoice(language: self.selectedLanguage.rawValue) {
             utterance.voice = voice
         } else {
             // Fallback to English if selected language voice isn't available
             utterance.voice = AVSpeechSynthesisVoice(language: "en") ?? AVSpeechSynthesisVoice.speechVoices().first
         }
-        
+
         // Set speech properties for better healthcare use
         utterance.rate = UIAccessibility.isVoiceOverRunning ? 0.4 : 0.5 // Slower for VoiceOver users
         utterance.volume = 1.0
         utterance.pitchMultiplier = 1.0
-        
+
         // Set up delegate to track speech completion
         let delegate = SpeechDelegate {
             DispatchQueue.main.async {
@@ -317,14 +318,15 @@ struct SoundboardView: View {
             }
         }
         self.speechDelegate = delegate
-        speechSynth.delegate = delegate
-        
-        speechSynth.speak(utterance)
-        
+        self.speechSynth.delegate = delegate
+
+        self.speechSynth.speak(utterance)
+
         // Immediate haptic feedback for button press
         let impact = UIImpactFeedbackGenerator(style: .medium)
         impact.impactOccurred()
     }
+
 }
 
 // Helper class to handle speech synthesis delegate
