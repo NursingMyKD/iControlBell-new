@@ -1,18 +1,4 @@
-    // Toast state for notifications
-    @Published var toastMessage: String? = nil
-    @Published var toastIsError: Bool = false
-
-    /// Show a toast notification with a message and error/success state
-    func showToast(_ message: String, isError: Bool = false) {
-        toastMessage = message
-        toastIsError = isError
-        // Optionally, clear after a delay
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [weak self] in
-            if self?.toastMessage == message {
-                self?.toastMessage = nil
-            }
-        }
-    }
+// ...existing code...
 // AppState.swift
 // Global app state for iControlBell with Rauland Responder 5 connectivity
 //
@@ -60,6 +46,17 @@ class AppState: ObservableObject {
     @Published var selectedLanguage: Language = .english
     @Published var toastMessage: String? = nil
     @Published var toastIsError: Bool = false
+    /// Show a toast notification with a message and error/success state
+    func showToast(_ message: String, isError: Bool = false) {
+        toastMessage = message
+        toastIsError = isError
+        // Optionally, clear after a delay
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [weak self] in
+            if self?.toastMessage == message {
+                self?.toastMessage = nil
+            }
+        }
+    }
     // Rauland Connectivity State
     @Published var raulandManager: RaulandAPIManaging
     @Published var isRaulandConfigured: Bool = false
