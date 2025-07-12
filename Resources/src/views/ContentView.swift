@@ -41,7 +41,9 @@ struct ContentView: View {
                         isConnected: appState.raulandManager.isConnected,
                         isConnecting: appState.raulandManager.connectionState == .connecting || appState.raulandManager.connectionState == .authenticating
                     )
-                    .padding(.bottom, 4)
+                    .padding(.top, 12)
+                    .padding(.bottom, 8)
+                    // Main content
                     if isLandscape && !isIPad {
                         landscapeLayout
                     } else {
@@ -106,28 +108,57 @@ struct ContentView: View {
             VStack(spacing: dynamicSpacing) {
                 // Header Section
                 headerSection
-                
+
                 // Rauland Connection Status
                 RaulandConnectionView(raulandManager: appState.raulandManager)
                     .environmentObject(appState)
-                
-                // Call Request Grid
-                CallRequestGridView(
-                    selectedLanguage: appState.selectedLanguage, 
-                    callRequests: callRequestData.options,
-                    isIPad: isIPad,
-                    isCompact: isCompact
+                    .padding(.bottom, 12)
+
+                // Call Request Grid - visually grouped
+                VStack(spacing: 16) {
+                    Text("call_requests".localized)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 4)
+                    CallRequestGridView(
+                        selectedLanguage: appState.selectedLanguage,
+                        callRequests: callRequestData.options,
+                        isIPad: isIPad,
+                        isCompact: isCompact
+                    )
+                    .environmentObject(appState)
+                }
+                .padding(.vertical, 8)
+                .background(
+                    RoundedRectangle(cornerRadius: 18)
+                        .fill(Color.adaptiveCardBackground)
+                        .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
                 )
-                .environmentObject(appState)
-                
-                // Soundboard
-                SoundboardView(
-                    selectedLanguage: appState.selectedLanguage, 
-                    categories: soundboardData.categories,
-                    isIPad: isIPad,
-                    isCompact: isCompact
+
+                // Soundboard - visually grouped
+                VStack(spacing: 16) {
+                    Text("soundboard".localized)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 4)
+                    SoundboardView(
+                        selectedLanguage: appState.selectedLanguage,
+                        categories: soundboardData.categories,
+                        isIPad: isIPad,
+                        isCompact: isCompact
+                    )
+                }
+                .padding(.vertical, 8)
+                .background(
+                    RoundedRectangle(cornerRadius: 18)
+                        .fill(Color.adaptiveCardBackground)
+                        .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
                 )
-                
+
                 Spacer(minLength: 20)
             }
             .padding(.horizontal, horizontalPadding)

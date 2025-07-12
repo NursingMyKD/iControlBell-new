@@ -55,5 +55,17 @@
     </dict>
     <key>NSNetworkUsageDescription</key>
     <string>iControlBell requires network access to communicate with Rauland Responder 5 nurse call systems for patient-staff communication in healthcare facilities.</string>
+    <key>CFBundleIcons</key>
+    <dict>
+        <key>CFBundlePrimaryIcon</key>
+        <dict>
+            <key>CFBundleIconFiles</key>
+            <array>
+                <string>AppIcon</string>
+            </array>
+            <key>UIPrerenderedIcon</key>
+            <false/>
+        </dict>
+    </dict>
 </dict>
 </plist>
