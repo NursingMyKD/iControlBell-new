@@ -1,0 +1,78 @@
+/* 
+   Localizable.strings (Dutch)
+   iControlBell
+   
+   Gebruikersinterface lokalisatie voor zorgcommunicatie app
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Toegankelijke beltoepassing met oogvolging";
+
+// MARK: - Main Interface
+"main_description" = "Richt je blik op de knop die het beste beschrijft dat je hulp nodig hebt, of gebruik het geluidsbord om te spreken.";
+"select_language" = "Selecteer taal:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Geluidsbord";
+"soundboard_description" = "Selecteer een categorie en zin om hardop uit te spreken.";
+"select_voice" = "Selecteer stem:";
+"system_voice" = "Systeemstem";
+"no_categories_available" = "Geen geluidsbordcategorieën beschikbaar";
+
+// MARK: - Call Requests
+"call_request_sent" = "verzoek verzonden!";
+"call_bell_activated" = "Oproepbel geactiveerd!";
+
+// MARK: - Bluetooth
+"bluetooth_connected" = "Bluetooth verbonden";
+"bluetooth_not_connected" = "Bluetooth niet verbonden";
+"bluetooth_status" = "Bluetooth status";
+"trigger_call_bell" = "Oproepbel activeren";
+"searching_devices" = "Zoeken naar apparaten...";
+"device_connected" = "Apparaat verbonden";
+"connection_failed" = "Verbinding mislukt";
+"bluetooth_error" = "Bluetooth fout: %@";
+"call_bell_unavailable" = "Oproepbel niet beschikbaar - Bluetooth niet verbonden";
+"double_tap_activate_call_bell" = "Dubbeltik om oproepbel te activeren";
+"double_tap_change_language" = "Dubbeltik om taal te wijzigen.";
+"double_tap_send_request" = "Dubbeltik om %@ hulpverzoek te verzenden";
+
+// MARK: - Accessibility Labels
+"bluetooth_connected_accessibility" = "Bluetooth is verbonden en klaar";
+"bluetooth_not_connected_accessibility" = "Bluetooth is niet verbonden";
+"language_picker_accessibility" = "Taalkiezer";
+"call_request_button_accessibility" = "verzoekknop";
+"soundboard_phrase_accessibility" = "Spreken";
+"currently_speaking_accessibility" = "Spreekt momenteel deze zin uit";
+"tap_to_speak_accessibility" = "Dubbeltik om deze zin hardop uit te spreken";
+
+// MARK: - Navigation
+"back" = "Terug";
+"settings" = "Instellingen";
+"help" = "Help";
+
+// MARK: - Error Messages
+"error_loading_data" = "Fout bij laden van gegevens";
+"error_bluetooth_unavailable" = "Bluetooth niet beschikbaar";
+"error_speech_unavailable" = "Spraaksynthese niet beschikbaar";
+"error_permission_denied" = "Toegang geweigerd";
+
+// MARK: - Success Messages
+"settings_saved" = "Instellingen opgeslagen";
+"language_changed" = "Taal gewijzigd";
+"connection_successful" = "Verbinding succesvol";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Annuleren";
+"retry" = "Opnieuw proberen";
+"done" = "Klaar";
+"save" = "Opslaan";
+"close" = "Sluiten";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Noodoproep";
+"medical_assistance" = "Medische hulp";
+"nurse_call" = "Verpleegsteroproep";
+"patient_care" = "Patiëntenzorg";

@@ -1,0 +1,78 @@
+/* 
+   Localizable.strings (Arabic)
+   iControlBell
+   
+   توطين واجهة المستخدم لتطبيق التواصل الطبي
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "تطبيق جرس نداء يمكن الوصول إليه مع تتبع العين";
+
+// MARK: - Main Interface
+"main_description" = "ركز نظرك على الزر الذي يصف بشكل أفضل حاجتك لطلب المساعدة، أو استخدم لوحة الصوت للتحدث.";
+"select_language" = "اختر اللغة:";
+
+// MARK: - Soundboard
+"soundboard_title" = "لوحة الصوت";
+"soundboard_description" = "اختر فئة وعبارة لقراءتها بصوت عالٍ.";
+"select_voice" = "اختر الصوت:";
+"system_voice" = "صوت النظام";
+"no_categories_available" = "لا توجد فئات لوحة صوت متاحة";
+
+// MARK: - Call Requests
+"call_request_sent" = "تم إرسال الطلب!";
+"call_bell_activated" = "تم تنشيط جرس النداء!";
+
+// MARK: - Bluetooth
+"bluetooth_connected" = "البلوتوث متصل";
+"bluetooth_not_connected" = "البلوتوث غير متصل";
+"bluetooth_status" = "حالة البلوتوث";
+"trigger_call_bell" = "تشغيل جرس النداء";
+"searching_devices" = "البحث عن الأجهزة...";
+"device_connected" = "الجهاز متصل";
+"connection_failed" = "فشل الاتصال";
+"bluetooth_error" = "خطأ في البلوتوث: %@";
+"call_bell_unavailable" = "جرس النداء غير متاح - البلوتوث غير متصل";
+"double_tap_activate_call_bell" = "انقر مرتين لتنشيط جرس النداء";
+"double_tap_change_language" = "انقر مرتين لتغيير اللغة.";
+"double_tap_send_request" = "انقر مرتين لإرسال طلب مساعدة %@";
+
+// MARK: - Accessibility Labels
+"bluetooth_connected_accessibility" = "البلوتوث متصل وجاهز";
+"bluetooth_not_connected_accessibility" = "البلوتوث غير متصل";
+"language_picker_accessibility" = "منتقي اللغة";
+"call_request_button_accessibility" = "زر الطلب";
+"soundboard_phrase_accessibility" = "تحدث";
+"currently_speaking_accessibility" = "يقرأ حالياً هذه العبارة";
+"tap_to_speak_accessibility" = "انقر مرتين لقراءة هذه العبارة بصوت عالٍ";
+
+// MARK: - Navigation
+"back" = "رجوع";
+"settings" = "الإعدادات";
+"help" = "مساعدة";
+
+// MARK: - Error Messages
+"error_loading_data" = "خطأ في تحميل البيانات";
+"error_bluetooth_unavailable" = "البلوتوث غير متاح";
+"error_speech_unavailable" = "تركيب الكلام غير متاح";
+"error_permission_denied" = "تم رفض الإذن";
+
+// MARK: - Success Messages
+"settings_saved" = "تم حفظ الإعدادات";
+"language_changed" = "تم تغيير اللغة";
+"connection_successful" = "الاتصال ناجح";
+
+// MARK: - General Actions
+"ok" = "موافق";
+"cancel" = "إلغاء";
+"retry" = "إعادة المحاولة";
+"done" = "تم";
+"save" = "حفظ";
+"close" = "إغلاق";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "مكالمة طوارئ";
+"medical_assistance" = "مساعدة طبية";
+"nurse_call" = "نداء الممرضة";
+"patient_care" = "رعاية المريض";

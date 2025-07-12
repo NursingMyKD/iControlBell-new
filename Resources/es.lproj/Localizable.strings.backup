@@ -1,0 +1,63 @@
+/* 
+   Localizable.strings (Spanish)
+   iControlBell
+   
+   Localización de interfaz de usuario para aplicación de comunicación de atención médica
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Aplicación de timbre accesible con seguimiento ocular";
+
+// MARK: - Main Interface
+"main_description" = "Enfoca tu mirada en el botón que mejor describa tu necesidad de solicitar asistencia, o usa el tablero de sonidos para hablar.";
+"select_language" = "Seleccionar idioma:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Tablero de sonidos";
+"soundboard_description" = "Selecciona una categoría y una frase para que sea pronunciada en voz alta.";
+"select_voice" = "Seleccionar voz:";
+"system_voice" = "Voz del sistema";
+"no_categories_available" = "No hay categorías de tablero de sonidos disponibles";
+
+// MARK: - Call Requests
+"call_request_sent" = "solicitud enviada!";
+"call_bell_activated" = "¡Timbre de llamada activado!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Selector de idioma";
+"call_request_button_accessibility" = "botón de solicitud";
+"soundboard_phrase_accessibility" = "Hablar";
+"currently_speaking_accessibility" = "Actualmente pronunciando esta frase";
+"tap_to_speak_accessibility" = "Toca dos veces para pronunciar esta frase en voz alta";
+"double_tap_change_language" = "Toca dos veces para cambiar el idioma.";
+"double_tap_send_request" = "Toca dos veces para enviar solicitud de asistencia %@";
+
+// MARK: - Navigation
+"back" = "Atrás";
+"settings" = "Configuración";
+"help" = "Ayuda";
+
+// MARK: - Error Messages
+"error_loading_data" = "Error al cargar datos";
+"error_speech_unavailable" = "Síntesis de voz no disponible";
+"error_permission_denied" = "Permiso denegado";
+
+// MARK: - Success Messages
+"settings_saved" = "Configuración guardada";
+"language_changed" = "Idioma cambiado";
+"connection_successful" = "Conexión exitosa";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Cancelar";
+"retry" = "Reintentar";
+"done" = "Hecho";
+"save" = "Guardar";
+"close" = "Cerrar";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Llamada de emergencia";
+"medical_assistance" = "Asistencia médica";
+"nurse_call" = "Llamar enfermera";
+"patient_care" = "Atención al paciente";

@@ -1,0 +1,170 @@
+/* 
+   Localizable.strings (Spanish)
+   iControlB// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Cancelar";
+"retry" = "Reintentar";
+"done" = "Hecho";
+"save" = "Guardar";
+"close" = "Cerrar";
+"double_tap_to_open_settings" = "Toque dos veces para abrir configuración";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Llamada de Emergencia";
+"medical_assistance" = "Asistencia Médica";
+"nurse_call" = "Llamada de Enfermera";
+"patient_care" = "Cuidado del Paciente";
+
+// MARK: - Rauland Responder 5 Integration
+"rauland_connection_title" = "Conexión Responder 5";
+"rauland_status_disconnected" = "Desconectado";
+"rauland_status_connecting" = "Conectando";
+"rauland_status_authenticating" = "Autenticando";
+"rauland_status_connected" = "Conectado";
+"rauland_status_error" = "Error";
+"rauland_status_suspended" = "Suspendido";
+"rauland_connect" = "Conectar";
+"rauland_disconnect" = "Desconectar";
+"rauland_refresh" = "Actualizar";
+"rauland_configured" = "Sistema Rauland configurado";
+"rauland_not_configured" = "Sistema Rauland no configurado";
+"rauland_not_connected" = "No conectado al sistema Rauland";
+"rauland_connected_to" = "Conectado a";
+"rauland_connection_successful" = "Conectado al sistema Rauland";
+"rauland_disconnected" = "Desconectado del sistema Rauland";
+"rauland_session_refreshed" = "Sesión actualizada";
+"rauland_facility" = "Instalación";
+"rauland_features" = "Características";
+
+// MARK: - Rauland Call Types
+"rauland_call_emergency" = "Emergencia";
+"rauland_call_nurse" = "Llamada de Enfermera";
+"rauland_call_general" = "Asistencia General";
+"rauland_call_maintenance" = "Mantenimiento";
+"rauland_call_housekeeping" = "Limpieza";
+
+// MARK: - Priority Levels
+"priority_low" = "Baja";
+"priority_normal" = "Normal";
+"priority_urgent" = "Urgente";
+"priority_critical" = "Crítica";
+
+// MARK: - Rauland Error Messages
+"rauland_error_network" = "Red no disponible. Verifique la conexión a internet.";
+"rauland_error_auth_failed" = "Autenticación fallida. Verifique las credenciales.";
+"rauland_error_session_expired" = "Sesión expirada. Reconéctese por favor.";
+"rauland_error_invalid_api_key" = "Clave API inválida. Contacte soporte técnico.";
+"rauland_error_facility_not_found" = "Instalación no encontrada. Verifique el ID de instalación.";
+"rauland_error_device_unauthorized" = "Dispositivo no autorizado. Contacte soporte técnico.";
+"rauland_error_call_failed" = "Solicitud de llamada fallida. Intente de nuevo.";
+"rauland_error_timeout" = "Tiempo de conexión agotado. Verifique la conexión de red.";
+"rauland_error_server_unavailable" = "Servidor Rauland no disponible. Intente más tarde.";
+"rauland_error_invalid_config" = "Configuración inválida. Contacte soporte técnico.";
+"rauland_error_rate_limit" = "Demasiadas solicitudes. Espere antes de intentar de nuevo.";
+"rauland_error_emergency_failed" = "Llamada de emergencia falló. Use comunicación de respaldo inmediatamente.";
+
+// MARK: - Accessibility Labels for Rauland
+"rauland_connection_status" = "Estado de conexión Rauland Responder 5";
+"rauland_connect_button" = "Conectar al sistema Rauland";
+"rauland_disconnect_button" = "Desconectar del sistema Rauland";
+"rauland_refresh_button" = "Actualizar conexión Rauland";
+"double_tap_to_connect_rauland" = "Toque dos veces para conectar al sistema Rauland Responder 5";
+"double_tap_to_disconnect_rauland" = "Toque dos veces para desconectar del sistema Rauland";
+"double_tap_to_refresh_rauland" = "Toque dos veces para actualizar el estado de conexión";
+
+// MARK: - Rauland Configuration
+"rauland_configuration_title" = "Configuración Rauland";
+"rauland_configuration_header" = "Configuración Responder 5";
+"rauland_configuration_description" = "Configure la conexión al sistema de llamadas de enfermera Rauland Responder 5 de su instalación";
+"rauland_configuration_required" = "Configuración requerida para conectividad Rauland";
+"rauland_placeholder_mode" = "MODO DE DEMOSTRACIÓN";
+"rauland_placeholder_description" = "Usando modo demo/simulado hasta que la API real de Rauland esté disponible";
+"rauland_placeholder_demo_note" = "Todas las llamadas son simuladas - no se realizan llamadas de red reales";
+"rauland_connection_settings" = "Configuración de Conexión";
+"rauland_facility_settings" = "Configuración de Instalación";
+"rauland_device_settings" = "Configuración de Dispositivo";
+"rauland_base_url" = "URL del Servidor";
+"rauland_base_url_placeholder" = "https://placeholder.rauland.demo";
+"rauland_api_key" = "Clave API";
+"rauland_api_key_placeholder" = "demo-api-key (demostración)";
+"rauland_facility_id" = "ID de Instalación";
+"rauland_facility_id_placeholder" = "Demo-Healthcare-Facility";
+"rauland_room_number" = "Número de Habitación (Opcional)";
+"rauland_room_number_placeholder" = "Room-Demo";
+"rauland_device_id" = "ID de Dispositivo";
+"rauland_device_id_placeholder" = "Identificador único de dispositivo";
+"rauland_device_id_note" = "Identificador único generado automáticamente para este dispositivo";
+"rauland_test_connection" = "Probar Conexión";
+"rauland_test_connection_accessibility" = "Probar conexión Rauland con la configuración actual";
+"rauland_test_successful" = "Prueba de conexión exitosa";
+"rauland_test_failed" = "Prueba de conexión falló";
+"rauland_configuration_help" = "Ayuda de Configuración";
+
+// MARK: - Rauland Help Content
+"rauland_help_api_key" = "Clave API";
+"rauland_help_api_key_content" = "La clave API es proporcionada por el departamento de IT de su instalación y autoriza a este dispositivo a comunicarse con el sistema Rauland Responder 5. Contacte soporte técnico si no tiene esta clave.";
+"rauland_help_facility_id" = "ID de Instalación";
+"rauland_help_facility_id_content" = "El ID de instalación identifica su instalación específica de atención médica dentro del sistema Rauland. Esto típicamente se configura durante la configuración inicial del sistema por técnicos de Rauland.";
+"rauland_help_device_id" = "ID de Dispositivo";
+"rauland_help_device_id_content" = "Un identificador único para este dispositivo específico. Se genera automáticamente pero puede personalizarse si es necesario para propósitos de seguimiento de la instalación.";
+"rauland_help_room_number" = "Número de Habitación";
+"rauland_help_room_number_content" = "Asignación opcional de habitación para este dispositivo. Si se especifica, las solicitudes de llamada se asociarán con esta habitación específica en el sistema de llamadas de enfermera.";
+"rauland_help_support" = "¿Necesita Ayuda?";
+"rauland_help_support_content" = "Para asistencia con la configuración, contacte el departamento de IT de su instalación o soporte técnico de Rauland. Pueden proporcionar las credenciales necesarias y verificar la compatibilidad del sistema.";calización de interfaz de usuario para aplicación de comunicación de atención médica
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Aplicación de timbre accesible con seguimiento ocular";
+
+// MARK: - Main Interface
+"main_description" = "Enfoca tu mirada en el botón que mejor describa tu necesidad de solicitar asistencia, o usa el tablero de sonidos para hablar.";
+"select_language" = "Seleccionar idioma:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Tablero de sonidos";
+"soundboard_description" = "Selecciona una categoría y una frase para que sea pronunciada en voz alta.";
+"select_voice" = "Seleccionar voz:";
+"system_voice" = "Voz del sistema";
+"no_categories_available" = "No hay categorías de tablero de sonidos disponibles";
+
+// MARK: - Call Requests
+"call_request_sent" = "solicitud enviada!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Selector de idioma";
+"call_request_button_accessibility" = "botón de solicitud";
+"soundboard_phrase_accessibility" = "Hablar";
+"currently_speaking_accessibility" = "Actualmente pronunciando esta frase";
+"tap_to_speak_accessibility" = "Toca dos veces para pronunciar esta frase en voz alta";
+"double_tap_change_language" = "Toca dos veces para cambiar el idioma.";
+"double_tap_send_request" = "Toca dos veces para enviar solicitud de asistencia %@";
+
+// MARK: - Navigation
+"back" = "Atrás";
+"settings" = "Configuración";
+"help" = "Ayuda";
+
+// MARK: - Error Messages
+"error_loading_data" = "Error al cargar datos";
+"error_speech_unavailable" = "Síntesis de voz no disponible";
+"error_permission_denied" = "Permiso denegado";
+
+// MARK: - Success Messages
+"settings_saved" = "Configuración guardada";
+"language_changed" = "Idioma cambiado";
+"connection_successful" = "Conexión exitosa";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Cancelar";
+"retry" = "Reintentar";
+"done" = "Hecho";
+"save" = "Guardar";
+"close" = "Cerrar";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Llamada de emergencia";
+"medical_assistance" = "Asistencia médica";
+"nurse_call" = "Llamar enfermera";
+"patient_care" = "Atención al paciente";

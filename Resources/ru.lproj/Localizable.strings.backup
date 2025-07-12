@@ -1,0 +1,78 @@
+/* 
+   Localizable.strings (Russian)
+   iControlBell
+   
+   Локализация пользовательского интерфейса для приложения медицинской связи
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Доступное приложение вызова с отслеживанием взгляда";
+
+// MARK: - Main Interface
+"main_description" = "Сфокусируйте взгляд на кнопке, которая лучше всего описывает вашу потребность вызвать помощь, или используйте звуковую панель для говорения.";
+"select_language" = "Выберите язык:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Звуковая панель";
+"soundboard_description" = "Выберите категорию и фразу для произношения вслух.";
+"select_voice" = "Выберите голос:";
+"system_voice" = "Системный голос";
+"no_categories_available" = "Нет доступных категорий звуковой панели";
+
+// MARK: - Call Requests
+"call_request_sent" = "запрос отправлен!";
+"call_bell_activated" = "Звонок вызова активирован!";
+
+// MARK: - Bluetooth
+"bluetooth_connected" = "Bluetooth подключен";
+"bluetooth_not_connected" = "Bluetooth не подключен";
+"bluetooth_status" = "Статус Bluetooth";
+"trigger_call_bell" = "Активировать звонок вызова";
+"searching_devices" = "Поиск устройств...";
+"device_connected" = "Устройство подключено";
+"connection_failed" = "Подключение не удалось";
+"bluetooth_error" = "Ошибка Bluetooth: %@";
+"call_bell_unavailable" = "Звонок вызова недоступен - Bluetooth не подключен";
+"double_tap_activate_call_bell" = "Дважды нажмите для активации звонка вызова";
+"double_tap_change_language" = "Дважды нажмите для смены языка.";
+"double_tap_send_request" = "Дважды нажмите для отправки запроса помощи %@";
+
+// MARK: - Accessibility Labels
+"bluetooth_connected_accessibility" = "Bluetooth подключен и готов";
+"bluetooth_not_connected_accessibility" = "Bluetooth не подключен";
+"language_picker_accessibility" = "Выбор языка";
+"call_request_button_accessibility" = "кнопка запроса";
+"soundboard_phrase_accessibility" = "Говорить";
+"currently_speaking_accessibility" = "В настоящее время произносится эта фраза";
+"tap_to_speak_accessibility" = "Дважды нажмите для произношения этой фразы вслух";
+
+// MARK: - Navigation
+"back" = "Назад";
+"settings" = "Настройки";
+"help" = "Помощь";
+
+// MARK: - Error Messages
+"error_loading_data" = "Ошибка загрузки данных";
+"error_bluetooth_unavailable" = "Bluetooth недоступен";
+"error_speech_unavailable" = "Синтез речи недоступен";
+"error_permission_denied" = "Доступ запрещен";
+
+// MARK: - Success Messages
+"settings_saved" = "Настройки сохранены";
+"language_changed" = "Язык изменен";
+"connection_successful" = "Подключение успешно";
+
+// MARK: - General Actions
+"ok" = "ОК";
+"cancel" = "Отмена";
+"retry" = "Повторить";
+"done" = "Готово";
+"save" = "Сохранить";
+"close" = "Закрыть";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Экстренный вызов";
+"medical_assistance" = "Медицинская помощь";
+"nurse_call" = "Вызов медсестры";
+"patient_care" = "Уход за пациентом";

@@ -114,7 +114,7 @@ struct AccessibilityUtils {
 struct AccessibilityAwareModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .dynamicTypeSize(.medium ... .accessibilityExtraExtraExtraLarge)
+            .dynamicTypeSize(.medium ... .accessibility3)
             .animation(AccessibilityUtils.prefersReducedMotion ? .none : .default, value: AccessibilityUtils.currentContentSizeCategory)
     }
 }
@@ -226,3 +226,4 @@ struct HapticUtils {
         selection.selectionChanged()
     }
 }
+

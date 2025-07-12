@@ -1,0 +1,78 @@
+/* 
+   Localizable.strings (Hindi)
+   iControlBell
+   
+   स्वास्थ्य संचार ऐप के लिए उपयोगकर्ता इंटरफेस स्थानीयकरण
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "आँखों की ट्रैकिंग के साथ सुलभ कॉल बेल ऐप";
+
+// MARK: - Main Interface
+"main_description" = "उस बटन पर अपनी नज़र केंद्रित करें जो सहायता के लिए कॉल करने की आपकी आवश्यकता का सबसे अच्छा वर्णन करता है, या बोलने के लिए साउंडबोर्ड का उपयोग करें।";
+"select_language" = "भाषा चुनें:";
+
+// MARK: - Soundboard
+"soundboard_title" = "साउंडबोर्ड";
+"soundboard_description" = "जोर से बोलने के लिए एक श्रेणी और वाक्य चुनें।";
+"select_voice" = "आवाज़ चुनें:";
+"system_voice" = "सिस्टम आवाज़";
+"no_categories_available" = "कोई साउंडबोर्ड श्रेणियाँ उपलब्ध नहीं हैं";
+
+// MARK: - Call Requests
+"call_request_sent" = "अनुरोध भेजा गया!";
+"call_bell_activated" = "कॉल बेल सक्रिय हो गया!";
+
+// MARK: - Bluetooth
+"bluetooth_connected" = "ब्लूटूथ जुड़ा हुआ";
+"bluetooth_not_connected" = "ब्लूटूथ जुड़ा नहीं";
+"bluetooth_status" = "ब्लूटूथ स्थिति";
+"trigger_call_bell" = "कॉल बेल ट्रिगर करें";
+"searching_devices" = "डिवाइस खोजे जा रहे हैं...";
+"device_connected" = "डिवाइस जुड़ा हुआ";
+"connection_failed" = "कनेक्शन विफल";
+"bluetooth_error" = "ब्लूटूथ त्रुटि: %@";
+"call_bell_unavailable" = "कॉल बेल उपलब्ध नहीं - ब्लूटूथ जुड़ा नहीं";
+"double_tap_activate_call_bell" = "कॉल बेल सक्रिय करने के लिए दो बार टैप करें";
+"double_tap_change_language" = "भाषा बदलने के लिए दो बार टैप करें।";
+"double_tap_send_request" = "%@ सहायता अनुरोध भेजने के लिए दो बार टैप करें";
+
+// MARK: - Accessibility Labels
+"bluetooth_connected_accessibility" = "ब्लूटूथ जुड़ा और तैयार है";
+"bluetooth_not_connected_accessibility" = "ब्लूटूथ जुड़ा नहीं है";
+"language_picker_accessibility" = "भाषा चयनकर्ता";
+"call_request_button_accessibility" = "अनुरोध बटन";
+"soundboard_phrase_accessibility" = "बोलना";
+"currently_speaking_accessibility" = "वर्तमान में यह वाक्य बोल रहा है";
+"tap_to_speak_accessibility" = "इस वाक्य को जोर से बोलने के लिए दो बार टैप करें";
+
+// MARK: - Navigation
+"back" = "वापस";
+"settings" = "सेटिंग्स";
+"help" = "सहायता";
+
+// MARK: - Error Messages
+"error_loading_data" = "डेटा लोड करने में त्रुटि";
+"error_bluetooth_unavailable" = "ब्लूटूथ उपलब्ध नहीं";
+"error_speech_unavailable" = "स्पीच सिंथेसिस उपलब्ध नहीं";
+"error_permission_denied" = "अनुमति अस्वीकार";
+
+// MARK: - Success Messages
+"settings_saved" = "सेटिंग्स सहेजी गईं";
+"language_changed" = "भाषा बदली गई";
+"connection_successful" = "कनेक्शन सफल";
+
+// MARK: - General Actions
+"ok" = "ठीक है";
+"cancel" = "रद्द करें";
+"retry" = "पुनः प्रयास";
+"done" = "हो गया";
+"save" = "सहेजें";
+"close" = "बंद करें";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "आपातकालीन कॉल";
+"medical_assistance" = "चिकित्सा सहायता";
+"nurse_call" = "नर्स कॉल";
+"patient_care" = "रोगी देखभाल";

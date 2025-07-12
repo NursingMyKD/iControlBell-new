@@ -1,0 +1,79 @@
+/* 
+   Localizable.strings (Portuguese)
+   iControlBell
+   
+   Localização da interface do usuário para aplicação de comunicação de saúde
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Aplicação de campainha acessível com rastreamento ocular";
+
+// MARK: - Main Interface
+"main_description" = "Concentre seu olhar no botão que melhor descreve sua necessidade de solicitar assistência, ou use o painel de sons para falar.";
+"select_language" = "Selecionar idioma:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Painel de sons";
+"soundboard_description" = "Selecione uma categoria e uma frase para que seja falada em voz alta.";
+"select_voice" = "Selecionar voz:";
+"system_voice" = "Voz do sistema";
+"no_categories_available" = "Nenhuma categoria de painel de sons disponível";
+
+// MARK: - Call Requests
+"call_request_sent" = "solicitação enviada!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Seletor de idioma";
+"call_request_button_accessibility" = "botão de solicitação";
+"soundboard_phrase_accessibility" = "Falar";
+"currently_speaking_accessibility" = "Falando esta frase atualmente";
+"tap_to_speak_accessibility" = "Toque duas vezes para falar esta frase em voz alta";
+
+// MARK: - Navigation
+"back" = "Voltar";
+"settings" = "Configurações";
+"help" = "Ajuda";
+
+// MARK: - Error Messages
+"error_loading_data" = "Erro ao carregar dados";
+"error_speech_unavailable" = "Síntese de fala indisponível";
+"error_permission_denied" = "Permissão negada";
+
+// MARK: - Success Messages
+"settings_saved" = "Configurações salvas";
+"language_changed" = "Idioma alterado";
+"connection_successful" = "Conexão bem-sucedida";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Cancelar";
+"retry" = "Tentar novamente";
+"done" = "Concluído";
+"save" = "Salvar";
+"close" = "Fechar";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Chamada de emergência";
+"medical_assistance" = "Assistência médica";
+"nurse_call" = "Chamar enfermeira";
+"patient_care" = "Cuidados ao paciente";
+
+// MARK: - Rauland Responder 5 Integration
+"rauland_connection_title" = "Responder 5 Connection";
+"rauland_status_disconnected" = "Disconnected";
+"rauland_status_connecting" = "Connecting";
+"rauland_status_connected" = "Connected";
+"rauland_connect" = "Connect";
+"rauland_disconnect" = "Disconnect";
+"rauland_configured" = "Rauland system configured";
+"rauland_not_connected" = "Not connected to Rauland system";
+"rauland_connection_successful" = "Connected to Rauland system";
+"rauland_disconnected" = "Disconnected from Rauland system";
+"rauland_call_emergency" = "Emergency";
+"rauland_call_nurse" = "Nurse Call";
+"rauland_call_general" = "General Assistance";
+"rauland_error_network" = "Network unavailable. Please check internet connection.";
+"rauland_error_call_failed" = "Call request failed. Please try again.";
+"rauland_configuration_title" = "Rauland Configuration";
+"double_tap_to_open_settings" = "Double tap to open settings";

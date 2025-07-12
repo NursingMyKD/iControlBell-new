@@ -1,0 +1,63 @@
+/* 
+   Localizable.strings (English)
+   iControlBell
+   
+   User interface localization for healthcare communication app
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Eye-tracking accessible call bell app";
+
+// MARK: - Main Interface
+"main_description" = "Focus your gaze on the button below that best describes your need to call for assistance, or use the soundboard to speak.";
+"select_language" = "Select Language:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Soundboard";
+"soundboard_description" = "Select a category and a phrase to have it spoken aloud.";
+"select_voice" = "Select Voice:";
+"system_voice" = "System Voice";
+"no_categories_available" = "No soundboard categories available";
+
+// MARK: - Call Requests
+"call_request_sent" = "request sent!";
+"call_bell_activated" = "Call bell activated!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Language selection picker";
+"call_request_button_accessibility" = "request button";
+"soundboard_phrase_accessibility" = "Speak";
+"currently_speaking_accessibility" = "Currently speaking this phrase";
+"tap_to_speak_accessibility" = "Double tap to speak this phrase aloud";
+"double_tap_change_language" = "Double tap to change language.";
+"double_tap_send_request" = "Double tap to send %@ assistance request";
+
+// MARK: - Navigation
+"back" = "Back";
+"settings" = "Settings";
+"help" = "Help";
+
+// MARK: - Error Messages
+"error_loading_data" = "Error loading data";
+"error_speech_unavailable" = "Speech synthesis unavailable";
+"error_permission_denied" = "Permission denied";
+
+// MARK: - Success Messages
+"settings_saved" = "Settings saved";
+"language_changed" = "Language changed";
+"connection_successful" = "Connection successful";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Cancel";
+"retry" = "Retry";
+"done" = "Done";
+"save" = "Save";
+"close" = "Close";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Emergency Call";
+"medical_assistance" = "Medical Assistance";
+"nurse_call" = "Nurse Call";
+"patient_care" = "Patient Care";

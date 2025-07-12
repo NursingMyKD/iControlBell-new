@@ -1,0 +1,78 @@
+/* 
+   Localizable.strings (Chinese Simplified)
+   iControlBell
+   
+   医疗通讯应用的用户界面本地化
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "具有眼球追踪功能的无障碍呼叫铃应用";
+
+// MARK: - Main Interface
+"main_description" = "将视线聚焦在最能描述您需要呼叫帮助的按钮上，或使用语音板说话。";
+"select_language" = "选择语言：";
+
+// MARK: - Soundboard
+"soundboard_title" = "语音板";
+"soundboard_description" = "选择一个类别和短语以大声朗读。";
+"select_voice" = "选择语音：";
+"system_voice" = "系统语音";
+"no_categories_available" = "没有可用的语音板类别";
+
+// MARK: - Call Requests
+"call_request_sent" = "请求已发送！";
+"call_bell_activated" = "呼叫铃已激活！";
+
+// MARK: - Bluetooth
+"bluetooth_connected" = "蓝牙已连接";
+"bluetooth_not_connected" = "蓝牙未连接";
+"bluetooth_status" = "蓝牙状态";
+"trigger_call_bell" = "触发呼叫铃";
+"searching_devices" = "正在搜索设备...";
+"device_connected" = "设备已连接";
+"connection_failed" = "连接失败";
+"bluetooth_error" = "蓝牙错误：%@";
+"call_bell_unavailable" = "呼叫铃不可用 - 蓝牙未连接";
+"double_tap_activate_call_bell" = "双击激活呼叫铃";
+"double_tap_change_language" = "双击更改语言。";
+"double_tap_send_request" = "双击发送%@协助请求";
+
+// MARK: - Accessibility Labels
+"bluetooth_connected_accessibility" = "蓝牙已连接并准备就绪";
+"bluetooth_not_connected_accessibility" = "蓝牙未连接";
+"language_picker_accessibility" = "语言选择器";
+"call_request_button_accessibility" = "请求按钮";
+"soundboard_phrase_accessibility" = "说话";
+"currently_speaking_accessibility" = "当前正在朗读此短语";
+"tap_to_speak_accessibility" = "双击朗读此短语";
+
+// MARK: - Navigation
+"back" = "返回";
+"settings" = "设置";
+"help" = "帮助";
+
+// MARK: - Error Messages
+"error_loading_data" = "数据加载错误";
+"error_bluetooth_unavailable" = "蓝牙不可用";
+"error_speech_unavailable" = "语音合成不可用";
+"error_permission_denied" = "权限被拒绝";
+
+// MARK: - Success Messages
+"settings_saved" = "设置已保存";
+"language_changed" = "语言已更改";
+"connection_successful" = "连接成功";
+
+// MARK: - General Actions
+"ok" = "确定";
+"cancel" = "取消";
+"retry" = "重试";
+"done" = "完成";
+"save" = "保存";
+"close" = "关闭";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "紧急呼叫";
+"medical_assistance" = "医疗援助";
+"nurse_call" = "护士呼叫";
+"patient_care" = "患者护理";

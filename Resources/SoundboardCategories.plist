@@ -39,171 +39,619 @@
         <dict>
             <key>en</key><array>
                 <string>Hello</string>
+                <string>Hi there</string>
+                <string>Good morning</string>
+                <string>Good afternoon</string>
+                <string>Good evening</string>
+                <string>Good night</string>
+                <string>How are you?</string>
+                <string>Nice to meet you</string>
                 <string>Goodbye</string>
+                <string>See you later</string>
+                <string>Take care</string>
+                <string>Have a good day</string>
                 <string>My name is...</string>
+                <string>What's your name?</string>
+                <string>Please</string>
+                <string>Thank you</string>
                 <string>You're welcome</string>
+                <string>Excuse me</string>
+                <string>I'm sorry</string>
+                <string>How's your day?</string>
             </array>
             <key>es</key><array>
                 <string>Hola</string>
+                <string>Hola, ¿qué tal?</string>
+                <string>Buenos días</string>
+                <string>Buenas tardes</string>
+                <string>Buenas noches</string>
+                <string>Que duermas bien</string>
+                <string>¿Cómo estás?</string>
+                <string>Mucho gusto</string>
                 <string>Adiós</string>
+                <string>Hasta luego</string>
+                <string>Cuídate</string>
+                <string>Que tengas un buen día</string>
                 <string>Mi nombre es...</string>
+                <string>¿Cómo te llamas?</string>
+                <string>Por favor</string>
+                <string>Gracias</string>
                 <string>De nada</string>
+                <string>Disculpe</string>
+                <string>Lo siento</string>
+                <string>¿Cómo ha sido tu día?</string>
             </array>
             <key>fr</key><array>
                 <string>Bonjour</string>
+                <string>Salut</string>
+                <string>Bon matin</string>
+                <string>Bon après-midi</string>
+                <string>Bonsoir</string>
+                <string>Bonne nuit</string>
+                <string>Comment allez-vous?</string>
+                <string>Enchanté</string>
                 <string>Au revoir</string>
+                <string>À bientôt</string>
+                <string>Prenez soin de vous</string>
+                <string>Bonne journée</string>
                 <string>Je m'appelle...</string>
+                <string>Comment vous appelez-vous?</string>
+                <string>S'il vous plaît</string>
+                <string>Merci</string>
                 <string>De rien</string>
+                <string>Excusez-moi</string>
+                <string>Je suis désolé</string>
+                <string>Comment s'est passée votre journée?</string>
             </array>
             <key>de</key><array>
                 <string>Hallo</string>
+                <string>Hi</string>
+                <string>Guten Morgen</string>
+                <string>Guten Tag</string>
+                <string>Guten Abend</string>
+                <string>Gute Nacht</string>
+                <string>Wie geht es Ihnen?</string>
+                <string>Freut mich Sie kennenzulernen</string>
                 <string>Auf Wiedersehen</string>
+                <string>Bis später</string>
+                <string>Passen Sie auf sich auf</string>
+                <string>Schönen Tag noch</string>
                 <string>Mein Name ist...</string>
+                <string>Wie heißen Sie?</string>
+                <string>Bitte</string>
+                <string>Danke</string>
                 <string>Gern geschehen</string>
+                <string>Entschuldigung</string>
+                <string>Es tut mir leid</string>
+                <string>Wie war Ihr Tag?</string>
             </array>
             <key>pt</key><array>
                 <string>Olá</string>
+                <string>Oi</string>
+                <string>Bom dia</string>
+                <string>Boa tarde</string>
+                <string>Boa noite</string>
+                <string>Durma bem</string>
+                <string>Como você está?</string>
+                <string>Prazer em conhecê-lo</string>
                 <string>Tchau</string>
+                <string>Até logo</string>
+                <string>Se cuide</string>
+                <string>Tenha um bom dia</string>
                 <string>Meu nome é...</string>
+                <string>Qual é o seu nome?</string>
+                <string>Por favor</string>
+                <string>Obrigado</string>
                 <string>De nada</string>
+                <string>Com licença</string>
+                <string>Desculpe</string>
+                <string>Como foi seu dia?</string>
             </array>
             <key>it</key><array>
                 <string>Ciao</string>
+                <string>Salve</string>
+                <string>Buongiorno</string>
+                <string>Buon pomeriggio</string>
+                <string>Buonasera</string>
+                <string>Buonanotte</string>
+                <string>Come sta?</string>
+                <string>Piacere di conoscerla</string>
                 <string>Arrivederci</string>
+                <string>A presto</string>
+                <string>Si prenda cura di sé</string>
+                <string>Buona giornata</string>
                 <string>Il mio nome è...</string>
+                <string>Come si chiama?</string>
+                <string>Per favore</string>
+                <string>Grazie</string>
                 <string>Prego</string>
+                <string>Scusi</string>
+                <string>Mi dispiace</string>
+                <string>Com'è andata la giornata?</string>
             </array>
             <key>ja</key><array>
                 <string>こんにちは</string>
+                <string>こんばんは</string>
+                <string>おはようございます</string>
+                <string>こんにちは</string>
+                <string>こんばんは</string>
+                <string>おやすみなさい</string>
+                <string>元気ですか？</string>
+                <string>はじめまして</string>
                 <string>さようなら</string>
+                <string>また後で</string>
+                <string>気をつけて</string>
+                <string>良い一日を</string>
                 <string>私の名前は...</string>
+                <string>お名前は何ですか？</string>
+                <string>お願いします</string>
+                <string>ありがとう</string>
                 <string>どういたしまして</string>
+                <string>すみません</string>
+                <string>ごめんなさい</string>
+                <string>今日はどうでしたか？</string>
             </array>
             <key>nl</key><array>
                 <string>Hallo</string>
+                <string>Hoi</string>
+                <string>Goedemorgen</string>
+                <string>Goedemiddag</string>
+                <string>Goedenavond</string>
+                <string>Welterusten</string>
+                <string>Hoe gaat het?</string>
+                <string>Leuk je te ontmoeten</string>
                 <string>Tot ziens</string>
+                <string>Tot later</string>
+                <string>Zorg goed voor jezelf</string>
+                <string>Fijne dag</string>
                 <string>Mijn naam is...</string>
+                <string>Hoe heet je?</string>
+                <string>Alsjeblieft</string>
+                <string>Dank je wel</string>
                 <string>Graag gedaan</string>
+                <string>Pardon</string>
+                <string>Het spijt me</string>
+                <string>Hoe was je dag?</string>
             </array>
             <key>ru</key><array>
                 <string>Привет</string>
+                <string>Здравствуйте</string>
+                <string>Доброе утро</string>
+                <string>Добрый день</string>
+                <string>Добрый вечер</string>
+                <string>Спокойной ночи</string>
+                <string>Как дела?</string>
+                <string>Очень приятно</string>
                 <string>До свидания</string>
+                <string>До встречи</string>
+                <string>Берегите себя</string>
+                <string>Хорошего дня</string>
                 <string>Меня зовут...</string>
+                <string>Как вас зовут?</string>
                 <string>Пожалуйста</string>
+                <string>Спасибо</string>
+                <string>Пожалуйста</string>
+                <string>Извините</string>
+                <string>Простите</string>
+                <string>Как прошёл день?</string>
             </array>
             <key>zh</key><array>
                 <string>你好</string>
+                <string>您好</string>
+                <string>早上好</string>
+                <string>下午好</string>
+                <string>晚上好</string>
+                <string>晚安</string>
+                <string>你好吗？</string>
+                <string>很高兴认识你</string>
                 <string>再见</string>
+                <string>待会见</string>
+                <string>保重</string>
+                <string>祝你有美好的一天</string>
                 <string>我的名字是...</string>
+                <string>你叫什么名字？</string>
+                <string>请</string>
+                <string>谢谢</string>
                 <string>不客气</string>
+                <string>不好意思</string>
+                <string>对不起</string>
+                <string>你今天过得怎么样？</string>
             </array>
             <key>hi</key><array>
                 <string>नमस्ते</string>
+                <string>नमस्कार</string>
+                <string>सुप्रभात</string>
+                <string>नमस्कार</string>
+                <string>शुभ संध्या</string>
+                <string>शुभ रात्रि</string>
+                <string>आप कैसे हैं?</string>
+                <string>आपसे मिलकर खुशी हुई</string>
                 <string>अलविदा</string>
+                <string>फिर मिलेंगे</string>
+                <string>अपना ख्याल रखिए</string>
+                <string>आपका दिन शुभ हो</string>
                 <string>मेरा नाम है...</string>
+                <string>आपका नाम क्या है?</string>
+                <string>कृपया</string>
+                <string>धन्यवाद</string>
                 <string>स्वागत है</string>
+                <string>माफ करिए</string>
+                <string>मुझे खुशी है</string>
+                <string>आपका दिन कैसा रहा?</string>
             </array>
             <key>ar</key><array>
                 <string>مرحبا</string>
-                <string>وداعا</string>
+                <string>أهلا وسهلا</string>
+                <string>صباح الخير</string>
+                <string>مساء الخير</string>
+                <string>ليلة سعيدة</string>
+                <string>تصبح على خير</string>
+                <string>كيف حالك؟</string>
+                <string>تشرفنا</string>
+                <string>إلى اللقاء</string>
+                <string>أراك لاحقا</string>
+                <string>مع السلامة</string>
+                <string>يوم سعيد</string>
                 <string>اسمي...</string>
-                <string>على الرحب والسعة</string>
+                <string>ما اسمك؟</string>
+                <string>من فضلك</string>
+                <string>شكرا لك</string>
+                <string>عفوا</string>
+                <string>آسف</string>
+                <string>اعذرني</string>
+                <string>كيف كان يومك؟</string>
             </array>
             <key>bn</key><array>
                 <string>হ্যালো</string>
+                <string>আস্সালামু আলাইকুম</string>
+                <string>সুপ্রভাত</string>
+                <string>শুভ বিকাল</string>
+                <string>শুভ সন্ধ্যা</string>
+                <string>শুভ রাত্রি</string>
+                <string>কেমন আছেন?</string>
+                <string>আপনার সাথে দেখা করে ভালো লাগলো</string>
                 <string>বিদায়</string>
+                <string>পরে দেখা হবে</string>
+                <string>ভালো থাকবেন</string>
+                <string>শুভ দিন</string>
                 <string>আমার নাম...</string>
+                <string>আপনার নাম কি?</string>
+                <string>দয়া করে</string>
+                <string>ধন্যবাদ</string>
                 <string>স্বাগতম</string>
+                <string>দুঃখিত</string>
+                <string>মাফ করবেন</string>
+                <string>আজ কেমন কেটেছে?</string>
             </array>
             <key>ko</key><array>
                 <string>안녕하세요</string>
+                <string>안녕</string>
+                <string>좋은 아침</string>
+                <string>좋은 오후</string>
+                <string>좋은 저녁</string>
+                <string>잘 자요</string>
+                <string>어떻게 지내세요?</string>
+                <string>만나서 반가워요</string>
                 <string>안녕히 가세요</string>
+                <string>나중에 봐요</string>
+                <string>조심하세요</string>
+                <string>좋은 하루 되세요</string>
                 <string>제 이름은...</string>
+                <string>이름이 뭐예요?</string>
+                <string>부탁합니다</string>
+                <string>감사합니다</string>
                 <string>천만에요</string>
+                <string>실례합니다</string>
+                <string>죄송합니다</string>
+                <string>오늘 어떠셨어요?</string>
             </array>
             <key>tr</key><array>
                 <string>Merhaba</string>
+                <string>Selam</string>
+                <string>Günaydın</string>
+                <string>İyi akşamlar</string>
+                <string>İyi geceler</string>
+                <string>Uyku düşkün</string>
+                <string>Nasılsınız?</string>
+                <string>Tanıştığımıza memnun oldum</string>
                 <string>Hoşçakal</string>
+                <string>Görüşürüz</string>
+                <string>Kendinize iyi bakın</string>
+                <string>İyi günler</string>
                 <string>Benim adım...</string>
+                <string>Adınız ne?</string>
+                <string>Lütfen</string>
+                <string>Teşekkür ederim</string>
                 <string>Rica ederim</string>
+                <string>Özür dilerim</string>
+                <string>Pardon</string>
+                <string>Günün nasıl geçti?</string>
             </array>
             <key>pl</key><array>
                 <string>Cześć</string>
+                <string>Witam</string>
+                <string>Dzień dobry</string>
+                <string>Dobry wieczór</string>
+                <string>Dobranoc</string>
+                <string>Śpij dobrze</string>
+                <string>Jak się masz?</string>
+                <string>Miło Cię poznać</string>
                 <string>Do widzenia</string>
+                <string>Na razie</string>
+                <string>Trzymaj się</string>
+                <string>Miłego dnia</string>
                 <string>Nazywam się...</string>
+                <string>Jak masz na imię?</string>
+                <string>Proszę</string>
+                <string>Dziękuję</string>
                 <string>Nie ma za co</string>
+                <string>Przepraszam</string>
+                <string>Przykro mi</string>
+                <string>Jak minął Ci dzień?</string>
             </array>
             <key>sv</key><array>
                 <string>Hej</string>
+                <string>Hallå</string>
+                <string>God morgon</string>
+                <string>God kväll</string>
+                <string>God natt</string>
+                <string>Sov gott</string>
+                <string>Hur har du det?</string>
+                <string>Trevligt att träffa dig</string>
                 <string>Hej då</string>
+                <string>Vi ses senare</string>
+                <string>Ha det bra</string>
+                <string>Ha en bra dag</string>
                 <string>Mitt namn är...</string>
+                <string>Vad heter du?</string>
+                <string>Snälla</string>
+                <string>Tack</string>
                 <string>Varsågod</string>
+                <string>Förlåt</string>
+                <string>Ursäkta</string>
+                <string>Hur har din dag varit?</string>
             </array>
             <key>vi</key><array>
                 <string>Xin chào</string>
+                <string>Chào bạn</string>
+                <string>Chào buổi sáng</string>
+                <string>Chào buổi chiều</string>
+                <string>Chào buổi tối</string>
+                <string>Chúc ngủ ngon</string>
+                <string>Bạn có khỏe không?</string>
+                <string>Rất vui được gặp bạn</string>
                 <string>Tạm biệt</string>
+                <string>Hẹn gặp lại</string>
+                <string>Chăm sóc bản thân nhé</string>
+                <string>Chúc bạn ngày tốt lành</string>
                 <string>Tên tôi là...</string>
+                <string>Bạn tên gì?</string>
+                <string>Xin lỗi</string>
+                <string>Cảm ơn</string>
                 <string>Không có gì</string>
+                <string>Xin lỗi</string>
+                <string>Tôi xin lỗi</string>
+                <string>Hôm nay của bạn thế nào?</string>
             </array>
             <key>id</key><array>
                 <string>Halo</string>
+                <string>Selamat pagi</string>
+                <string>Selamat siang</string>
+                <string>Selamat sore</string>
+                <string>Selamat malam</string>
+                <string>Selamat tidur</string>
+                <string>Apa kabar?</string>
+                <string>Senang bertemu dengan Anda</string>
                 <string>Selamat tinggal</string>
+                <string>Sampai jumpa lagi</string>
+                <string>Hati-hati</string>
+                <string>Semoga harimu menyenangkan</string>
                 <string>Nama saya...</string>
+                <string>Siapa nama Anda?</string>
+                <string>Tolong</string>
+                <string>Terima kasih</string>
                 <string>Sama-sama</string>
+                <string>Maaf</string>
+                <string>Permisi</string>
+                <string>Bagaimana hari Anda?</string>
             </array>
             <key>ur</key><array>
                 <string>سلام</string>
+                <string>آداب</string>
+                <string>صبح بخیر</string>
+                <string>شام بخیر</string>
+                <string>رات بخیر</string>
+                <string>شب بخیر</string>
+                <string>آپ کیسے ہیں؟</string>
+                <string>آپ سے ملکر خوشی ہوئی</string>
                 <string>خدا حافظ</string>
+                <string>پھر ملیں گے</string>
+                <string>اپنا خیال رکھیں</string>
+                <string>آپ کا دن اچھا گزرے</string>
                 <string>میرا نام...</string>
+                <string>آپ کا نام کیا ہے؟</string>
+                <string>براہ کرم</string>
+                <string>شکریہ</string>
                 <string>خوش آمدید</string>
+                <string>معاف کریں</string>
+                <string>مجھے افسوس ہے</string>
+                <string>آج آپ کا دن کیسا رہا؟</string>
             </array>
             <key>tl</key><array>
                 <string>Kumusta</string>
+                <string>Kamusta ka</string>
+                <string>Magandang umaga</string>
+                <string>Magandang hapon</string>
+                <string>Magandang gabi</string>
+                <string>Magandang tulog</string>
+                <string>Kumusta ka?</string>
+                <string>Natutuwa akong makilala ka</string>
                 <string>Paalam</string>
+                <string>Kita tayo mamaya</string>
+                <string>Mag-ingat</string>
+                <string>Magandang araw</string>
                 <string>Ang pangalan ko ay...</string>
+                <string>Ano ang pangalan mo?</string>
+                <string>Pakisuyo</string>
+                <string>Salamat</string>
                 <string>Walang anuman</string>
+                <string>Paumanhin</string>
+                <string>Pasensya na</string>
+                <string>Kumusta ang araw mo?</string>
             </array>
             <key>th</key><array>
                 <string>สวัสดี</string>
+                <string>หวัดดี</string>
+                <string>สวัสดีตอนเช้า</string>
+                <string>สวัสดีตอนบ่าย</string>
+                <string>สวัสดีตอนเย็น</string>
+                <string>ราตรีสวัสดิ์</string>
+                <string>สบายดีไหม?</string>
+                <string>ยินดีที่ได้รู้จัก</string>
                 <string>ลาก่อน</string>
+                <string>แล้วเจอกันใหม่</string>
+                <string>ดูแลตัวเองด้วย</string>
+                <string>ขอให้มีความสุข</string>
                 <string>ชื่อของฉันคือ...</string>
+                <string>คุณชื่ออะไร?</string>
+                <string>กรุณา</string>
+                <string>ขอบคุณ</string>
                 <string>ไม่เป็นไร</string>
+                <string>ขอโทษ</string>
+                <string>ฉันขอโทษ</string>
+                <string>วันนี้เป็นยังไงบ้าง?</string>
             </array>
             <key>el</key><array>
                 <string>Γεια σας</string>
+                <string>Γεια σου</string>
+                <string>Καλημέρα</string>
+                <string>Καλησπέρα</string>
+                <string>Καληνύχτα</string>
+                <string>Καλό ύπνο</string>
+                <string>Πώς είστε;</string>
+                <string>Χαίρομαι που σας γνωρίζω</string>
                 <string>Αντίο</string>
+                <string>Τα λέμε αργότερα</string>
+                <string>Προσέχετε τον εαυτό σας</string>
+                <string>Καλή μέρα</string>
                 <string>Το όνομά μου είναι...</string>
+                <string>Πώς σας λένε;</string>
                 <string>Παρακαλώ</string>
+                <string>Ευχαριστώ</string>
+                <string>Παρακαλώ</string>
+                <string>Συγγνώμη</string>
+                <string>Λυπάμαι</string>
+                <string>Πώς πέρασε η μέρα σας;</string>
             </array>
             <key>cs</key><array>
                 <string>Ahoj</string>
+                <string>Dobrý den</string>
+                <string>Dobré ráno</string>
+                <string>Dobrý večer</string>
+                <string>Dobrou noc</string>
                 <string>Na shledanou</string>
+                <string>Ahoj na shledanou</string>
                 <string>Jmenuji se...</string>
+                <string>Jak se máte?</string>
+                <string>Jak se jmenujete?</string>
+                <string>Těší mě</string>
+                <string>Vítejte</string>
                 <string>Prosím</string>
+                <string>Děkuji</string>
+                <string>Promiňte</string>
+                <string>S dovolením</string>
+                <string>Rádi vás vidíme</string>
+                <string>Jak se daří?</string>
+                <string>Hezký den</string>
+                <string>Na viděnou</string>
             </array>
             <key>hu</key><array>
                 <string>Szia</string>
+                <string>Jó napot</string>
+                <string>Jó reggelt</string>
+                <string>Jó estét</string>
+                <string>Jó éjszakát</string>
                 <string>Viszlát</string>
+                <string>Viszontlátásra</string>
                 <string>A nevem...</string>
-                <string>Szívesen</string>
+                <string>Hogy van?</string>
+                <string>Mi a neve?</string>
+                <string>Örülök, hogy találkozunk</string>
+                <string>Üdvözöljük</string>
+                <string>Kérem</string>
+                <string>Köszönöm</string>
+                <string>Elnézést</string>
+                <string>Bocsánat</string>
+                <string>Örülünk, hogy látjuk</string>
+                <string>Hogy megy?</string>
+                <string>Szép napot</string>
+                <string>Viszlát később</string>
             </array>
             <key>ro</key><array>
                 <string>Salut</string>
+                <string>Bună ziua</string>
+                <string>Bună dimineața</string>
+                <string>Bună seara</string>
+                <string>Noapte bună</string>
                 <string>La revedere</string>
+                <string>Pe curând</string>
                 <string>Numele meu este...</string>
-                <string>Cu plăcere</string>
+                <string>Ce mai faceți?</string>
+                <string>Cum vă numiți?</string>
+                <string>Îmi pare bine să vă cunosc</string>
+                <string>Bun venit</string>
+                <string>Vă rog</string>
+                <string>Mulțumesc</string>
+                <string>Scuzați-mă</string>
+                <string>Îmi pare rău</string>
+                <string>Ne bucurăm să vă vedem</string>
+                <string>Ce mai faci?</string>
+                <string>O zi frumoasă</string>
+                <string>Ne vedem mai târziu</string>
             </array>
             <key>da</key><array>
                 <string>Hej</string>
+                <string>Goddag</string>
+                <string>God morgen</string>
+                <string>God aften</string>
+                <string>Godnat</string>
                 <string>Farvel</string>
+                <string>Vi ses</string>
                 <string>Mit navn er...</string>
-                <string>Så lidt</string>
+                <string>Hvordan har du det?</string>
+                <string>Hvad hedder du?</string>
+                <string>Dejligt at møde dig</string>
+                <string>Velkommen</string>
+                <string>Tak</string>
+                <string>Undskyld</string>
+                <string>Beklager</string>
+                <string>Vi er glade for at se dig</string>
+                <string>Hvordan går det?</string>
+                <string>Hav en god dag</string>
+                <string>Vi ses senere</string>
+                <string>Hyggelig at se dig</string>
             </array>
             <key>fi</key><array>
                 <string>Moi</string>
+                <string>Hei</string>
+                <string>Huomenta</string>
+                <string>Hyvää iltaa</string>
+                <string>Hyvää yötä</string>
                 <string>Näkemiin</string>
+                <string>Heippa</string>
                 <string>Nimeni on...</string>
-                <string>Ei kestä</string>
+                <string>Mitä kuuluu?</string>
+                <string>Mikä sinun nimesi on?</string>
+                <string>Hauska tavata</string>
+                <string>Tervetuloa</string>
+                <string>Kiitos</string>
+                <string>Anteeksi</string>
+                <string>Pahoittelut</string>
+                <string>Mukava nähdä sinut</string>
+                <string>Miten menee?</string>
+                <string>Hyvää päivää</string>
+                <string>Nähdään myöhemmin</string>
+                <string>Kiva nähdä</string>
             </array>
         </dict>
     </dict>
@@ -247,168 +695,616 @@
                 <string>I need food</string>
                 <string>I need help</string>
                 <string>I need to go to the bathroom</string>
+                <string>I need medicine</string>
+                <string>I need rest</string>
+                <string>I need to sit down</string>
+                <string>I need fresh air</string>
+                <string>I need my phone</string>
+                <string>I need to call someone</string>
+                <string>I need a doctor</string>
+                <string>I need more time</string>
+                <string>I need to lie down</string>
+                <string>I need assistance</string>
+                <string>I need privacy</string>
+                <string>I need quiet</string>
+                <string>I need my glasses</string>
+                <string>I need to eat</string>
+                <string>I need to drink</string>
+                <string>I need to go home</string>
             </array>
             <key>es</key><array>
                 <string>Necesito agua</string>
                 <string>Necesito comida</string>
                 <string>Necesito ayuda</string>
                 <string>Necesito ir al baño</string>
+                <string>Necesito medicina</string>
+                <string>Necesito descansar</string>
+                <string>Necesito sentarme</string>
+                <string>Necesito aire fresco</string>
+                <string>Necesito mi teléfono</string>
+                <string>Necesito llamar a alguien</string>
+                <string>Necesito un doctor</string>
+                <string>Necesito más tiempo</string>
+                <string>Necesito acostarme</string>
+                <string>Necesito asistencia</string>
+                <string>Necesito privacidad</string>
+                <string>Necesito silencio</string>
+                <string>Necesito mis lentes</string>
+                <string>Necesito comer</string>
+                <string>Necesito beber</string>
+                <string>Necesito ir a casa</string>
             </array>
             <key>fr</key><array>
                 <string>J'ai besoin d'eau</string>
                 <string>J'ai besoin de nourriture</string>
                 <string>J'ai besoin d'aide</string>
                 <string>J'ai besoin d'aller aux toilettes</string>
+                <string>J'ai besoin de médicaments</string>
+                <string>J'ai besoin de repos</string>
+                <string>J'ai besoin de m'asseoir</string>
+                <string>J'ai besoin d'air frais</string>
+                <string>J'ai besoin de mon téléphone</string>
+                <string>J'ai besoin d'appeler quelqu'un</string>
+                <string>J'ai besoin d'un médecin</string>
+                <string>J'ai besoin de plus de temps</string>
+                <string>J'ai besoin de m'allonger</string>
+                <string>J'ai besoin d'assistance</string>
+                <string>J'ai besoin d'intimité</string>
+                <string>J'ai besoin de silence</string>
+                <string>J'ai besoin de mes lunettes</string>
+                <string>J'ai besoin de manger</string>
+                <string>J'ai besoin de boire</string>
+                <string>J'ai besoin de rentrer chez moi</string>
             </array>
             <key>de</key><array>
                 <string>Ich brauche Wasser</string>
                 <string>Ich brauche Essen</string>
                 <string>Ich brauche Hilfe</string>
                 <string>Ich muss auf die Toilette</string>
+                <string>Ich brauche Medizin</string>
+                <string>Ich brauche Ruhe</string>
+                <string>Ich muss mich hinsetzen</string>
+                <string>Ich brauche frische Luft</string>
+                <string>Ich brauche mein Telefon</string>
+                <string>Ich muss jemanden anrufen</string>
+                <string>Ich brauche einen Arzt</string>
+                <string>Ich brauche mehr Zeit</string>
+                <string>Ich muss mich hinlegen</string>
+                <string>Ich brauche Unterstützung</string>
+                <string>Ich brauche Privatsphäre</string>
+                <string>Ich brauche Ruhe</string>
+                <string>Ich brauche meine Brille</string>
+                <string>Ich muss essen</string>
+                <string>Ich muss trinken</string>
+                <string>Ich muss nach Hause</string>
             </array>
             <key>pt</key><array>
                 <string>Preciso de água</string>
                 <string>Preciso de comida</string>
                 <string>Preciso de ajuda</string>
                 <string>Preciso ir ao banheiro</string>
+                <string>Preciso de remédio</string>
+                <string>Preciso descansar</string>
+                <string>Preciso me sentar</string>
+                <string>Preciso de ar fresco</string>
+                <string>Preciso do meu telefone</string>
+                <string>Preciso ligar para alguém</string>
+                <string>Preciso de um médico</string>
+                <string>Preciso de mais tempo</string>
+                <string>Preciso me deitar</string>
+                <string>Preciso de assistência</string>
+                <string>Preciso de privacidade</string>
+                <string>Preciso de silêncio</string>
+                <string>Preciso dos meus óculos</string>
+                <string>Preciso comer</string>
+                <string>Preciso beber</string>
+                <string>Preciso ir para casa</string>
             </array>
             <key>it</key><array>
                 <string>Ho bisogno di acqua</string>
                 <string>Ho bisogno di cibo</string>
                 <string>Ho bisogno di aiuto</string>
                 <string>Ho bisogno di andare in bagno</string>
+                <string>Ho bisogno di medicine</string>
+                <string>Ho bisogno di riposare</string>
+                <string>Ho bisogno di sedermi</string>
+                <string>Ho bisogno di aria fresca</string>
+                <string>Ho bisogno del mio telefono</string>
+                <string>Ho bisogno di chiamare qualcuno</string>
+                <string>Ho bisogno di un dottore</string>
+                <string>Ho bisogno di più tempo</string>
+                <string>Ho bisogno di sdraiarmi</string>
+                <string>Ho bisogno di assistenza</string>
+                <string>Ho bisogno di privacy</string>
+                <string>Ho bisogno di silenzio</string>
+                <string>Ho bisogno dei miei occhiali</string>
+                <string>Ho bisogno di mangiare</string>
+                <string>Ho bisogno di bere</string>
+                <string>Ho bisogno di andare a casa</string>
             </array>
             <key>ja</key><array>
                 <string>水が必要です</string>
                 <string>食べ物が必要です</string>
                 <string>助けが必要です</string>
                 <string>トイレに行く必要があります</string>
+                <string>薬が必要です</string>
+                <string>休息が必要です</string>
+                <string>座る必要があります</string>
+                <string>新鮮な空気が必要です</string>
+                <string>携帯電話が必要です</string>
+                <string>誰かに電話する必要があります</string>
+                <string>医者が必要です</string>
+                <string>もっと時間が必要です</string>
+                <string>横になる必要があります</string>
+                <string>介助が必要です</string>
+                <string>プライバシーが必要です</string>
+                <string>静かさが必要です</string>
+                <string>眼鏡が必要です</string>
+                <string>食べる必要があります</string>
+                <string>飲む必要があります</string>
+                <string>家に帰る必要があります</string>
             </array>
             <key>nl</key><array>
                 <string>Ik heb water nodig</string>
                 <string>Ik heb eten nodig</string>
                 <string>Ik heb hulp nodig</string>
                 <string>Ik moet naar de wc</string>
+                <string>Ik heb medicijnen nodig</string>
+                <string>Ik heb rust nodig</string>
+                <string>Ik moet gaan zitten</string>
+                <string>Ik heb frisse lucht nodig</string>
+                <string>Ik heb mijn telefoon nodig</string>
+                <string>Ik moet iemand bellen</string>
+                <string>Ik heb een dokter nodig</string>
+                <string>Ik heb meer tijd nodig</string>
+                <string>Ik moet gaan liggen</string>
+                <string>Ik heb assistentie nodig</string>
+                <string>Ik heb privacy nodig</string>
+                <string>Ik heb stilte nodig</string>
+                <string>Ik heb mijn bril nodig</string>
+                <string>Ik moet eten</string>
+                <string>Ik moet drinken</string>
+                <string>Ik moet naar huis</string>
             </array>
             <key>ru</key><array>
                 <string>Мне нужна вода</string>
                 <string>Мне нужна еда</string>
                 <string>Мне нужна помощь</string>
                 <string>Мне нужно в туалет</string>
+                <string>Мне нужны лекарства</string>
+                <string>Мне нужен отдых</string>
+                <string>Мне нужно сесть</string>
+                <string>Мне нужен свежий воздух</string>
+                <string>Мне нужен телефон</string>
+                <string>Мне нужно кому-то позвонить</string>
+                <string>Мне нужен врач</string>
+                <string>Мне нужно больше времени</string>
+                <string>Мне нужно лечь</string>
+                <string>Мне нужна помощь</string>
+                <string>Мне нужно уединение</string>
+                <string>Мне нужна тишина</string>
+                <string>Мне нужны очки</string>
+                <string>Мне нужно поесть</string>
+                <string>Мне нужно попить</string>
+                <string>Мне нужно домой</string>
             </array>
             <key>zh</key><array>
                 <string>我需要水</string>
                 <string>我需要食物</string>
                 <string>我需要帮助</string>
                 <string>我需要去洗手间</string>
+                <string>我需要药</string>
+                <string>我需要休息</string>
+                <string>我需要坐下</string>
+                <string>我需要新鲜空气</string>
+                <string>我需要我的手机</string>
+                <string>我需要打电话给某人</string>
+                <string>我需要医生</string>
+                <string>我需要更多时间</string>
+                <string>我需要躺下</string>
+                <string>我需要协助</string>
+                <string>我需要隐私</string>
+                <string>我需要安静</string>
+                <string>我需要我的眼镜</string>
+                <string>我需要吃东西</string>
+                <string>我需要喝水</string>
+                <string>我需要回家</string>
             </array>
             <key>hi</key><array>
                 <string>मुझे पानी चाहिए</string>
                 <string>मुझे खाना चाहिए</string>
                 <string>मुझे मदद चाहिए</string>
                 <string>मुझे बाथरूम जाना है</string>
+                <string>मुझे दवा चाहिए</string>
+                <string>मुझे आराम चाहिए</string>
+                <string>मुझे बैठना है</string>
+                <string>मुझे ताजी हवा चाहिए</string>
+                <string>मुझे फोन चाहिए</string>
+                <string>मुझे किसी को फोन करना है</string>
+                <string>मुझे डॉक्टर चाहिए</string>
+                <string>मुझे और समय चाहिए</string>
+                <string>मुझे लेटना है</string>
+                <string>मुझे सहायता चाहिए</string>
+                <string>मुझे एकांत चाहिए</string>
+                <string>मुझे शांति चाहिए</string>
+                <string>मुझे चश्मा चाहिए</string>
+                <string>मुझे खाना है</string>
+                <string>मुझे पीना है</string>
+                <string>मुझे घर जाना है</string>
             </array>
             <key>ar</key><array>
                 <string>أحتاج إلى الماء</string>
                 <string>أحتاج إلى الطعام</string>
                 <string>أحتاج إلى المساعدة</string>
                 <string>أحتاج إلى الذهاب إلى الحمام</string>
+                <string>أحتاج إلى الدواء</string>
+                <string>أحتاج إلى الراحة</string>
+                <string>أحتاج إلى الجلوس</string>
+                <string>أحتاج إلى الهواء النقي</string>
+                <string>أحتاج إلى الهاتف</string>
+                <string>أحتاج إلى الاتصال بأحد</string>
+                <string>أحتاج إلى طبيب</string>
+                <string>أحتاج إلى مزيد من الوقت</string>
+                <string>أحتاج إلى الاستلقاء</string>
+                <string>أحتاج إلى المساعدة</string>
+                <string>أحتاج إلى الخصوصية</string>
+                <string>أحتاج إلى الهدوء</string>
+                <string>أحتاج إلى النظارات</string>
+                <string>أحتاج إلى الأكل</string>
+                <string>أحتاج إلى الشرب</string>
+                <string>أحتاج إلى العودة إلى المنزل</string>
             </array>
             <key>bn</key><array>
                 <string>আমার পানি দরকার</string>
                 <string>আমার খাবার দরকার</string>
                 <string>আমার সাহায্য দরকার</string>
                 <string>আমার বাথরুমে যেতে হবে</string>
+                <string>আমার ওষুধ দরকার</string>
+                <string>আমার বিশ্রাম দরকার</string>
+                <string>আমার বসতে হবে</string>
+                <string>আমার তাজা বাতাস দরকার</string>
+                <string>আমার ফোন দরকার</string>
+                <string>আমার কাউকে ফোন করতে হবে</string>
+                <string>আমার ডাক্তার দরকার</string>
+                <string>আমার আরো সময় দরকার</string>
+                <string>আমার শুয়ে থাকতে হবে</string>
+                <string>আমার সহায়তা দরকার</string>
+                <string>আমার একাকীত্ব দরকার</string>
+                <string>আমার শান্তি দরকার</string>
+                <string>আমার চশমা দরকার</string>
+                <string>আমার খেতে হবে</string>
+                <string>আমার পান করতে হবে</string>
+                <string>আমার বাড়ি যেতে হবে</string>
             </array>
             <key>ko</key><array>
                 <string>물이 필요해요</string>
                 <string>음식이 필요해요</string>
                 <string>도움이 필요해요</string>
                 <string>화장실에 가야 해요</string>
+                <string>약이 필요해요</string>
+                <string>휴식이 필요해요</string>
+                <string>앉아야 해요</string>
+                <string>신선한 공기가 필요해요</string>
+                <string>핸드폰이 필요해요</string>
+                <string>누군가에게 전화해야 해요</string>
+                <string>의사가 필요해요</string>
+                <string>시간이 더 필요해요</string>
+                <string>누워야 해요</string>
+                <string>도움이 필요해요</string>
+                <string>사생활이 필요해요</string>
+                <string>조용함이 필요해요</string>
+                <string>안경이 필요해요</string>
+                <string>먹어야 해요</string>
+                <string>마셔야 해요</string>
+                <string>집에 가야 해요</string>
             </array>
             <key>tr</key><array>
                 <string>Suya ihtiyacım var</string>
                 <string>Yiyeceğe ihtiyacım var</string>
                 <string>Yardıma ihtiyacım var</string>
                 <string>Tuvalete gitmem gerekiyor</string>
+                <string>İlaca ihtiyacım var</string>
+                <string>Dinlenmeye ihtiyacım var</string>
+                <string>Oturmam gerekiyor</string>
+                <string>Temiz havaya ihtiyacım var</string>
+                <string>Telefona ihtiyacım var</string>
+                <string>Birini aramam gerekiyor</string>
+                <string>Doktora ihtiyacım var</string>
+                <string>Daha fazla zamana ihtiyacım var</string>
+                <string>Uzanmam gerekiyor</string>
+                <string>Yardıma ihtiyacım var</string>
+                <string>Mahremiyete ihtiyacım var</string>
+                <string>Sessizliğe ihtiyacım var</string>
+                <string>Gözlüğe ihtiyacım var</string>
+                <string>Yemek yemem gerekiyor</string>
+                <string>İçmem gerekiyor</string>
+                <string>Eve gitmem gerekiyor</string>
             </array>
             <key>pl</key><array>
                 <string>Potrzebuję wody</string>
                 <string>Potrzebuję jedzenia</string>
                 <string>Potrzebuję pomocy</string>
                 <string>Muszę iść do łazienki</string>
+                <string>Potrzebuję lekarstwa</string>
+                <string>Potrzebuję odpoczynku</string>
+                <string>Muszę usiąść</string>
+                <string>Potrzebuję świeżego powietrza</string>
+                <string>Potrzebuję telefonu</string>
+                <string>Muszę do kogoś zadzwonić</string>
+                <string>Potrzebuję lekarza</string>
+                <string>Potrzebuję więcej czasu</string>
+                <string>Muszę się położyć</string>
+                <string>Potrzebuję wsparcia</string>
+                <string>Potrzebuję prywatności</string>
+                <string>Potrzebuję ciszy</string>
+                <string>Potrzebuję okularów</string>
+                <string>Muszę coś zjeść</string>
+                <string>Muszę się napić</string>
+                <string>Muszę wracać do domu</string>
             </array>
             <key>sv</key><array>
                 <string>Jag behöver vatten</string>
                 <string>Jag behöver mat</string>
                 <string>Jag behöver hjälp</string>
                 <string>Jag behöver gå på toaletten</string>
+                <string>Jag behöver medicin</string>
+                <string>Jag behöver vila</string>
+                <string>Jag måste sitta ner</string>
+                <string>Jag behöver frisk luft</string>
+                <string>Jag behöver en telefon</string>
+                <string>Jag måste ringa någon</string>
+                <string>Jag behöver en läkare</string>
+                <string>Jag behöver mer tid</string>
+                <string>Jag måste ligga ner</string>
+                <string>Jag behöver stöd</string>
+                <string>Jag behöver ensamhet</string>
+                <string>Jag behöver tystnad</string>
+                <string>Jag behöver glasögon</string>
+                <string>Jag måste äta</string>
+                <string>Jag måste dricka</string>
+                <string>Jag måste gå hem</string>
             </array>
             <key>vi</key><array>
                 <string>Tôi cần nước</string>
                 <string>Tôi cần thức ăn</string>
                 <string>Tôi cần giúp đỡ</string>
                 <string>Tôi cần đi vệ sinh</string>
+                <string>Tôi cần thuốc</string>
+                <string>Tôi cần nghỉ ngơi</string>
+                <string>Tôi cần ngồi xuống</string>
+                <string>Tôi cần không khí trong lành</string>
+                <string>Tôi cần điện thoại</string>
+                <string>Tôi cần gọi cho ai đó</string>
+                <string>Tôi cần bác sĩ</string>
+                <string>Tôi cần thêm thời gian</string>
+                <string>Tôi cần nằm xuống</string>
+                <string>Tôi cần hỗ trợ</string>
+                <string>Tôi cần riêng tư</string>
+                <string>Tôi cần yên tĩnh</string>
+                <string>Tôi cần kính</string>
+                <string>Tôi cần ăn</string>
+                <string>Tôi cần uống</string>
+                <string>Tôi cần về nhà</string>
             </array>
             <key>id</key><array>
                 <string>Saya butuh air</string>
                 <string>Saya butuh makanan</string>
                 <string>Saya butuh bantuan</string>
                 <string>Saya perlu ke kamar mandi</string>
+                <string>Saya butuh obat</string>
+                <string>Saya butuh istirahat</string>
+                <string>Saya perlu duduk</string>
+                <string>Saya butuh udara segar</string>
+                <string>Saya butuh telepon</string>
+                <string>Saya perlu menelepon seseorang</string>
+                <string>Saya butuh dokter</string>
+                <string>Saya butuh lebih banyak waktu</string>
+                <string>Saya perlu berbaring</string>
+                <string>Saya butuh dukungan</string>
+                <string>Saya butuh privasi</string>
+                <string>Saya butuh ketenangan</string>
+                <string>Saya butuh kacamata</string>
+                <string>Saya perlu makan</string>
+                <string>Saya perlu minum</string>
+                <string>Saya perlu pulang</string>
             </array>
             <key>ur</key><array>
                 <string>مجھے پانی چاہیے</string>
                 <string>مجھے کھانا چاہیے</string>
                 <string>مجھے مدد چاہیے</string>
                 <string>مجھے باتھ روم جانا ہے</string>
+                <string>مجھے دوا چاہیے</string>
+                <string>مجھے آرام چاہیے</string>
+                <string>مجھے بیٹھنا ہے</string>
+                <string>مجھے تازہ ہوا چاہیے</string>
+                <string>مجھے فون چاہیے</string>
+                <string>مجھے کسی کو فون کرنا ہے</string>
+                <string>مجھے ڈاکٹر چاہیے</string>
+                <string>مجھے مزید وقت چاہیے</string>
+                <string>مجھے لیٹنا ہے</string>
+                <string>مجھے مدد چاہیے</string>
+                <string>مجھے تنہائی چاہیے</string>
+                <string>مجھے خاموشی چاہیے</string>
+                <string>مجھے چشمہ چاہیے</string>
+                <string>مجھے کھانا کھانا ہے</string>
+                <string>مجھے پینا ہے</string>
+                <string>مجھے گھر جانا ہے</string>
             </array>
             <key>tl</key><array>
                 <string>Kailangan ko ng tubig</string>
                 <string>Kailangan ko ng pagkain</string>
                 <string>Kailangan ko ng tulong</string>
                 <string>Kailangan kong pumunta sa banyo</string>
+                <string>Kailangan ko ng gamot</string>
+                <string>Kailangan ko ng pahinga</string>
+                <string>Kailangan kong umupo</string>
+                <string>Kailangan ko ng sariwang hangin</string>
+                <string>Kailangan ko ng telepono</string>
+                <string>Kailangan kong tumawag sa isang tao</string>
+                <string>Kailangan ko ng doktor</string>
+                <string>Kailangan ko ng mas maraming oras</string>
+                <string>Kailangan kong humiga</string>
+                <string>Kailangan ko ng tulong</string>
+                <string>Kailangan ko ng privacy</string>
+                <string>Kailangan ko ng katahimikan</string>
+                <string>Kailangan ko ng salamin</string>
+                <string>Kailangan kong kumain</string>
+                <string>Kailangan kong uminom</string>
+                <string>Kailangan kong umuwi</string>
             </array>
             <key>th</key><array>
                 <string>ฉันต้องการน้ำ</string>
                 <string>ฉันต้องการอาหาร</string>
                 <string>ฉันต้องการความช่วยเหลือ</string>
                 <string>ฉันต้องไปห้องน้ำ</string>
+                <string>ฉันต้องการยา</string>
+                <string>ฉันต้องการพักผ่อน</string>
+                <string>ฉันต้องการนั่ง</string>
+                <string>ฉันต้องการอากาศบริสุทธิ์</string>
+                <string>ฉันต้องการโทรศัพท์</string>
+                <string>ฉันต้องการโทรหาใครสักคน</string>
+                <string>ฉันต้องการหมอ</string>
+                <string>ฉันต้องการเวลามากกว่านี้</string>
+                <string>ฉันต้องการนอน</string>
+                <string>ฉันต้องการความช่วยเหลือ</string>
+                <string>ฉันต้องการความเป็นส่วนตัว</string>
+                <string>ฉันต้องการความเงียบ</string>
+                <string>ฉันต้องการแว่นตา</string>
+                <string>ฉันต้องการกิน</string>
+                <string>ฉันต้องการดื่ม</string>
+                <string>ฉันต้องการกลับบ้าน</string>
             </array>
             <key>el</key><array>
                 <string>Χρειάζομαι νερό</string>
                 <string>Χρειάζομαι φαγητό</string>
                 <string>Χρειάζομαι βοήθεια</string>
                 <string>Χρειάζομαι να πάω στο μπάνιο</string>
+                <string>Χρειάζομαι φάρμακο</string>
+                <string>Χρειάζομαι ξεκούραση</string>
+                <string>Χρειάζομαι να καθίσω</string>
+                <string>Χρειάζομαι καθαρό αέρα</string>
+                <string>Χρειάζομαι τηλέφωνο</string>
+                <string>Χρειάζομαι να καλέσω κάποιον</string>
+                <string>Χρειάζομαι γιατρό</string>
+                <string>Χρειάζομαι περισσότερο χρόνο</string>
+                <string>Χρειάζομαι να ξαπλώσω</string>
+                <string>Χρειάζομαι υποστήριξη</string>
+                <string>Χρειάζομαι ιδιωτικότητα</string>
+                <string>Χρειάζομαι ησυχία</string>
+                <string>Χρειάζομαι τα γυαλιά μου</string>
+                <string>Χρειάζομαι να φάω</string>
+                <string>Χρειάζομαι να πιω</string>
+                <string>Χρειάζομαι να πάω σπίτι</string>
             </array>
             <key>cs</key><array>
                 <string>Potřebuji vodu</string>
                 <string>Potřebuji jídlo</string>
                 <string>Potřebuji pomoc</string>
                 <string>Potřebuji jít na toaletu</string>
+                <string>Potřebuji léky</string>
+                <string>Potřebuji odpočinek</string>
+                <string>Potřebuji lékařskou péči</string>
+                <string>Potřebuji telefon</string>
+                <string>Potřebuji poradit</string>
+                <string>Potřebuji dopravní prostředek</string>
+                <string>Potřebuji brýle</string>
+                <string>Potřebuji spát</string>
+                <string>Potřebuji čas</string>
+                <string>Potřebuji informace</string>
+                <string>Potřebuji sedět si</string>
+                <string>Potřebuji čerstvý vzduch</string>
+                <string>Potřebuji klid</string>
+                <string>Potřebuji podporu</string>
+                <string>Potřebuji domů</string>
+                <string>Potřebuji změnu</string>
             </array>
             <key>hu</key><array>
                 <string>Vízre van szükségem</string>
                 <string>Ételre van szükségem</string>
                 <string>Segítségre van szükségem</string>
                 <string>Mosdóba kell mennem</string>
+                <string>Gyógyszerre van szükségem</string>
+                <string>Pihenésre van szükségem</string>
+                <string>Orvosi ellátásra van szükségem</string>
+                <string>Telefonra van szükségem</string>
+                <string>Tanácsra van szükségem</string>
+                <string>Közlekedésre van szükségem</string>
+                <string>Szemüvegre van szükségem</string>
+                <string>Aludnom kell</string>
+                <string>Időre van szükségem</string>
+                <string>Információra van szükségem</string>
+                <string>Le kell ülnöm</string>
+                <string>Friss levegőre van szükségem</string>
+                <string>Csendre van szükségem</string>
+                <string>Támogatásra van szükségem</string>
+                <string>Haza kell mennem</string>
+                <string>Változásra van szükségem</string>
             </array>
             <key>ro</key><array>
                 <string>Am nevoie de apă</string>
                 <string>Am nevoie de mâncare</string>
                 <string>Am nevoie de ajutor</string>
                 <string>Trebuie să merg la baie</string>
+                <string>Am nevoie de medicamente</string>
+                <string>Am nevoie de odihnă</string>
+                <string>Am nevoie de îngrijire medicală</string>
+                <string>Am nevoie de telefon</string>
+                <string>Am nevoie de sfaturi</string>
+                <string>Am nevoie de transport</string>
+                <string>Am nevoie de ochelari</string>
+                <string>Trebuie să dorm</string>
+                <string>Am nevoie de timp</string>
+                <string>Am nevoie de informații</string>
+                <string>Trebuie să mă așez</string>
+                <string>Am nevoie de aer proaspăt</string>
+                <string>Am nevoie de liniște</string>
+                <string>Am nevoie de sprijin</string>
+                <string>Trebuie să merg acasă</string>
+                <string>Am nevoie de schimbare</string>
             </array>
             <key>da</key><array>
                 <string>Jeg har brug for vand</string>
                 <string>Jeg har brug for mad</string>
                 <string>Jeg har brug for hjælp</string>
                 <string>Jeg skal på toilettet</string>
+                <string>Jeg har brug for medicin</string>
+                <string>Jeg har brug for hvile</string>
+                <string>Jeg har brug for lægehjælp</string>
+                <string>Jeg har brug for en telefon</string>
+                <string>Jeg har brug for råd</string>
+                <string>Jeg har brug for transport</string>
+                <string>Jeg har brug for briller</string>
+                <string>Jeg skal sove</string>
+                <string>Jeg har brug for tid</string>
+                <string>Jeg har brug for information</string>
+                <string>Jeg skal sidde ned</string>
+                <string>Jeg har brug for frisk luft</string>
+                <string>Jeg har brug for ro</string>
+                <string>Jeg har brug for støtte</string>
+                <string>Jeg skal hjem</string>
+                <string>Jeg har brug for forandring</string>
             </array>
             <key>fi</key><array>
                 <string>Tarvitsen vettä</string>
                 <string>Tarvitsen ruokaa</string>
                 <string>Tarvitsen apua</string>
                 <string>Minun täytyy mennä wc:hen</string>
+                <string>Tarvitsen lääkettä</string>
+                <string>Tarvitsen lepoa</string>
+                <string>Tarvitsen lääkäriä</string>
+                <string>Tarvitsen puhelimen</string>
+                <string>Tarvitsen neuvoja</string>
+                <string>Tarvitsen kuljetuksen</string>
+                <string>Tarvitsen silmälasit</string>
+                <string>Minun täytyy nukkua</string>
+                <string>Tarvitsen aikaa</string>
+                <string>Tarvitsen tietoa</string>
+                <string>Minun täytyy istua</string>
+                <string>Tarvitsen raikasta ilmaa</string>
+                <string>Tarvitsen rauhaa</string>
+                <string>Tarvitsen tukea</string>
+                <string>Minun täytyy mennä kotiin</string>
+                <string>Tarvitsen muutosta</string>
             </array>
         </dict>
     </dict>
@@ -451,111 +1347,485 @@
                 <string>I'm cold</string>
                 <string>I'm hot</string>
                 <string>I'm tired</string>
+                <string>I'm comfortable</string>
+                <string>I'm uncomfortable</string>
+                <string>I need a blanket</string>
+                <string>I need a pillow</string>
+                <string>The temperature is perfect</string>
+                <string>It's too bright</string>
+                <string>It's too dark</string>
+                <string>I need to adjust my position</string>
+                <string>My back hurts</string>
+                <string>I need support</string>
+                <string>I'm dizzy</string>
+                <string>I feel weak</string>
+                <string>I need to stretch</string>
+                <string>I'm sleepy</string>
+                <string>I can't sleep</string>
+                <string>I need peace and quiet</string>
+                <string>I'm feeling better now</string>
             </array>
             <key>es</key><array>
                 <string>Tengo frío</string>
                 <string>Tengo calor</string>
                 <string>Estoy cansado</string>
+                <string>Estoy cómodo</string>
+                <string>Estoy incómodo</string>
+                <string>Necesito una manta</string>
+                <string>Necesito una almohada</string>
+                <string>La temperatura está perfecta</string>
+                <string>Hay demasiada luz</string>
+                <string>Está muy oscuro</string>
+                <string>Necesito cambiar de posición</string>
+                <string>Me duele la espalda</string>
+                <string>Necesito apoyo</string>
+                <string>Estoy mareado</string>
+                <string>Me siento débil</string>
+                <string>Necesito estirarme</string>
+                <string>Tengo sueño</string>
+                <string>No puedo dormir</string>
+                <string>Necesito paz y tranquilidad</string>
+                <string>Me siento mejor ahora</string>
             </array>
             <key>fr</key><array>
                 <string>J'ai froid</string>
                 <string>J'ai chaud</string>
                 <string>Je suis fatigué</string>
+                <string>Je suis à l'aise</string>
+                <string>Je ne suis pas à l'aise</string>
+                <string>J'ai besoin d'une couverture</string>
+                <string>J'ai besoin d'un oreiller</string>
+                <string>La température est parfaite</string>
+                <string>Il y a trop de lumière</string>
+                <string>Il fait trop sombre</string>
+                <string>J'ai besoin de changer de position</string>
+                <string>J'ai mal au dos</string>
+                <string>J'ai besoin de soutien</string>
+                <string>J'ai des vertiges</string>
+                <string>Je me sens faible</string>
+                <string>J'ai besoin de m'étirer</string>
+                <string>J'ai sommeil</string>
+                <string>Je ne peux pas dormir</string>
+                <string>J'ai besoin de paix et de tranquillité</string>
+                <string>Je me sens mieux maintenant</string>
             </array>
             <key>de</key><array>
                 <string>Mir ist kalt</string>
                 <string>Mir ist heiß</string>
                 <string>Ich bin müde</string>
+                <string>Ich fühle mich wohl</string>
+                <string>Ich fühle mich unwohl</string>
+                <string>Ich brauche eine Decke</string>
+                <string>Ich brauche ein Kissen</string>
+                <string>Die Temperatur ist perfekt</string>
+                <string>Es ist zu hell</string>
+                <string>Es ist zu dunkel</string>
+                <string>Ich muss meine Position ändern</string>
+                <string>Mein Rücken tut weh</string>
+                <string>Ich brauche Unterstützung</string>
+                <string>Mir ist schwindelig</string>
+                <string>Ich fühle mich schwach</string>
+                <string>Ich muss mich strecken</string>
+                <string>Ich bin schläfrig</string>
+                <string>Ich kann nicht schlafen</string>
+                <string>Ich brauche Ruhe und Frieden</string>
+                <string>Mir geht es jetzt besser</string>
             </array>
             <key>pt</key><array>
                 <string>Estou com frio</string>
                 <string>Estou com calor</string>
                 <string>Estou cansado</string>
+                <string>Estou confortável</string>
+                <string>Estou desconfortável</string>
+                <string>Preciso de um cobertor</string>
+                <string>Preciso de um travesseiro</string>
+                <string>A temperatura está perfeita</string>
+                <string>Está muito claro</string>
+                <string>Está muito escuro</string>
+                <string>Preciso mudar de posição</string>
+                <string>Minhas costas doem</string>
+                <string>Preciso de apoio</string>
+                <string>Estou com tontura</string>
+                <string>Me sinto fraco</string>
+                <string>Preciso me alongar</string>
+                <string>Estou com sono</string>
+                <string>Não consigo dormir</string>
+                <string>Preciso de paz e sossego</string>
+                <string>Estou me sentindo melhor agora</string>
             </array>
             <key>it</key><array>
                 <string>Ho freddo</string>
                 <string>Ho caldo</string>
                 <string>Sono stanco</string>
+                <string>Sto comodo</string>
+                <string>Non sto comodo</string>
+                <string>Ho bisogno di una coperta</string>
+                <string>Ho bisogno di un cuscino</string>
+                <string>La temperatura è perfetta</string>
+                <string>C'è troppa luce</string>
+                <string>È troppo buio</string>
+                <string>Ho bisogno di cambiare posizione</string>
+                <string>Mi fa male la schiena</string>
+                <string>Ho bisogno di supporto</string>
+                <string>Ho le vertigini</string>
+                <string>Mi sento debole</string>
+                <string>Ho bisogno di allungarmi</string>
+                <string>Ho sonno</string>
+                <string>Non riesco a dormire</string>
+                <string>Ho bisogno di pace e tranquillità</string>
+                <string>Mi sento meglio ora</string>
             </array>
             <key>ja</key><array>
                 <string>寒いです</string>
                 <string>暑いです</string>
                 <string>疲れています</string>
+                <string>快適です</string>
+                <string>不快です</string>
+                <string>毛布が必要です</string>
+                <string>枕が必要です</string>
+                <string>温度は完璧です</string>
+                <string>明るすぎます</string>
+                <string>暗すぎます</string>
+                <string>姿勢を変える必要があります</string>
+                <string>背中が痛いです</string>
+                <string>サポートが必要です</string>
+                <string>めまいがします</string>
+                <string>弱く感じます</string>
+                <string>ストレッチが必要です</string>
+                <string>眠いです</string>
+                <string>眠れません</string>
+                <string>平和と静寂が必要です</string>
+                <string>今気分が良くなりました</string>
             </array>
             <key>nl</key><array>
                 <string>Ik heb het koud</string>
                 <string>Ik heb het warm</string>
                 <string>Ik ben moe</string>
+                <string>Ik voel me comfortabel</string>
+                <string>Ik voel me oncomfortabel</string>
+                <string>Ik heb een deken nodig</string>
+                <string>Ik heb een kussen nodig</string>
+                <string>De temperatuur is perfect</string>
+                <string>Het is te licht</string>
+                <string>Het is te donker</string>
+                <string>Ik moet mijn positie aanpassen</string>
+                <string>Mijn rug doet pijn</string>
+                <string>Ik heb ondersteuning nodig</string>
+                <string>Ik ben duizelig</string>
+                <string>Ik voel me zwak</string>
+                <string>Ik moet me uitrekken</string>
+                <string>Ik ben slaperig</string>
+                <string>Ik kan niet slapen</string>
+                <string>Ik heb rust en stilte nodig</string>
+                <string>Ik voel me nu beter</string>
             </array>
             <key>ru</key><array>
                 <string>Мне холодно</string>
                 <string>Мне жарко</string>
                 <string>Я устал</string>
+                <string>Мне комфортно</string>
+                <string>Мне некомфортно</string>
+                <string>Мне нужно одеяло</string>
+                <string>Мне нужна подушка</string>
+                <string>Температура идеальная</string>
+                <string>Слишком ярко</string>
+                <string>Слишком темно</string>
+                <string>Мне нужно изменить положение</string>
+                <string>У меня болит спина</string>
+                <string>Мне нужна поддержка</string>
+                <string>У меня кружится голова</string>
+                <string>Я чувствую слабость</string>
+                <string>Мне нужно потянуться</string>
+                <string>Я хочу спать</string>
+                <string>Я не могу уснуть</string>
+                <string>Мне нужен покой и тишина</string>
+                <string>Сейчас я чувствую себя лучше</string>
             </array>
             <key>zh</key><array>
                 <string>我冷</string>
                 <string>我热</string>
                 <string>我累了</string>
+                <string>我很舒服</string>
+                <string>我不舒服</string>
+                <string>我需要毯子</string>
+                <string>我需要枕头</string>
+                <string>温度很完美</string>
+                <string>太亮了</string>
+                <string>太暗了</string>
+                <string>我需要调整位置</string>
+                <string>我背痛</string>
+                <string>我需要支撑</string>
+                <string>我头晕</string>
+                <string>我感到虚弱</string>
+                <string>我需要伸展</string>
+                <string>我困了</string>
+                <string>我睡不着</string>
+                <string>我需要平静和安宁</string>
+                <string>我现在感觉好多了</string>
             </array>
             <key>hi</key><array>
                 <string>मुझे ठंड लग रही है</string>
                 <string>मुझे गर्मी लग रही है</string>
                 <string>मैं थक गया हूँ</string>
+                <string>मैं आरामदायक हूँ</string>
+                <string>मैं असहज हूँ</string>
+                <string>मुझे कंबल चाहिए</string>
+                <string>मुझे तकिया चाहिए</string>
+                <string>तापमान बिल्कुल सही है</string>
+                <string>बहुत उजाला है</string>
+                <string>बहुत अंधेरा है</string>
+                <string>मुझे अपनी स्थिति बदलनी है</string>
+                <string>मेरी पीठ में दर्द है</string>
+                <string>मुझे सहारा चाहिए</string>
+                <string>मेरा सिर घूम रहा है</string>
+                <string>मैं कमजोर महसूस कर रहा हूँ</string>
+                <string>मुझे खिंचाव करना है</string>
+                <string>मुझे नींद आ रही है</string>
+                <string>मैं सो नहीं सकता</string>
+                <string>मुझे शांति और चुप्पी चाहिए</string>
+                <string>अब मैं बेहतर महसूस कर रहा हूँ</string>
             </array>
             <key>ar</key><array>
                 <string>أنا بارد</string>
                 <string>أنا حار</string>
                 <string>أنا متعب</string>
+                <string>أنا مرتاح</string>
+                <string>أنا غير مرتاح</string>
+                <string>أحتاج إلى بطانية</string>
+                <string>أحتاج إلى وسادة</string>
+                <string>درجة الحرارة مثالية</string>
+                <string>الضوء ساطع جداً</string>
+                <string>الجو مظلم جداً</string>
+                <string>أحتاج إلى تغيير وضعيتي</string>
+                <string>ظهري يؤلمني</string>
+                <string>أحتاج إلى دعم</string>
+                <string>أشعر بالدوار</string>
+                <string>أشعر بالضعف</string>
+                <string>أحتاج إلى التمدد</string>
+                <string>أشعر بالنعاس</string>
+                <string>لا أستطيع النوم</string>
+                <string>أحتاج إلى السكينة والصمت</string>
+                <string>أشعر بتحسن الآن</string>
             </array>
             <key>bn</key><array>
                 <string>আমার ঠান্ডা লাগছে</string>
                 <string>আমার গরম লাগছে</string>
                 <string>আমি ক্লান্ত</string>
+                <string>আমি আরামদায়ক</string>
+                <string>আমি অস্বস্তিকর</string>
+                <string>আমার কম্বল দরকার</string>
+                <string>আমার বালিশ দরকার</string>
+                <string>তাপমাত্রা ঠিক আছে</string>
+                <string>অনেক উজ্জ্বল</string>
+                <string>অনেক অন্ধকার</string>
+                <string>আমার অবস্থান পরিবর্তন করতে হবে</string>
+                <string>আমার পিঠে ব্যথা</string>
+                <string>আমার সাপোর্ট দরকার</string>
+                <string>আমার মাথা ঘুরছে</string>
+                <string>আমি দুর্বল বোধ করছি</string>
+                <string>আমার স্ট্রেচ করতে হবে</string>
+                <string>আমার ঘুম আসছে</string>
+                <string>আমি ঘুমাতে পারছি না</string>
+                <string>আমার শান্তি এবং নীরবতা দরকার</string>
+                <string>এখন আমি ভালো অনুভব করছি</string>
             </array>
             <key>ko</key><array>
                 <string>추워요</string>
                 <string>더워요</string>
                 <string>피곤해요</string>
+                <string>편안해요</string>
+                <string>불편해요</string>
+                <string>담요가 필요해요</string>
+                <string>베개가 필요해요</string>
+                <string>온도가 완벽해요</string>
+                <string>너무 밝아요</string>
+                <string>너무 어두워요</string>
+                <string>자세를 바꿔야 해요</string>
+                <string>허리가 아파요</string>
+                <string>지지가 필요해요</string>
+                <string>어지러워요</string>
+                <string>약해요</string>
+                <string>스트레칭이 필요해요</string>
+                <string>졸려요</string>
+                <string>잠들 수 없어요</string>
+                <string>평화와 조용함이 필요해요</string>
+                <string>이제 기분이 나아요</string>
             </array>
             <key>tr</key><array>
                 <string>Üşüyorum</string>
                 <string>Sıcak</string>
                 <string>Yorgunum</string>
+                <string>Rahatım</string>
+                <string>Rahatsızım</string>
+                <string>Battaniyeye ihtiyacım var</string>
+                <string>Yastığa ihtiyacım var</string>
+                <string>Sıcaklık mükemmel</string>
+                <string>Çok parlak</string>
+                <string>Çok karanlık</string>
+                <string>Pozisyonumu değiştirmem gerekiyor</string>
+                <string>Sırtım ağrıyor</string>
+                <string>Desteğe ihtiyacım var</string>
+                <string>Başım dönüyor</string>
+                <string>Zayıf hissediyorum</string>
+                <string>Esnemeye ihtiyacım var</string>
+                <string>Uykum geliyor</string>
+                <string>Uyuyamıyorum</string>
+                <string>Huzur ve sessizliğe ihtiyacım var</string>
+                <string>Şimdi daha iyi hissediyorum</string>
             </array>
             <key>pl</key><array>
                 <string>Jest mi zimno</string>
                 <string>Jest mi gorąco</string>
                 <string>Jestem zmęczony</string>
+                <string>Czuję się komfortowo</string>
+                <string>Czuję się niekomfortowo</string>
+                <string>Potrzebuję koca</string>
+                <string>Potrzebuję poduszki</string>
+                <string>Temperatura jest idealna</string>
+                <string>Jest za jasno</string>
+                <string>Jest za ciemno</string>
+                <string>Muszę zmienić pozycję</string>
+                <string>Boli mnie plecy</string>
+                <string>Potrzebuję wsparcia</string>
+                <string>Kręci mi się w głowie</string>
+                <string>Czuję się słabo</string>
+                <string>Muszę się rozciągnąć</string>
+                <string>Chce mi się spać</string>
+                <string>Nie mogę zasnąć</string>
+                <string>Potrzebuję spokoju i ciszy</string>
+                <string>Teraz czuję się lepiej</string>
             </array>
             <key>sv</key><array>
                 <string>Jag fryser</string>
                 <string>Jag är varm</string>
                 <string>Jag är trött</string>
+                <string>Jag är bekväm</string>
+                <string>Jag är obekväm</string>
+                <string>Jag behöver en filt</string>
+                <string>Jag behöver en kudde</string>
+                <string>Temperaturen är perfekt</string>
+                <string>Det är för ljust</string>
+                <string>Det är för mörkt</string>
+                <string>Jag måste byta position</string>
+                <string>Min rygg gör ont</string>
+                <string>Jag behöver stöd</string>
+                <string>Jag känner mig yr</string>
+                <string>Jag känner mig svag</string>
+                <string>Jag behöver stretcha</string>
+                <string>Jag är sömnig</string>
+                <string>Jag kan inte sova</string>
+                <string>Jag behöver fred och tystnad</string>
+                <string>Nu mår jag bättre</string>
             </array>
             <key>vi</key><array>
                 <string>Tôi lạnh</string>
                 <string>Tôi nóng</string>
                 <string>Tôi mệt</string>
+                <string>Tôi cảm thấy thoải mái</string>
+                <string>Tôi cảm thấy khó chịu</string>
+                <string>Tôi cần chăn</string>
+                <string>Tôi cần gối</string>
+                <string>Nhiệt độ hoàn hảo</string>
+                <string>Quá sáng</string>
+                <string>Quá tối</string>
+                <string>Tôi cần thay đổi tư thế</string>
+                <string>Lưng tôi đau</string>
+                <string>Tôi cần hỗ trợ</string>
+                <string>Tôi cảm thấy chóng mặt</string>
+                <string>Tôi cảm thấy yếu</string>
+                <string>Tôi cần duỗi người</string>
+                <string>Tôi buồn ngủ</string>
+                <string>Tôi không thể ngủ</string>
+                <string>Tôi cần bình yên và tĩnh lặng</string>
+                <string>Bây giờ tôi cảm thấy tốt hơn</string>
             </array>
             <key>id</key><array>
                 <string>Saya kedinginan</string>
                 <string>Saya kepanasan</string>
                 <string>Saya lelah</string>
+                <string>Saya merasa nyaman</string>
+                <string>Saya merasa tidak nyaman</string>
+                <string>Saya butuh selimut</string>
+                <string>Saya butuh bantal</string>
+                <string>Suhu sudah sempurna</string>
+                <string>Terlalu terang</string>
+                <string>Terlalu gelap</string>
+                <string>Saya perlu mengubah posisi</string>
+                <string>Punggung saya sakit</string>
+                <string>Saya butuh penyangga</string>
+                <string>Saya merasa pusing</string>
+                <string>Saya merasa lemah</string>
+                <string>Saya perlu peregangan</string>
+                <string>Saya mengantuk</string>
+                <string>Saya tidak bisa tidur</string>
+                <string>Saya butuh kedamaian dan ketenangan</string>
+                <string>Sekarang saya merasa lebih baik</string>
             </array>
             <key>ur</key><array>
                 <string>مجھے سردی لگ رہی ہے</string>
                 <string>مجھے گرمی لگ رہی ہے</string>
                 <string>میں تھک گیا ہوں</string>
+                <string>میں آرام سے ہوں</string>
+                <string>میں بے آرام ہوں</string>
+                <string>مجھے کمبل چاہیے</string>
+                <string>مجھے تکیہ چاہیے</string>
+                <string>درجہ حرارت بہترین ہے</string>
+                <string>بہت روشن ہے</string>
+                <string>بہت اندھیرا ہے</string>
+                <string>مجھے اپنی حالت بدلنی ہے</string>
+                <string>میری کمر میں درد ہے</string>
+                <string>مجھے سہارا چاہیے</string>
+                <string>مجھے چکر آ رہے ہیں</string>
+                <string>میں کمزور محسوس کر رہا ہوں</string>
+                <string>مجھے کھینچنا ہے</string>
+                <string>مجھے نیند آ رہی ہے</string>
+                <string>میں سو نہیں سکتا</string>
+                <string>مجھے سکون اور خاموشی چاہیے</string>
+                <string>اب میں بہتر محسوس کر رہا ہوں</string>
             </array>
             <key>tl</key><array>
                 <string>Ginaw ako</string>
                 <string>Mainit ako</string>
                 <string>Pagod ako</string>
+                <string>Komportable ako</string>
+                <string>Hindi ako komportable</string>
+                <string>Kailangan ko ng kumot</string>
+                <string>Kailangan ko ng unan</string>
+                <string>Perpekto ang temperatura</string>
+                <string>Masyadong maliwanag</string>
+                <string>Masyadong madilim</string>
+                <string>Kailangan kong baguhin ang posisyon ko</string>
+                <string>Masakit ang likod ko</string>
+                <string>Kailangan ko ng suporta</string>
+                <string>Nahihilo ako</string>
+                <string>Mahina ako</string>
+                <string>Kailangan kong mag-stretch</string>
+                <string>Inaantok ako</string>
+                <string>Hindi ako makatulog</string>
+                <string>Kailangan ko ng kapayapaan at katahimikan</string>
+                <string>Mas mabuti na ang pakiramdam ko ngayon</string>
             </array>
             <key>th</key><array>
                 <string>ฉันหนาว</string>
                 <string>ฉันร้อน</string>
                 <string>ฉันเหนื่อย</string>
+                <string>ฉันสบาย</string>
+                <string>ฉันไม่สบาย</string>
+                <string>ฉันต้องการผ้าห่ม</string>
+                <string>ฉันต้องการหมอน</string>
+                <string>อุณหภูมิดีมาก</string>
+                <string>สว่างเกินไป</string>
+                <string>มืดเกินไป</string>
+                <string>ฉันต้องการเปลี่ยนท่า</string>
+                <string>หลังฉันปวด</string>
+                <string>ฉันต้องการการพยุง</string>
+                <string>ฉันเวียนหัว</string>
+                <string>ฉันรู้สึกอ่อนแอ</string>
+                <string>ฉันต้องการยืดเส้น</string>
+                <string>ฉันง่วง</string>
+                <string>ฉันนอนไม่หลับ</string>
+                <string>ฉันต้องการความสงบและเงียบ</string>
+                <string>ตอนนี้ฉันรู้สึกดีขึ้น</string>
             </array>
             <key>el</key><array>
                 <string>Κρυώνω</string>
@@ -566,26 +1836,111 @@
                 <string>Je mi zima</string>
                 <string>Je mi horko</string>
                 <string>Jsem unavený</string>
+                <string>Cítím se pohodlně</string>
+                <string>Je mi nepohodlně</string>
+                <string>Potřebuji deku</string>
+                <string>Potřebuji polštář</string>
+                <string>Teplota je příjemná</string>
+                <string>Je příliš světlo</string>
+                <string>Je příliš tmavé</string>
+                <string>Potřebuji změnit polohu</string>
+                <string>Bolí mě záda</string>
+                <string>Potřebuji podpěru</string>
+                <string>Je mi nevolno</string>
+                <string>Cítím se slabý</string>
+                <string>Potřebuji se protáhnout</string>
+                <string>Jsem ospalý</string>
+                <string>Nemůžu spát</string>
+                <string>Potřebuji klid a ticho</string>
+                <string>Teď se cítím lépe</string>
             </array>
             <key>hu</key><array>
                 <string>Fázom</string>
                 <string>Melegem van</string>
                 <string>Fáradt vagyok</string>
+                <string>Kényelmesen érzem magam</string>
+                <string>Kényelmetlenül érzem magam</string>
+                <string>Takaróra van szükségem</string>
+                <string>Párnára van szükségem</string>
+                <string>A hőmérséklet kellemes</string>
+                <string>Túl világos</string>
+                <string>Túl sötét</string>
+                <string>Helyzetet kell változtatnom</string>
+                <string>Fáj a hátam</string>
+                <string>Támasztékra van szükségem</string>
+                <string>Szédülök</string>
+                <string>Gyengének érzem magam</string>
+                <string>Nyújtóznom kell</string>
+                <string>Álmos vagyok</string>
+                <string>Nem tudok aludni</string>
+                <string>Békére és csöndre van szükségem</string>
+                <string>Most jobban érzem magam</string>
             </array>
             <key>ro</key><array>
                 <string>Îmi este frig</string>
                 <string>Îmi este cald</string>
                 <string>Sunt obosit</string>
+                <string>Mă simt confortabil</string>
+                <string>Mă simt inconfortabil</string>
+                <string>Am nevoie de o pătură</string>
+                <string>Am nevoie de o pernă</string>
+                <string>Temperatura este plăcută</string>
+                <string>Este prea luminos</string>
+                <string>Este prea întunecat</string>
+                <string>Trebuie să îmi schimb poziția</string>
+                <string>Mă doare spatele</string>
+                <string>Am nevoie de sprijin</string>
+                <string>Mi-e rău</string>
+                <string>Mă simt slăbit</string>
+                <string>Trebuie să mă întind</string>
+                <string>Sunt somnoros</string>
+                <string>Nu pot dormi</string>
+                <string>Am nevoie de pace și liniște</string>
+                <string>Acum mă simt mai bine</string>
             </array>
             <key>da</key><array>
                 <string>Jeg fryser</string>
                 <string>Jeg er varm</string>
                 <string>Jeg er træt</string>
+                <string>Jeg føler mig komfortabel</string>
+                <string>Jeg føler mig ukomfortabel</string>
+                <string>Jeg har brug for et tæppe</string>
+                <string>Jeg har brug for en pude</string>
+                <string>Temperaturen er behagelig</string>
+                <string>Det er for lyst</string>
+                <string>Det er for mørkt</string>
+                <string>Jeg skal skifte position</string>
+                <string>Jeg har ondt i ryggen</string>
+                <string>Jeg har brug for støtte</string>
+                <string>Jeg er svimmel</string>
+                <string>Jeg føler mig svag</string>
+                <string>Jeg skal strække mig</string>
+                <string>Jeg er søvnig</string>
+                <string>Jeg kan ikke sove</string>
+                <string>Jeg har brug for ro og stilhed</string>
+                <string>Nu har jeg det bedre</string>
             </array>
             <key>fi</key><array>
                 <string>Minulla on kylmä</string>
                 <string>Minulla on kuuma</string>
                 <string>Olen väsynyt</string>
+                <string>Tunnen oloni mukavaksi</string>
+                <string>Tunnen oloni epämukavaksi</string>
+                <string>Tarvitsen peitteen</string>
+                <string>Tarvitsen tyynyn</string>
+                <string>Lämpötila on miellyttävä</string>
+                <string>On liian valoisaa</string>
+                <string>On liian pimeää</string>
+                <string>Minun täytyy vaihtaa asentoa</string>
+                <string>Selkäni särkee</string>
+                <string>Tarvitsen tukea</string>
+                <string>Minua huimaa</string>
+                <string>Tunnen oloni heikoksi</string>
+                <string>Minun täytyy venytellä</string>
+                <string>Olen unelias</string>
+                <string>En pysty nukkumaan</string>
+                <string>Tarvitsen rauhaa ja hiljaisuutta</string>
+                <string>Nyt voin paremmin</string>
             </array>
         </dict>
     </dict>
@@ -629,132 +1984,484 @@
                 <string>I'm sad</string>
                 <string>I'm angry</string>
                 <string>I'm scared</string>
+                <string>I'm excited</string>
+                <string>I'm worried</string>
+                <string>I'm confused</string>
+                <string>I'm frustrated</string>
+                <string>I'm proud</string>
+                <string>I'm grateful</string>
+                <string>I'm nervous</string>
+                <string>I'm calm</string>
+                <string>I'm anxious</string>
+                <string>I'm disappointed</string>
+                <string>I'm hopeful</string>
+                <string>I'm lonely</string>
+                <string>I'm content</string>
+                <string>I'm surprised</string>
+                <string>I'm embarrassed</string>
+                <string>I feel peaceful</string>
             </array>
             <key>es</key><array>
                 <string>Estoy feliz</string>
                 <string>Estoy triste</string>
                 <string>Estoy enojado</string>
                 <string>Tengo miedo</string>
+                <string>Estoy emocionado</string>
+                <string>Estoy preocupado</string>
+                <string>Estoy confundido</string>
+                <string>Estoy frustrado</string>
+                <string>Estoy orgulloso</string>
+                <string>Estoy agradecido</string>
+                <string>Estoy nervioso</string>
+                <string>Estoy tranquilo</string>
+                <string>Estoy ansioso</string>
+                <string>Estoy decepcionado</string>
+                <string>Tengo esperanza</string>
+                <string>Me siento solo</string>
+                <string>Estoy contento</string>
+                <string>Estoy sorprendido</string>
+                <string>Estoy avergonzado</string>
+                <string>Me siento en paz</string>
             </array>
             <key>fr</key><array>
                 <string>Je suis heureux</string>
                 <string>Je suis triste</string>
                 <string>Je suis en colère</string>
                 <string>J'ai peur</string>
+                <string>Je suis excité</string>
+                <string>Je suis inquiet</string>
+                <string>Je suis confus</string>
+                <string>Je suis frustré</string>
+                <string>Je suis fier</string>
+                <string>Je suis reconnaissant</string>
+                <string>Je suis nerveux</string>
+                <string>Je suis calme</string>
+                <string>Je suis anxieux</string>
+                <string>Je suis déçu</string>
+                <string>J'ai de l'espoir</string>
+                <string>Je me sens seul</string>
+                <string>Je suis content</string>
+                <string>Je suis surpris</string>
+                <string>Je suis gêné</string>
+                <string>Je me sens en paix</string>
             </array>
             <key>de</key><array>
                 <string>Ich bin glücklich</string>
                 <string>Ich bin traurig</string>
                 <string>Ich bin wütend</string>
                 <string>Ich habe Angst</string>
+                <string>Ich bin aufgeregt</string>
+                <string>Ich mache mir Sorgen</string>
+                <string>Ich bin verwirrt</string>
+                <string>Ich bin frustriert</string>
+                <string>Ich bin stolz</string>
+                <string>Ich bin dankbar</string>
+                <string>Ich bin nervös</string>
+                <string>Ich bin ruhig</string>
+                <string>Ich bin ängstlich</string>
+                <string>Ich bin enttäuscht</string>
+                <string>Ich bin hoffnungsvoll</string>
+                <string>Ich fühle mich einsam</string>
+                <string>Ich bin zufrieden</string>
+                <string>Ich bin überrascht</string>
+                <string>Mir ist peinlich</string>
+                <string>Ich fühle mich friedlich</string>
             </array>
             <key>pt</key><array>
                 <string>Estou feliz</string>
                 <string>Estou triste</string>
                 <string>Estou bravo</string>
                 <string>Tenho medo</string>
+                <string>Estou animado</string>
+                <string>Estou preocupado</string>
+                <string>Estou confuso</string>
+                <string>Estou frustrado</string>
+                <string>Estou orgulhoso</string>
+                <string>Estou grato</string>
+                <string>Estou nervoso</string>
+                <string>Estou calmo</string>
+                <string>Estou ansioso</string>
+                <string>Estou decepcionado</string>
+                <string>Tenho esperança</string>
+                <string>Me sinto sozinho</string>
+                <string>Estou satisfeito</string>
+                <string>Estou surpreso</string>
+                <string>Estou envergonhado</string>
+                <string>Me sinto em paz</string>
             </array>
             <key>it</key><array>
                 <string>Sono felice</string>
                 <string>Sono triste</string>
                 <string>Sono arrabbiato</string>
                 <string>Ho paura</string>
+                <string>Sono eccitato</string>
+                <string>Sono preoccupato</string>
+                <string>Sono confuso</string>
+                <string>Sono frustrato</string>
+                <string>Sono orgoglioso</string>
+                <string>Sono grato</string>
+                <string>Sono nervoso</string>
+                <string>Sono calmo</string>
+                <string>Sono ansioso</string>
+                <string>Sono deluso</string>
+                <string>Ho speranza</string>
+                <string>Mi sento solo</string>
+                <string>Sono contento</string>
+                <string>Sono sorpreso</string>
+                <string>Sono imbarazzato</string>
+                <string>Mi sento in pace</string>
             </array>
             <key>ja</key><array>
                 <string>幸せです</string>
                 <string>悲しいです</string>
                 <string>怒っています</string>
                 <string>怖いです</string>
+                <string>興奮しています</string>
+                <string>心配しています</string>
+                <string>混乱しています</string>
+                <string>イライラしています</string>
+                <string>誇りに思います</string>
+                <string>感謝しています</string>
+                <string>緊張しています</string>
+                <string>落ち着いています</string>
+                <string>不安です</string>
+                <string>失望しています</string>
+                <string>希望を持っています</string>
+                <string>孤独を感じています</string>
+                <string>満足しています</string>
+                <string>驚いています</string>
+                <string>恥ずかしいです</string>
+                <string>平和を感じています</string>
             </array>
             <key>nl</key><array>
                 <string>Ik ben blij</string>
                 <string>Ik ben verdrietig</string>
                 <string>Ik ben boos</string>
                 <string>Ik ben bang</string>
+                <string>Ik ben opgewonden</string>
+                <string>Ik maak me zorgen</string>
+                <string>Ik ben verward</string>
+                <string>Ik ben gefrustreerd</string>
+                <string>Ik ben trots</string>
+                <string>Ik ben dankbaar</string>
+                <string>Ik ben nerveus</string>
+                <string>Ik ben rustig</string>
+                <string>Ik ben angstig</string>
+                <string>Ik ben teleurgesteld</string>
+                <string>Ik ben hoopvol</string>
+                <string>Ik voel me eenzaam</string>
+                <string>Ik ben tevreden</string>
+                <string>Ik ben verrast</string>
+                <string>Ik schaam me</string>
+                <string>Ik voel me vredig</string>
             </array>
             <key>ru</key><array>
                 <string>Я счастлив</string>
                 <string>Мне грустно</string>
                 <string>Я сержусь</string>
                 <string>Мне страшно</string>
+                <string>Я взволнован</string>
+                <string>Я волнуюсь</string>
+                <string>Я растерян</string>
+                <string>Я расстроен</string>
+                <string>Я горжусь</string>
+                <string>Я благодарен</string>
+                <string>Я нервничаю</string>
+                <string>Я спокоен</string>
+                <string>Я тревожусь</string>
+                <string>Я разочарован</string>
+                <string>У меня есть надежда</string>
+                <string>Я чувствую себя одиноко</string>
+                <string>Я доволен</string>
+                <string>Я удивлён</string>
+                <string>Мне стыдно</string>
+                <string>Я чувствую покой</string>
             </array>
             <key>zh</key><array>
                 <string>我很开心</string>
                 <string>我很难过</string>
                 <string>我很生气</string>
                 <string>我很害怕</string>
+                <string>我很兴奋</string>
+                <string>我很担心</string>
+                <string>我很困惑</string>
+                <string>我很沮丧</string>
+                <string>我很自豪</string>
+                <string>我很感激</string>
+                <string>我很紧张</string>
+                <string>我很平静</string>
+                <string>我很焦虑</string>
+                <string>我很失望</string>
+                <string>我很有希望</string>
+                <string>我感到孤独</string>
+                <string>我很满足</string>
+                <string>我很惊讶</string>
+                <string>我很尴尬</string>
+                <string>我感到平和</string>
             </array>
             <key>hi</key><array>
                 <string>मैं खुश हूँ</string>
                 <string>मैं दुखी हूँ</string>
                 <string>मैं गुस्से में हूँ</string>
                 <string>मैं डर गया हूँ</string>
+                <string>मैं उत्साहित हूँ</string>
+                <string>मैं चिंतित हूँ</string>
+                <string>मैं भ्रमित हूँ</string>
+                <string>मैं निराश हूँ</string>
+                <string>मुझे गर्व है</string>
+                <string>मैं आभारी हूँ</string>
+                <string>मैं घबराया हुआ हूँ</string>
+                <string>मैं शांत हूँ</string>
+                <string>मैं चिंतित हूँ</string>
+                <string>मैं निराश हूँ</string>
+                <string>मुझे उम्मीद है</string>
+                <string>मैं अकेला महसूस कर रहा हूँ</string>
+                <string>मैं संतुष्ट हूँ</string>
+                <string>मैं हैरान हूँ</string>
+                <string>मैं शर्मिंदा हूँ</string>
+                <string>मैं शांति महसूस कर रहा हूँ</string>
             </array>
             <key>ar</key><array>
                 <string>أنا سعيد</string>
                 <string>أنا حزين</string>
                 <string>أنا غاضب</string>
                 <string>أنا خائف</string>
+                <string>أنا متحمس</string>
+                <string>أنا قلق</string>
+                <string>أنا مرتبك</string>
+                <string>أنا محبط</string>
+                <string>أنا فخور</string>
+                <string>أنا ممتن</string>
+                <string>أنا متوتر</string>
+                <string>أنا هادئ</string>
+                <string>أنا قلق</string>
+                <string>أشعر باليأس</string>
+                <string>أشعر بالأمل</string>
+                <string>أشعر بالوحدة</string>
+                <string>أنا راض</string>
+                <string>أنا مندهش</string>
+                <string>أنا محرج</string>
+                <string>أشعر بالسلام</string>
             </array>
             <key>bn</key><array>
                 <string>আমি খুশি</string>
                 <string>আমি দুঃখিত</string>
                 <string>আমি রাগান্বিত</string>
                 <string>আমি ভয় পেয়েছি</string>
+                <string>আমি উত্সাহিত</string>
+                <string>আমি চিন্তিত</string>
+                <string>আমি বিভ্রান্ত</string>
+                <string>আমি হতাশ</string>
+                <string>আমি গর্বিত</string>
+                <string>আমি কৃতজ্ঞ</string>
+                <string>আমি উত্তেজিত</string>
+                <string>আমি শান্ত</string>
+                <string>আমি চিন্তিত</string>
+                <string>আমি নিরাশ</string>
+                <string>আমি আশাবাদী</string>
+                <string>আমি একা অনুভব করছি</string>
+                <string>আমি সন্তুষ্ট</string>
+                <string>আমি অবাক</string>
+                <string>আমি লজ্জিত</string>
+                <string>আমি শান্তিতে অনুভব করছি</string>
             </array>
             <key>ko</key><array>
                 <string>행복해요</string>
                 <string>슬퍼요</string>
                 <string>화나요</string>
                 <string>무서워요</string>
+                <string>신나요</string>
+                <string>걱정돼요</string>
+                <string>혼란스러워요</string>
+                <string>좌절스러워요</string>
+                <string>자랑스러워요</string>
+                <string>감사해요</string>
+                <string>긴장돼요</string>
+                <string>차분해요</string>
+                <string>불안해요</string>
+                <string>실망스러워요</string>
+                <string>희망적이에요</string>
+                <string>외로워요</string>
+                <string>만족해요</string>
+                <string>놀랐어요</string>
+                <string>부끄러워요</string>
+                <string>평화로워요</string>
             </array>
             <key>tr</key><array>
                 <string>Mutluyum</string>
                 <string>Üzgünüm</string>
                 <string>Kızgınım</string>
                 <string>Korkuyorum</string>
+                <string>Heyecanlıyım</string>
+                <string>Endişeliyim</string>
+                <string>Kafam karışık</string>
+                <string>Hayal kırıklığına uğradım</string>
+                <string>Gurur duyuyorum</string>
+                <string>Minnettarım</string>
+                <string>Gerginim</string>
+                <string>Sakinim</string>
+                <string>Endişeliyim</string>
+                <string>Umutsuzum</string>
+                <string>Umutluyum</string>
+                <string>Yalnızlık hissediyorum</string>
+                <string>Memnunum</string>
+                <string>Şaşırdım</string>
+                <string>Utanıyorum</string>
+                <string>Huzur hissediyorum</string>
             </array>
             <key>pl</key><array>
                 <string>Jestem szczęśliwy</string>
                 <string>Jestem smutny</string>
                 <string>Jestem zły</string>
                 <string>Boję się</string>
+                <string>Jestem podekscytowany</string>
+                <string>Martwię się</string>
+                <string>Jestem zdezorientowany</string>
+                <string>Jestem sfrustrowany</string>
+                <string>Jestem dumny</string>
+                <string>Jestem wdzięczny</string>
+                <string>Jestem zdenerwowany</string>
+                <string>Jestem spokojny</string>
+                <string>Jestem niespokojny</string>
+                <string>Czuję się beznadziejnie</string>
+                <string>Mam nadzieję</string>
+                <string>Czuję się samotny</string>
+                <string>Jestem zadowolony</string>
+                <string>Jestem zaskoczony</string>
+                <string>Wstydzę się</string>
+                <string>Czuję się spokojnie</string>
             </array>
             <key>sv</key><array>
                 <string>Jag är glad</string>
                 <string>Jag är ledsen</string>
                 <string>Jag är arg</string>
                 <string>Jag är rädd</string>
+                <string>Jag är uppspelt</string>
+                <string>Jag är orolig</string>
+                <string>Jag är förvirrad</string>
+                <string>Jag är frustrerad</string>
+                <string>Jag är stolt</string>
+                <string>Jag är tacksam</string>
+                <string>Jag är nervös</string>
+                <string>Jag är lugn</string>
+                <string>Jag är orolig</string>
+                <string>Jag känner mig hopplös</string>
+                <string>Jag har hopp</string>
+                <string>Jag känner mig ensam</string>
+                <string>Jag är nöjd</string>
+                <string>Jag är förvånad</string>
+                <string>Jag skäms</string>
+                <string>Jag känner mig i fred</string>
             </array>
             <key>vi</key><array>
                 <string>Tôi vui</string>
                 <string>Tôi buồn</string>
                 <string>Tôi giận</string>
                 <string>Tôi sợ</string>
+                <string>Tôi phấn khích</string>
+                <string>Tôi lo lắng</string>
+                <string>Tôi bối rối</string>
+                <string>Tôi thất vọng</string>
+                <string>Tôi tự hào</string>
+                <string>Tôi biết ơn</string>
+                <string>Tôi căng thẳng</string>
+                <string>Tôi bình tĩnh</string>
+                <string>Tôi lo lắng</string>
+                <string>Tôi cảm thấy tuyệt vọng</string>
+                <string>Tôi có hy vọng</string>
+                <string>Tôi cảm thấy cô đơn</string>
+                <string>Tôi hài lòng</string>
+                <string>Tôi ngạc nhiên</string>
+                <string>Tôi xấu hổ</string>
+                <string>Tôi cảm thấy bình yên</string>
             </array>
             <key>id</key><array>
                 <string>Saya senang</string>
                 <string>Saya sedih</string>
                 <string>Saya marah</string>
                 <string>Saya takut</string>
+                <string>Saya bersemangat</string>
+                <string>Saya khawatir</string>
+                <string>Saya bingung</string>
+                <string>Saya frustrasi</string>
+                <string>Saya bangga</string>
+                <string>Saya bersyukur</string>
+                <string>Saya tegang</string>
+                <string>Saya tenang</string>
+                <string>Saya cemas</string>
+                <string>Saya merasa putus asa</string>
+                <string>Saya berharap</string>
+                <string>Saya merasa kesepian</string>
+                <string>Saya puas</string>
+                <string>Saya terkejut</string>
+                <string>Saya malu</string>
+                <string>Saya merasa damai</string>
             </array>
             <key>ur</key><array>
                 <string>میں خوش ہوں</string>
                 <string>میں اداس ہوں</string>
                 <string>میں غصے میں ہوں</string>
                 <string>میں ڈر گیا ہوں</string>
+                <string>میں پرجوش ہوں</string>
+                <string>میں پریشان ہوں</string>
+                <string>میں الجھن میں ہوں</string>
+                <string>میں مایوس ہوں</string>
+                <string>میں فخر محسوس کرتا ہوں</string>
+                <string>میں شکر گزار ہوں</string>
+                <string>میں گھبرایا ہوا ہوں</string>
+                <string>میں پرسکون ہوں</string>
+                <string>میں بے چین ہوں</string>
+                <string>میں مایوس ہوں</string>
+                <string>میں امیدوار ہوں</string>
+                <string>میں اکیلا محسوس کرتا ہوں</string>
+                <string>میں مطمئن ہوں</string>
+                <string>میں حیران ہوں</string>
+                <string>میں شرمندہ ہوں</string>
+                <string>میں سکون محسوس کرتا ہوں</string>
             </array>
             <key>tl</key><array>
                 <string>Masaya ako</string>
                 <string>Malungkot ako</string>
                 <string>Galit ako</string>
                 <string>Takot ako</string>
+                <string>Excited ako</string>
+                <string>Nag-aalala ako</string>
+                <string>Nalilito ako</string>
+                <string>Frustrated ako</string>
+                <string>Proud ako</string>
+                <string>Grateful ako</string>
+                <string>Nervous ako</string>
+                <string>Calm ako</string>
+                <string>Anxious ako</string>
+                <string>Disappointed ako</string>
+                <string>May pag-asa ako</string>
+                <string>Malungkot ako</string>
+                <string>Satisfied ako</string>
+                <string>Surprised ako</string>
+                <string>Nahihiya ako</string>
+                <string>Mapayapa ang pakiramdam ko</string>
             </array>
             <key>th</key><array>
                 <string>ฉันมีความสุข</string>
                 <string>ฉันเศร้า</string>
                 <string>ฉันโกรธ</string>
                 <string>ฉันกลัว</string>
+                <string>ฉันตื่นเต้น</string>
+                <string>ฉันกังวล</string>
+                <string>ฉันสับสน</string>
+                <string>ฉันผิดหวัง</string>
+                <string>ฉันภูมิใจ</string>
+                <string>ฉันรู้สึกขอบคุณ</string>
+                <string>ฉันประหม่า</string>
+                <string>ฉันสงบ</string>
+                <string>ฉันวิตกกังวล</string>
+                <string>ฉันผิดหวัง</string>
+                <string>ฉันมีความหวัง</string>
+                <string>ฉันรู้สึกเหงา</string>
+                <string>ฉันพอใจ</string>
+                <string>ฉันแปลกใจ</string>
+                <string>ฉันอาย</string>
+                <string>ฉันรู้สึกสงบ</string>
             </array>
             <key>el</key><array>
                 <string>Είμαι χαρούμενος</string>
@@ -767,30 +2474,110 @@
                 <string>Jsem smutný</string>
                 <string>Jsem rozzlobený</string>
                 <string>Bojím se</string>
+                <string>Jsem nadšený</string>
+                <string>Jsem nervózní</string>
+                <string>Jsem zklamaný</string>
+                <string>Jsem nadšený</string>
+                <string>Jsem unavený</string>
+                <string>Jsem spokojený</string>
+                <string>Jsem frustrovaný</string>
+                <string>Jsem hrdý</string>
+                <string>Cítím se osamělý</string>
+                <string>Jsem vděčný</string>
+                <string>Jsem zmatený</string>
+                <string>Jsem překvapený</string>
+                <string>Stydím se</string>
+                <string>Cítím se klidně</string>
+                <string>Jsem optimistický</string>
+                <string>Cítím naději</string>
             </array>
             <key>hu</key><array>
                 <string>Boldog vagyok</string>
                 <string>Szomorú vagyok</string>
                 <string>Mérges vagyok</string>
                 <string>Félek</string>
+                <string>Izgatott vagyok</string>
+                <string>Ideges vagyok</string>
+                <string>Csalódott vagyok</string>
+                <string>Lelkes vagyok</string>
+                <string>Fáradt vagyok</string>
+                <string>Elégedett vagyok</string>
+                <string>Frusztrált vagyok</string>
+                <string>Büszke vagyok</string>
+                <string>Magányos vagyok</string>
+                <string>Hálás vagyok</string>
+                <string>Zavarodott vagyok</string>
+                <string>Meglepődött vagyok</string>
+                <string>Szégyenkezem</string>
+                <string>Békés vagyok</string>
+                <string>Optimista vagyok</string>
+                <string>Reménnyel telek</string>
             </array>
             <key>ro</key><array>
                 <string>Sunt fericit</string>
                 <string>Sunt trist</string>
                 <string>Sunt supărat</string>
                 <string>Mi-e frică</string>
+                <string>Sunt entuziasmat</string>
+                <string>Sunt nervos</string>
+                <string>Sunt dezamăgit</string>
+                <string>Sunt încântat</string>
+                <string>Sunt obosit</string>
+                <string>Sunt mulțumit</string>
+                <string>Sunt frustrat</string>
+                <string>Sunt mândru</string>
+                <string>Mă simt singur</string>
+                <string>Sunt recunoscător</string>
+                <string>Sunt confuz</string>
+                <string>Sunt surprins</string>
+                <string>Îmi e rușine</string>
+                <string>Mă simt liniștit</string>
+                <string>Sunt optimist</string>
+                <string>Simt speranță</string>
             </array>
             <key>da</key><array>
                 <string>Jeg er glad</string>
                 <string>Jeg er ked af det</string>
                 <string>Jeg er sur</string>
                 <string>Jeg er bange</string>
+                <string>Jeg er begejstret</string>
+                <string>Jeg er nervøs</string>
+                <string>Jeg er skuffet</string>
+                <string>Jeg er ophidset</string>
+                <string>Jeg er træt</string>
+                <string>Jeg er tilfreds</string>
+                <string>Jeg er frustreret</string>
+                <string>Jeg er stolt</string>
+                <string>Jeg føler mig ensom</string>
+                <string>Jeg er taknemmelig</string>
+                <string>Jeg er forvirret</string>
+                <string>Jeg er overrasket</string>
+                <string>Jeg skammer mig</string>
+                <string>Jeg føler mig rolig</string>
+                <string>Jeg er optimistisk</string>
+                <string>Jeg føler håb</string>
             </array>
             <key>fi</key><array>
                 <string>Olen iloinen</string>
                 <string>Olen surullinen</string>
                 <string>Olen vihainen</string>
                 <string>Pelkään</string>
+                <string>Olen innostunut</string>
+                <string>Olen hermostunut</string>
+                <string>Olen pettynyt</string>
+                <string>Olen innoissani</string>
+                <string>Olen väsynyt</string>
+                <string>Olen tyytyväinen</string>
+                <string>Olen turhautunut</string>
+                <string>Olen ylpeä</string>
+                <string>Tunnen itseni yksinäiseksi</string>
+                <string>Olen kiitollinen</string>
+                <string>Olen hämmentynyt</string>
+                <string>Olen yllättynyt</string>
+                <string>Häpeän</string>
+                <string>Tunnen oloni rauhalliseksi</string>
+                <string>Olen optimistinen</string>
+                <string>Tunnen toivoa</string>
             </array>
         </dict>
     </dict>
@@ -833,111 +2620,485 @@
                 <string>Yes</string>
                 <string>No</string>
                 <string>Maybe</string>
+                <string>I don't know</string>
+                <string>I understand</string>
+                <string>I don't understand</string>
+                <string>Please repeat</string>
+                <string>Speak slower</string>
+                <string>That's correct</string>
+                <string>That's wrong</string>
+                <string>I agree</string>
+                <string>I disagree</string>
+                <string>Wait</string>
+                <string>Stop</string>
+                <string>Continue</string>
+                <string>I'm ready</string>
+                <string>I'm not ready</string>
+                <string>OK</string>
+                <string>Never mind</string>
+                <string>That's enough</string>
             </array>
             <key>es</key><array>
                 <string>Sí</string>
                 <string>No</string>
                 <string>Quizás</string>
+                <string>No sé</string>
+                <string>Entiendo</string>
+                <string>No entiendo</string>
+                <string>Por favor repite</string>
+                <string>Habla más despacio</string>
+                <string>Eso es correcto</string>
+                <string>Eso está mal</string>
+                <string>Estoy de acuerdo</string>
+                <string>No estoy de acuerdo</string>
+                <string>Espera</string>
+                <string>Para</string>
+                <string>Continúa</string>
+                <string>Estoy listo</string>
+                <string>No estoy listo</string>
+                <string>OK</string>
+                <string>No importa</string>
+                <string>Es suficiente</string>
             </array>
             <key>fr</key><array>
                 <string>Oui</string>
                 <string>Non</string>
                 <string>Peut-être</string>
+                <string>Je ne sais pas</string>
+                <string>Je comprends</string>
+                <string>Je ne comprends pas</string>
+                <string>Répétez s'il vous plaît</string>
+                <string>Parlez plus lentement</string>
+                <string>C'est correct</string>
+                <string>C'est faux</string>
+                <string>Je suis d'accord</string>
+                <string>Je ne suis pas d'accord</string>
+                <string>Attendez</string>
+                <string>Arrêtez</string>
+                <string>Continuez</string>
+                <string>Je suis prêt</string>
+                <string>Je ne suis pas prêt</string>
+                <string>D'accord</string>
+                <string>Peu importe</string>
+                <string>Ça suffit</string>
             </array>
             <key>de</key><array>
                 <string>Ja</string>
                 <string>Nein</string>
                 <string>Vielleicht</string>
+                <string>Ich weiß nicht</string>
+                <string>Ich verstehe</string>
+                <string>Ich verstehe nicht</string>
+                <string>Bitte wiederholen</string>
+                <string>Sprechen Sie langsamer</string>
+                <string>Das ist richtig</string>
+                <string>Das ist falsch</string>
+                <string>Ich stimme zu</string>
+                <string>Ich stimme nicht zu</string>
+                <string>Warten</string>
+                <string>Stopp</string>
+                <string>Weiter</string>
+                <string>Ich bin bereit</string>
+                <string>Ich bin nicht bereit</string>
+                <string>OK</string>
+                <string>Macht nichts</string>
+                <string>Das reicht</string>
             </array>
             <key>pt</key><array>
                 <string>Sim</string>
                 <string>Não</string>
                 <string>Talvez</string>
+                <string>Não sei</string>
+                <string>Entendo</string>
+                <string>Não entendo</string>
+                <string>Por favor repita</string>
+                <string>Fale mais devagar</string>
+                <string>Isso está correto</string>
+                <string>Isso está errado</string>
+                <string>Concordo</string>
+                <string>Não concordo</string>
+                <string>Espere</string>
+                <string>Pare</string>
+                <string>Continue</string>
+                <string>Estou pronto</string>
+                <string>Não estou pronto</string>
+                <string>OK</string>
+                <string>Deixa pra lá</string>
+                <string>Já chega</string>
             </array>
             <key>it</key><array>
                 <string>Sì</string>
                 <string>No</string>
                 <string>Forse</string>
+                <string>Non lo so</string>
+                <string>Capisco</string>
+                <string>Non capisco</string>
+                <string>Ripeta per favore</string>
+                <string>Parli più lentamente</string>
+                <string>È corretto</string>
+                <string>È sbagliato</string>
+                <string>Sono d'accordo</string>
+                <string>Non sono d'accordo</string>
+                <string>Aspetti</string>
+                <string>Fermi</string>
+                <string>Continui</string>
+                <string>Sono pronto</string>
+                <string>Non sono pronto</string>
+                <string>OK</string>
+                <string>Non importa</string>
+                <string>Basta così</string>
             </array>
             <key>ja</key><array>
                 <string>はい</string>
                 <string>いいえ</string>
                 <string>たぶん</string>
+                <string>わかりません</string>
+                <string>わかります</string>
+                <string>わかりません</string>
+                <string>もう一度お願いします</string>
+                <string>もっとゆっくり話してください</string>
+                <string>それは正しいです</string>
+                <string>それは間違っています</string>
+                <string>同意します</string>
+                <string>同意しません</string>
+                <string>待って</string>
+                <string>止まって</string>
+                <string>続けて</string>
+                <string>準備ができています</string>
+                <string>準備ができていません</string>
+                <string>オーケー</string>
+                <string>気にしないで</string>
+                <string>十分です</string>
             </array>
             <key>nl</key><array>
                 <string>Ja</string>
                 <string>Nee</string>
                 <string>Misschien</string>
+                <string>Ik weet het niet</string>
+                <string>Ik begrijp het</string>
+                <string>Ik begrijp het niet</string>
+                <string>Herhaal alsjeblieft</string>
+                <string>Spreek langzamer</string>
+                <string>Dat is correct</string>
+                <string>Dat is verkeerd</string>
+                <string>Ik ben het eens</string>
+                <string>Ik ben het oneens</string>
+                <string>Wacht</string>
+                <string>Stop</string>
+                <string>Ga door</string>
+                <string>Ik ben klaar</string>
+                <string>Ik ben niet klaar</string>
+                <string>Oké</string>
+                <string>Laat maar</string>
+                <string>Dat is genoeg</string>
             </array>
             <key>ru</key><array>
                 <string>Да</string>
                 <string>Нет</string>
                 <string>Может быть</string>
+                <string>Я не знаю</string>
+                <string>Я понимаю</string>
+                <string>Я не понимаю</string>
+                <string>Повторите, пожалуйста</string>
+                <string>Говорите медленнее</string>
+                <string>Это правильно</string>
+                <string>Это неправильно</string>
+                <string>Я согласен</string>
+                <string>Я не согласен</string>
+                <string>Подождите</string>
+                <string>Стоп</string>
+                <string>Продолжайте</string>
+                <string>Я готов</string>
+                <string>Я не готов</string>
+                <string>Хорошо</string>
+                <string>Неважно</string>
+                <string>Достаточно</string>
             </array>
             <key>zh</key><array>
                 <string>是</string>
                 <string>不</string>
                 <string>也许</string>
+                <string>我不知道</string>
+                <string>我明白</string>
+                <string>我不明白</string>
+                <string>请重复</string>
+                <string>请说慢一点</string>
+                <string>这是对的</string>
+                <string>这是错的</string>
+                <string>我同意</string>
+                <string>我不同意</string>
+                <string>等等</string>
+                <string>停</string>
+                <string>继续</string>
+                <string>我准备好了</string>
+                <string>我还没准备好</string>
+                <string>好的</string>
+                <string>没关系</string>
+                <string>够了</string>
             </array>
             <key>hi</key><array>
                 <string>हाँ</string>
                 <string>नहीं</string>
                 <string>शायद</string>
+                <string>मुझे नहीं पता</string>
+                <string>मैं समझता हूँ</string>
+                <string>मैं नहीं समझता</string>
+                <string>कृपया दोहराएं</string>
+                <string>धीरे बोलें</string>
+                <string>यह सही है</string>
+                <string>यह गलत है</string>
+                <string>मैं सहमत हूँ</string>
+                <string>मैं सहमत नहीं हूँ</string>
+                <string>इंतजार करें</string>
+                <string>रुकें</string>
+                <string>जारी रखें</string>
+                <string>मैं तैयार हूँ</string>
+                <string>मैं तैयार नहीं हूँ</string>
+                <string>ठीक है</string>
+                <string>कोई बात नहीं</string>
+                <string>बस काफी है</string>
             </array>
             <key>ar</key><array>
                 <string>نعم</string>
                 <string>لا</string>
                 <string>ربما</string>
+                <string>لا أعرف</string>
+                <string>أفهم</string>
+                <string>لا أفهم</string>
+                <string>أعد من فضلك</string>
+                <string>تكلم ببطء</string>
+                <string>هذا صحيح</string>
+                <string>هذا خطأ</string>
+                <string>أوافق</string>
+                <string>لا أوافق</string>
+                <string>انتظر</string>
+                <string>توقف</string>
+                <string>تابع</string>
+                <string>أنا مستعد</string>
+                <string>لست مستعداً</string>
+                <string>حسناً</string>
+                <string>لا بأس</string>
+                <string>هذا كافٍ</string>
             </array>
             <key>bn</key><array>
                 <string>হ্যাঁ</string>
                 <string>না</string>
                 <string>সম্ভবত</string>
+                <string>আমি জানি না</string>
+                <string>আমি বুঝি</string>
+                <string>আমি বুঝি না</string>
+                <string>দয়া করে আবার বলুন</string>
+                <string>ধীরে বলুন</string>
+                <string>এটা সঠিক</string>
+                <string>এটা ভুল</string>
+                <string>আমি একমত</string>
+                <string>আমি একমত নই</string>
+                <string>অপেক্ষা করুন</string>
+                <string>থামুন</string>
+                <string>চালিয়ে যান</string>
+                <string>আমি প্রস্তুত</string>
+                <string>আমি প্রস্তুত নই</string>
+                <string>ঠিক আছে</string>
+                <string>কোন সমস্যা নেই</string>
+                <string>যথেষ্ট</string>
             </array>
             <key>ko</key><array>
                 <string>예</string>
                 <string>아니요</string>
                 <string>아마도</string>
+                <string>모르겠어요</string>
+                <string>이해해요</string>
+                <string>이해하지 못해요</string>
+                <string>다시 말해주세요</string>
+                <string>천천히 말해주세요</string>
+                <string>맞아요</string>
+                <string>틀렸어요</string>
+                <string>동의해요</string>
+                <string>동의하지 않아요</string>
+                <string>기다려요</string>
+                <string>멈춰요</string>
+                <string>계속해요</string>
+                <string>준비됐어요</string>
+                <string>준비 안 됐어요</string>
+                <string>좋아요</string>
+                <string>괜찮아요</string>
+                <string>충분해요</string>
             </array>
             <key>tr</key><array>
                 <string>Evet</string>
                 <string>Hayır</string>
                 <string>Belki</string>
+                <string>Bilmiyorum</string>
+                <string>Anlıyorum</string>
+                <string>Anlamıyorum</string>
+                <string>Lütfen tekrar söyleyin</string>
+                <string>Yavaş konuşun</string>
+                <string>Bu doğru</string>
+                <string>Bu yanlış</string>
+                <string>Katılıyorum</string>
+                <string>Katılmıyorum</string>
+                <string>Bekleyin</string>
+                <string>Durun</string>
+                <string>Devam edin</string>
+                <string>Hazırım</string>
+                <string>Hazır değilim</string>
+                <string>Tamam</string>
+                <string>Sorun değil</string>
+                <string>Yeter</string>
             </array>
             <key>pl</key><array>
                 <string>Tak</string>
                 <string>Nie</string>
                 <string>Może</string>
+                <string>Nie wiem</string>
+                <string>Rozumiem</string>
+                <string>Nie rozumiem</string>
+                <string>Proszę powtórzyć</string>
+                <string>Proszę mówić wolniej</string>
+                <string>To jest prawda</string>
+                <string>To jest nieprawda</string>
+                <string>Zgadzam się</string>
+                <string>Nie zgadzam się</string>
+                <string>Czekaj</string>
+                <string>Zatrzymaj się</string>
+                <string>Kontynuuj</string>
+                <string>Jestem gotowy</string>
+                <string>Nie jestem gotowy</string>
+                <string>W porządku</string>
+                <string>W porządku</string>
+                <string>Wystarczy</string>
             </array>
             <key>sv</key><array>
                 <string>Ja</string>
                 <string>Nej</string>
                 <string>Kanske</string>
+                <string>Jag vet inte</string>
+                <string>Jag förstår</string>
+                <string>Jag förstår inte</string>
+                <string>Snälla upprepa</string>
+                <string>Prata långsammare</string>
+                <string>Det är rätt</string>
+                <string>Det är fel</string>
+                <string>Jag håller med</string>
+                <string>Jag håller inte med</string>
+                <string>Vänta</string>
+                <string>Stopp</string>
+                <string>Fortsätt</string>
+                <string>Jag är redo</string>
+                <string>Jag är inte redo</string>
+                <string>Okej</string>
+                <string>Det är okej</string>
+                <string>Det räcker</string>
             </array>
             <key>vi</key><array>
                 <string>Có</string>
                 <string>Không</string>
                 <string>Có lẽ</string>
+                <string>Tôi không biết</string>
+                <string>Tôi hiểu</string>
+                <string>Tôi không hiểu</string>
+                <string>Xin nhắc lại</string>
+                <string>Nói chậm thôi</string>
+                <string>Đúng rồi</string>
+                <string>Sai rồi</string>
+                <string>Tôi đồng ý</string>
+                <string>Tôi không đồng ý</string>
+                <string>Chờ một chút</string>
+                <string>Dừng lại</string>
+                <string>Tiếp tục</string>
+                <string>Tôi sẵn sàng</string>
+                <string>Tôi chưa sẵn sàng</string>
+                <string>Được rồi</string>
+                <string>Không sao</string>
+                <string>Đủ rồi</string>
             </array>
             <key>id</key><array>
                 <string>Ya</string>
                 <string>Tidak</string>
                 <string>Mungkin</string>
+                <string>Saya tidak tahu</string>
+                <string>Saya mengerti</string>
+                <string>Saya tidak mengerti</string>
+                <string>Tolong ulangi</string>
+                <string>Bicara lebih pelan</string>
+                <string>Itu benar</string>
+                <string>Itu salah</string>
+                <string>Saya setuju</string>
+                <string>Saya tidak setuju</string>
+                <string>Tunggu</string>
+                <string>Berhenti</string>
+                <string>Lanjutkan</string>
+                <string>Saya siap</string>
+                <string>Saya belum siap</string>
+                <string>Baik</string>
+                <string>Tidak apa-apa</string>
+                <string>Cukup</string>
             </array>
             <key>ur</key><array>
                 <string>ہاں</string>
                 <string>نہیں</string>
                 <string>شاید</string>
+                <string>مجھے نہیں معلوم</string>
+                <string>میں سمجھتا ہوں</string>
+                <string>میں نہیں سمجھتا</string>
+                <string>براہ کرم دوبارہ کہیں</string>
+                <string>آہستہ بولیں</string>
+                <string>یہ درست ہے</string>
+                <string>یہ غلط ہے</string>
+                <string>میں متفق ہوں</string>
+                <string>میں متفق نہیں ہوں</string>
+                <string>انتظار کریں</string>
+                <string>رک جائیں</string>
+                <string>جاری رکھیں</string>
+                <string>میں تیار ہوں</string>
+                <string>میں تیار نہیں ہوں</string>
+                <string>ٹھیک ہے</string>
+                <string>کوئی بات نہیں</string>
+                <string>کافی ہے</string>
             </array>
             <key>tl</key><array>
                 <string>Oo</string>
                 <string>Hindi</string>
                 <string>Siguro</string>
+                <string>Hindi ko alam</string>
+                <string>Naiintindihan ko</string>
+                <string>Hindi ko naiintindihan</string>
+                <string>Pakiulit</string>
+                <string>Dahan-dahan lang</string>
+                <string>Tama yan</string>
+                <string>Mali yan</string>
+                <string>Sumasang-ayon ako</string>
+                <string>Hindi ako sumasang-ayon</string>
+                <string>Maghintay</string>
+                <string>Tigil</string>
+                <string>Magpatuloy</string>
+                <string>Handa na ako</string>
+                <string>Hindi pa ako handa</string>
+                <string>Okay</string>
+                <string>Ayos lang</string>
+                <string>Tama na</string>
             </array>
             <key>th</key><array>
                 <string>ใช่</string>
                 <string>ไม่</string>
                 <string>อาจจะ</string>
+                <string>ฉันไม่รู้</string>
+                <string>ฉันเข้าใจ</string>
+                <string>ฉันไม่เข้าใจ</string>
+                <string>กรุณาพูดซ้ำ</string>
+                <string>พูดช้าๆ</string>
+                <string>ถูกต้อง</string>
+                <string>ผิด</string>
+                <string>ฉันเห็นด้วย</string>
+                <string>ฉันไม่เห็นด้วย</string>
+                <string>รอสักครู่</string>
+                <string>หยุด</string>
+                <string>ต่อไป</string>
+                <string>ฉันพร้อม</string>
+                <string>ฉันยังไม่พร้อม</string>
+                <string>โอเค</string>
+                <string>ไม่เป็นไร</string>
+                <string>พอแล้ว</string>
             </array>
             <key>el</key><array>
                 <string>Ναι</string>
@@ -948,26 +3109,111 @@
                 <string>Ano</string>
                 <string>Ne</string>
                 <string>Možná</string>
+                <string>Nevím</string>
+                <string>Rozumím</string>
+                <string>Nerozumím</string>
+                <string>Prosím, opakujte</string>
+                <string>Mluvte pomalu</string>
+                <string>To je správné</string>
+                <string>To je špatné</string>
+                <string>Souhlasím</string>
+                <string>Nesouhlasím</string>
+                <string>Počkejte</string>
+                <string>Stop</string>
+                <string>Pokračujte</string>
+                <string>Jsem připraven</string>
+                <string>Nejsem připraven</string>
+                <string>Dobře</string>
+                <string>Je to v pořádku</string>
+                <string>To stačí</string>
             </array>
             <key>hu</key><array>
                 <string>Igen</string>
                 <string>Nem</string>
                 <string>Talán</string>
+                <string>Nem tudom</string>
+                <string>Értem</string>
+                <string>Nem értem</string>
+                <string>Kérem, ismételje meg</string>
+                <string>Beszéljen lassan</string>
+                <string>Ez helyes</string>
+                <string>Ez hibás</string>
+                <string>Egyetértek</string>
+                <string>Nem értek egyet</string>
+                <string>Várjon</string>
+                <string>Állj</string>
+                <string>Folytassa</string>
+                <string>Készen állok</string>
+                <string>Nem állok készen</string>
+                <string>Rendben</string>
+                <string>Semmi baj</string>
+                <string>Elég</string>
             </array>
             <key>ro</key><array>
                 <string>Da</string>
                 <string>Nu</string>
                 <string>Poate</string>
+                <string>Nu știu</string>
+                <string>Înțeleg</string>
+                <string>Nu înțeleg</string>
+                <string>Vă rog să repetați</string>
+                <string>Vorbiți încet</string>
+                <string>Este corect</string>
+                <string>Este greșit</string>
+                <string>Sunt de acord</string>
+                <string>Nu sunt de acord</string>
+                <string>Așteptați</string>
+                <string>Stop</string>
+                <string>Continuați</string>
+                <string>Sunt gata</string>
+                <string>Nu sunt gata</string>
+                <string>Bine</string>
+                <string>E în regulă</string>
+                <string>Destul</string>
             </array>
             <key>da</key><array>
                 <string>Ja</string>
                 <string>Nej</string>
                 <string>Måske</string>
+                <string>Jeg ved det ikke</string>
+                <string>Jeg forstår</string>
+                <string>Jeg forstår ikke</string>
+                <string>Gentag venligst</string>
+                <string>Tal langsomt</string>
+                <string>Det er rigtigt</string>
+                <string>Det er forkert</string>
+                <string>Jeg er enig</string>
+                <string>Jeg er ikke enig</string>
+                <string>Vent</string>
+                <string>Stop</string>
+                <string>Fortsæt</string>
+                <string>Jeg er klar</string>
+                <string>Jeg er ikke klar</string>
+                <string>Okay</string>
+                <string>Det er fint</string>
+                <string>Det er nok</string>
             </array>
             <key>fi</key><array>
                 <string>Kyllä</string>
                 <string>Ei</string>
                 <string>Ehkä</string>
+                <string>En tiedä</string>
+                <string>Ymmärrän</string>
+                <string>En ymmärrä</string>
+                <string>Toista, kiitos</string>
+                <string>Puhu hitaasti</string>
+                <string>Se on oikein</string>
+                <string>Se on väärin</string>
+                <string>Olen samaa mieltä</string>
+                <string>En ole samaa mieltä</string>
+                <string>Odota</string>
+                <string>Seis</string>
+                <string>Jatka</string>
+                <string>Olen valmis</string>
+                <string>En ole valmis</string>
+                <string>Okei</string>
+                <string>Se on hyvä</string>
+                <string>Se riittää</string>
             </array>
         </dict>
     </dict>

@@ -1,0 +1,78 @@
+/* 
+   Localizable.strings (German)
+   iControlBell
+   
+   Benutzeroberflächen-Lokalisierung für Gesundheitskommunikations-App
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Barrierefreie Klingel-App mit Augensteuerung";
+
+// MARK: - Main Interface
+"main_description" = "Richten Sie Ihren Blick auf die Schaltfläche, die Ihren Hilfebedarf am besten beschreibt, oder verwenden Sie das Soundboard zum Sprechen.";
+"select_language" = "Sprache wählen:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Soundboard";
+"soundboard_description" = "Wählen Sie eine Kategorie und einen Satz aus, der laut vorgelesen werden soll.";
+"select_voice" = "Stimme auswählen:";
+"system_voice" = "Systemstimme";
+"no_categories_available" = "Keine Soundboard-Kategorien verfügbar";
+
+// MARK: - Call Requests
+"call_request_sent" = "Anfrage gesendet!";
+"call_bell_activated" = "Rufklingel aktiviert!";
+
+// MARK: - Bluetooth
+"bluetooth_connected" = "Bluetooth verbunden";
+"bluetooth_not_connected" = "Bluetooth nicht verbunden";
+"bluetooth_status" = "Bluetooth-Status";
+"trigger_call_bell" = "Rufklingel auslösen";
+"searching_devices" = "Geräte suchen...";
+"device_connected" = "Gerät verbunden";
+"connection_failed" = "Verbindung fehlgeschlagen";
+"bluetooth_error" = "Bluetooth-Fehler: %@";
+"call_bell_unavailable" = "Rufklingel nicht verfügbar - Bluetooth nicht verbunden";
+"double_tap_activate_call_bell" = "Doppeltippen zum Aktivieren der Rufklingel";
+"double_tap_change_language" = "Doppeltippen zum Ändern der Sprache.";
+"double_tap_send_request" = "Doppeltippen zum Senden einer %@-Hilfeanfrage";
+
+// MARK: - Accessibility Labels
+"bluetooth_connected_accessibility" = "Bluetooth ist verbunden und bereit";
+"bluetooth_not_connected_accessibility" = "Bluetooth ist nicht verbunden";
+"language_picker_accessibility" = "Sprachauswahl";
+"call_request_button_accessibility" = "Anfrage-Schaltfläche";
+"soundboard_phrase_accessibility" = "Sprechen";
+"currently_speaking_accessibility" = "Spricht gerade diesen Satz";
+"tap_to_speak_accessibility" = "Doppeltippen, um diesen Satz laut zu sprechen";
+
+// MARK: - Navigation
+"back" = "Zurück";
+"settings" = "Einstellungen";
+"help" = "Hilfe";
+
+// MARK: - Error Messages
+"error_loading_data" = "Fehler beim Laden der Daten";
+"error_bluetooth_unavailable" = "Bluetooth nicht verfügbar";
+"error_speech_unavailable" = "Sprachsynthese nicht verfügbar";
+"error_permission_denied" = "Berechtigung verweigert";
+
+// MARK: - Success Messages
+"settings_saved" = "Einstellungen gespeichert";
+"language_changed" = "Sprache geändert";
+"connection_successful" = "Verbindung erfolgreich";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Abbrechen";
+"retry" = "Wiederholen";
+"done" = "Fertig";
+"save" = "Speichern";
+"close" = "Schließen";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Notruf";
+"medical_assistance" = "Medizinische Hilfe";
+"nurse_call" = "Schwester rufen";
+"patient_care" = "Patientenversorgung";

@@ -1,0 +1,83 @@
+/* 
+   Localizable.strings (German)
+   iControlBell
+   
+   Benutzeroberflächen-Lokalisierung für Gesundheitskommunikations-App
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Barrierefreie Klingel-App mit Augensteuerung";
+
+// MARK: - Main Interface
+"main_description" = "Richten Sie Ihren Blick auf die Schaltfläche, die Ihren Hilfebedarf am besten beschreibt, oder verwenden Sie das Soundboard zum Sprechen.";
+"select_language" = "Sprache wählen:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Soundboard";
+"soundboard_description" = "Wählen Sie eine Kategorie und einen Satz aus, der laut vorgelesen werden soll.";
+"select_voice" = "Stimme auswählen:";
+"system_voice" = "Systemstimme";
+"no_categories_available" = "Keine Soundboard-Kategorien verfügbar";
+
+// MARK: - Call Requests
+"call_request_sent" = "Anfrage gesendet!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Sprachauswahl";
+"call_request_button_accessibility" = "Anfrage-Schaltfläche";
+"soundboard_phrase_accessibility" = "Sprechen";
+"currently_speaking_accessibility" = "Spricht derzeit diesen Satz";
+"tap_to_speak_accessibility" = "Doppeltippen zum Aussprechen dieses Satzes";
+"double_tap_change_language" = "Doppeltippen zum Ändern der Sprache.";
+"double_tap_send_request" = "Doppeltippen zum Senden einer %@-Hilfeanfrage";
+"currently_speaking_accessibility" = "Spricht gerade diesen Satz";
+"tap_to_speak_accessibility" = "Doppeltippen, um diesen Satz laut zu sprechen";
+
+// MARK: - Navigation
+"back" = "Zurück";
+"settings" = "Einstellungen";
+"help" = "Hilfe";
+
+// MARK: - Error Messages
+"error_loading_data" = "Fehler beim Laden der Daten";
+"error_speech_unavailable" = "Sprachsynthese nicht verfügbar";
+"error_permission_denied" = "Berechtigung verweigert";
+
+// MARK: - Success Messages
+"settings_saved" = "Einstellungen gespeichert";
+"language_changed" = "Sprache geändert";
+"connection_successful" = "Verbindung erfolgreich";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Abbrechen";
+"retry" = "Wiederholen";
+"done" = "Fertig";
+"save" = "Speichern";
+"close" = "Schließen";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Notruf";
+"medical_assistance" = "Medizinische Hilfe";
+"nurse_call" = "Schwester rufen";
+"patient_care" = "Patientenversorgung";
+
+// MARK: - Rauland Responder 5 Integration
+"rauland_connection_title" = "Responder 5 Connection";
+"rauland_status_disconnected" = "Disconnected";
+"rauland_status_connecting" = "Connecting";
+"rauland_status_connected" = "Connected";
+"rauland_connect" = "Connect";
+"rauland_disconnect" = "Disconnect";
+"rauland_configured" = "Rauland system configured";
+"rauland_not_connected" = "Not connected to Rauland system";
+"rauland_connection_successful" = "Connected to Rauland system";
+"rauland_disconnected" = "Disconnected from Rauland system";
+"rauland_call_emergency" = "Emergency";
+"rauland_call_nurse" = "Nurse Call";
+"rauland_call_general" = "General Assistance";
+"rauland_error_network" = "Network unavailable. Please check internet connection.";
+"rauland_error_call_failed" = "Call request failed. Please try again.";
+"rauland_configuration_title" = "Rauland Configuration";
+"double_tap_to_open_settings" = "Double tap to open settings";

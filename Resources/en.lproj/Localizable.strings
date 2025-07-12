@@ -1,0 +1,160 @@
+/* 
+   Localizable.strings (English)
+   iControlBell
+   
+   User interface localization for healthcare communication app
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "Eye-tracking accessible call bell app";
+
+// MARK: - Main Interface
+"main_description" = "Focus your gaze on the button below that best describes your need to call for assistance, or use the soundboard to speak.";
+"select_language" = "Select Language:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Soundboard";
+"soundboard_description" = "Select a category and a phrase to have it spoken aloud.";
+"select_voice" = "Select Voice:";
+"system_voice" = "System Voice";
+"no_categories_available" = "No soundboard categories available";
+
+// MARK: - Call Requests
+"call_request_sent" = "request sent!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Language selection picker";
+"call_request_button_accessibility" = "request button";
+"soundboard_phrase_accessibility" = "Speak";
+"currently_speaking_accessibility" = "Currently speaking this phrase";
+"tap_to_speak_accessibility" = "Double tap to speak this phrase aloud";
+"double_tap_change_language" = "Double tap to change language.";
+"double_tap_send_request" = "Double tap to send %@ assistance request";
+
+// MARK: - Navigation
+"back" = "Back";
+"settings" = "Settings";
+"help" = "Help";
+
+// MARK: - Error Messages
+"error_loading_data" = "Error loading data";
+"error_speech_unavailable" = "Speech synthesis unavailable";
+"error_permission_denied" = "Permission denied";
+
+// MARK: - Success Messages
+"settings_saved" = "Settings saved";
+"language_changed" = "Language changed";
+"connection_successful" = "Connection successful";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Cancel";
+"retry" = "Retry";
+"done" = "Done";
+"save" = "Save";
+"close" = "Close";
+"double_tap_to_open_settings" = "Double tap to open settings";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Emergency Call";
+"medical_assistance" = "Medical Assistance";
+"nurse_call" = "Nurse Call";
+"patient_care" = "Patient Care";
+
+// MARK: - Rauland Responder 5 Integration
+"rauland_connection_title" = "Responder 5 Connection";
+"rauland_status_disconnected" = "Disconnected";
+"rauland_status_connecting" = "Connecting";
+"rauland_status_authenticating" = "Authenticating";
+"rauland_status_connected" = "Connected";
+"rauland_status_error" = "Error";
+"rauland_status_suspended" = "Suspended";
+"rauland_connect" = "Connect";
+"rauland_disconnect" = "Disconnect";
+"rauland_refresh" = "Refresh";
+"rauland_configured" = "Rauland system configured";
+"rauland_not_configured" = "Rauland system not configured";
+"rauland_not_connected" = "Not connected to Rauland system";
+"rauland_connected_to" = "Connected to";
+"rauland_connection_successful" = "Connected to Rauland system";
+"rauland_disconnected" = "Disconnected from Rauland system";
+"rauland_session_refreshed" = "Session refreshed";
+"rauland_facility" = "Facility";
+"rauland_features" = "Features";
+
+// MARK: - Rauland Call Types
+"rauland_call_emergency" = "Emergency";
+"rauland_call_nurse" = "Nurse Call";
+"rauland_call_general" = "General Assistance";
+"rauland_call_maintenance" = "Maintenance";
+"rauland_call_housekeeping" = "Housekeeping";
+
+// MARK: - Priority Levels
+"priority_low" = "Low";
+"priority_normal" = "Normal";
+"priority_urgent" = "Urgent";
+"priority_critical" = "Critical";
+
+// MARK: - Rauland Error Messages
+"rauland_error_network" = "Network unavailable. Please check internet connection.";
+"rauland_error_auth_failed" = "Authentication failed. Please check credentials.";
+"rauland_error_session_expired" = "Session expired. Please reconnect.";
+"rauland_error_invalid_api_key" = "Invalid API key. Please contact IT support.";
+"rauland_error_facility_not_found" = "Facility not found. Please verify facility ID.";
+"rauland_error_device_unauthorized" = "Device not authorized. Please contact IT support.";
+"rauland_error_call_failed" = "Call request failed. Please try again.";
+"rauland_error_timeout" = "Connection timeout. Please check network connection.";
+"rauland_error_server_unavailable" = "Rauland server unavailable. Please try again later.";
+"rauland_error_invalid_config" = "Invalid configuration. Please contact IT support.";
+"rauland_error_rate_limit" = "Too many requests. Please wait before trying again.";
+"rauland_error_emergency_failed" = "Emergency call failed. Use backup communication immediately.";
+
+// MARK: - Accessibility Labels for Rauland
+"rauland_connection_status" = "Rauland Responder 5 connection status";
+"rauland_connect_button" = "Connect to Rauland system";
+"rauland_disconnect_button" = "Disconnect from Rauland system";
+"rauland_refresh_button" = "Refresh Rauland connection";
+"double_tap_to_connect_rauland" = "Double tap to connect to Rauland Responder 5 system";
+"double_tap_to_disconnect_rauland" = "Double tap to disconnect from Rauland system";
+"double_tap_to_refresh_rauland" = "Double tap to refresh connection status";
+
+// MARK: - Rauland Configuration
+"rauland_configuration_title" = "Rauland Configuration";
+"rauland_configuration_header" = "Responder 5 Setup";
+"rauland_configuration_description" = "Configure connection to your facility's Rauland Responder 5 nurse call system";
+"rauland_configuration_required" = "Configuration required for Rauland connectivity";
+"rauland_placeholder_mode" = "PLACEHOLDER MODE";
+"rauland_placeholder_description" = "Using demo/mock mode until real Rauland API is available";
+"rauland_placeholder_demo_note" = "All calls are simulated - no real network calls are made";
+"rauland_connection_settings" = "Connection Settings";
+"rauland_facility_settings" = "Facility Settings";
+"rauland_device_settings" = "Device Settings";
+"rauland_base_url" = "Server URL";
+"rauland_base_url_placeholder" = "https://placeholder.rauland.demo";
+"rauland_api_key" = "API Key";
+"rauland_api_key_placeholder" = "demo-api-key (placeholder)";
+"rauland_facility_id" = "Facility ID";
+"rauland_facility_id_placeholder" = "Demo-Healthcare-Facility";
+"rauland_room_number" = "Room Number (Optional)";
+"rauland_room_number_placeholder" = "Room-Demo";
+"rauland_device_id" = "Device ID";
+"rauland_device_id_placeholder" = "Unique device identifier";
+"rauland_device_id_note" = "Auto-generated unique identifier for this device";
+"rauland_test_connection" = "Test Connection";
+"rauland_test_connection_accessibility" = "Test Rauland connection with current settings";
+"rauland_test_successful" = "Connection test successful";
+"rauland_test_failed" = "Connection test failed";
+"rauland_configuration_help" = "Configuration Help";
+
+// MARK: - Rauland Help Content
+"rauland_help_api_key" = "API Key";
+"rauland_help_api_key_content" = "PLACEHOLDER MODE: Currently using demo API key. When the real Rauland API is available, the API key will be provided by your facility's IT department and will authorize this device to communicate with the Rauland Responder 5 system.";
+"rauland_help_facility_id" = "Facility ID";
+"rauland_help_facility_id_content" = "The facility ID identifies your specific healthcare facility within the Rauland system. Currently set to demo value for testing purposes.";
+"rauland_help_device_id" = "Device ID";
+"rauland_help_device_id_content" = "A unique identifier for this specific device. This is automatically generated and will be used to track this device in the Rauland system.";
+"rauland_help_room_number" = "Room Number";
+"rauland_help_room_number_content" = "Optional room assignment for this device. If specified, call requests will be associated with this specific room in the nurse call system.";
+"rauland_help_support" = "Need Help?";
+"rauland_help_support_content" = "PLACEHOLDER MODE: The app is currently running in demonstration mode with mock Rauland connectivity. When the real API is available, contact your facility's IT department or Rauland technical support for actual configuration assistance.";

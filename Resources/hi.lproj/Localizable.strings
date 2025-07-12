@@ -1,0 +1,79 @@
+/* 
+   Localizable.strings (Hindi)
+   iControlBell
+   
+   स्वास्थ्य संचार ऐप के लिए उपयोगकर्ता इंटरफेस स्थानीयकरण
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "आँखों की ट्रैकिंग के साथ सुलभ कॉल बेल ऐप";
+
+// MARK: - Main Interface
+"main_description" = "उस बटन पर अपनी नज़र केंद्रित करें जो सहायता के लिए कॉल करने की आपकी आवश्यकता का सबसे अच्छा वर्णन करता है, या बोलने के लिए साउंडबोर्ड का उपयोग करें।";
+"select_language" = "भाषा चुनें:";
+
+// MARK: - Soundboard
+"soundboard_title" = "साउंडबोर्ड";
+"soundboard_description" = "जोर से बोलने के लिए एक श्रेणी और वाक्य चुनें।";
+"select_voice" = "आवाज़ चुनें:";
+"system_voice" = "सिस्टम आवाज़";
+"no_categories_available" = "कोई साउंडबोर्ड श्रेणियाँ उपलब्ध नहीं हैं";
+
+// MARK: - Call Requests
+"call_request_sent" = "अनुरोध भेजा गया!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "भाषा चयनकर्ता";
+"call_request_button_accessibility" = "अनुरोध बटन";
+"soundboard_phrase_accessibility" = "बोलना";
+"currently_speaking_accessibility" = "वर्तमान में यह वाक्य बोल रहा है";
+"tap_to_speak_accessibility" = "इस वाक्य को जोर से बोलने के लिए दो बार टैप करें";
+
+// MARK: - Navigation
+"back" = "वापस";
+"settings" = "सेटिंग्स";
+"help" = "सहायता";
+
+// MARK: - Error Messages
+"error_loading_data" = "डेटा लोड करने में त्रुटि";
+"error_speech_unavailable" = "स्पीच सिंथेसिस उपलब्ध नहीं";
+"error_permission_denied" = "अनुमति अस्वीकार";
+
+// MARK: - Success Messages
+"settings_saved" = "सेटिंग्स सहेजी गईं";
+"language_changed" = "भाषा बदली गई";
+"connection_successful" = "कनेक्शन सफल";
+
+// MARK: - General Actions
+"ok" = "ठीक है";
+"cancel" = "रद्द करें";
+"retry" = "पुनः प्रयास";
+"done" = "हो गया";
+"save" = "सहेजें";
+"close" = "बंद करें";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "आपातकालीन कॉल";
+"medical_assistance" = "चिकित्सा सहायता";
+"nurse_call" = "नर्स कॉल";
+"patient_care" = "रोगी देखभाल";
+
+// MARK: - Rauland Responder 5 Integration
+"rauland_connection_title" = "Responder 5 Connection";
+"rauland_status_disconnected" = "Disconnected";
+"rauland_status_connecting" = "Connecting";
+"rauland_status_connected" = "Connected";
+"rauland_connect" = "Connect";
+"rauland_disconnect" = "Disconnect";
+"rauland_configured" = "Rauland system configured";
+"rauland_not_connected" = "Not connected to Rauland system";
+"rauland_connection_successful" = "Connected to Rauland system";
+"rauland_disconnected" = "Disconnected from Rauland system";
+"rauland_call_emergency" = "Emergency";
+"rauland_call_nurse" = "Nurse Call";
+"rauland_call_general" = "General Assistance";
+"rauland_error_network" = "Network unavailable. Please check internet connection.";
+"rauland_error_call_failed" = "Call request failed. Please try again.";
+"rauland_configuration_title" = "Rauland Configuration";
+"double_tap_to_open_settings" = "Double tap to open settings";

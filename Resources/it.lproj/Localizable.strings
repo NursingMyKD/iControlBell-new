@@ -1,0 +1,79 @@
+/* 
+   Localizable.strings (Italian)
+   iControlBell
+   
+   Localizzazione dell'interfaccia utente per app di comunicazione sanitaria
+*/
+
+// MARK: - App Information
+"app_title" = "iControlBell";
+"app_description" = "App di campanello accessibile con tracciamento oculare";
+
+// MARK: - Main Interface
+"main_description" = "Focalizza lo sguardo sul pulsante che meglio descrive la tua necessità di chiamare assistenza, o usa la lavagna audio per parlare.";
+"select_language" = "Seleziona lingua:";
+
+// MARK: - Soundboard
+"soundboard_title" = "Lavagna audio";
+"soundboard_description" = "Seleziona una categoria e una frase per farla pronunciare ad alta voce.";
+"select_voice" = "Seleziona voce:";
+"system_voice" = "Voce di sistema";
+"no_categories_available" = "Nessuna categoria di lavagna audio disponibile";
+
+// MARK: - Call Requests
+"call_request_sent" = "richiesta inviata!";
+
+// MARK: - Accessibility Labels
+"language_picker_accessibility" = "Selettore di lingua";
+"call_request_button_accessibility" = "pulsante di richiesta";
+"soundboard_phrase_accessibility" = "Parla";
+"currently_speaking_accessibility" = "Attualmente pronunciando questa frase";
+"tap_to_speak_accessibility" = "Tocca due volte per pronunciare questa frase ad alta voce";
+
+// MARK: - Navigation
+"back" = "Indietro";
+"settings" = "Impostazioni";
+"help" = "Aiuto";
+
+// MARK: - Error Messages
+"error_loading_data" = "Errore nel caricamento dei dati";
+"error_speech_unavailable" = "Sintesi vocale non disponibile";
+"error_permission_denied" = "Permesso negato";
+
+// MARK: - Success Messages
+"settings_saved" = "Impostazioni salvate";
+"language_changed" = "Lingua cambiata";
+"connection_successful" = "Connessione riuscita";
+
+// MARK: - General Actions
+"ok" = "OK";
+"cancel" = "Annulla";
+"retry" = "Riprova";
+"done" = "Fatto";
+"save" = "Salva";
+"close" = "Chiudi";
+
+// MARK: - Healthcare Specific
+"emergency_call" = "Chiamata di emergenza";
+"medical_assistance" = "Assistenza medica";
+"nurse_call" = "Chiamata infermiere";
+"patient_care" = "Cura del paziente";
+
+// MARK: - Rauland Responder 5 Integration
+"rauland_connection_title" = "Responder 5 Connection";
+"rauland_status_disconnected" = "Disconnected";
+"rauland_status_connecting" = "Connecting";
+"rauland_status_connected" = "Connected";
+"rauland_connect" = "Connect";
+"rauland_disconnect" = "Disconnect";
+"rauland_configured" = "Rauland system configured";
+"rauland_not_connected" = "Not connected to Rauland system";
+"rauland_connection_successful" = "Connected to Rauland system";
+"rauland_disconnected" = "Disconnected from Rauland system";
+"rauland_call_emergency" = "Emergency";
+"rauland_call_nurse" = "Nurse Call";
+"rauland_call_general" = "General Assistance";
+"rauland_error_network" = "Network unavailable. Please check internet connection.";
+"rauland_error_call_failed" = "Call request failed. Please try again.";
+"rauland_configuration_title" = "Rauland Configuration";
+"double_tap_to_open_settings" = "Double tap to open settings";
