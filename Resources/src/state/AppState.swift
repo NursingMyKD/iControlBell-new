@@ -1,29 +1,61 @@
 // AppState.swift
 // Global app state for iControlBell with Rauland Responder 5 connectivity
+//
+//  AppState.swift
+//  iControlBell
+//
+//  Created by shane stone on 7/6/25.
+//
 
+import Foundation
+
+// AppState.swift
+// Global app state for iControlBell with Rauland Responder 5 connectivity
+//
+//  AppState.swift
+//  iControlBell
+//
+//  Created by shane stone on 7/6/25.
+//
+
+import Foundation
+import Combine
 import SwiftUI
+import os.log
 
-/// Global app state for language selection, connectivity, and toast notifications.
-@MainActor
+
+
 class AppState: ObservableObject {
+    // Persistent confirmation banner state
+    @Published var showConfirmationBanner: Bool = false
+    @Published var confirmationBannerText: String = ""
+    @Published var confirmationBannerSeconds: Int = 0
+    private var confirmationBannerTimer: Timer?
+    // Offline call request queue
+    private var callRequestQueue: [RaulandCallRequest] {
+        get { CallRequestQueueManager.shared.loadQueue() }
+        set { CallRequestQueueManager.shared.saveQueue(newValue) }
+    }
+    // Onboarding state
+    @Published var showOnboarding: Bool {
+        didSet {
+            UserDefaults.standard.set(!showOnboarding, forKey: "onboardingComplete")
+        }
+    }
     @Published var selectedLanguage: Language = .english
     @Published var toastMessage: String? = nil
     @Published var toastIsError: Bool = false
-    
     // Rauland Connectivity State
-    @Published var raulandManager = RaulandAPIManager.shared
+    @Published var raulandManager: RaulandAPIManaging
     @Published var isRaulandConfigured: Bool = false
     @Published var facilityName: String = ""
-    
-    /// Shows a toast message for 2 seconds.
-    func showToast(_ message: String, isError: Bool = false) {
-        toastMessage = message
-        toastIsError = isError
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.toastMessage = nil
-        }
+    /// Allow dependency injection of RaulandAPIManaging
+    init(raulandManager: RaulandAPIManaging = RaulandAPIManager.shared) {
+        let onboardingComplete = UserDefaults.standard.bool(forKey: "onboardingComplete")
+        self.showOnboarding = !onboardingComplete
+        self.raulandManager = raulandManager
     }
-    
+
     /// Configure Rauland connection with facility details
     func configureRauland(baseURL: String, apiKey: String, deviceID: String, facilityID: String, roomNumber: String? = nil) {
         let config = RaulandConfiguration(
@@ -43,25 +75,73 @@ class AppState: ObservableObject {
             showToast("rauland_configured".localized)
         }
     }
-    
+
     /// Send a call request through Rauland API
     func sendRaulandCallRequest(_ callType: RaulandCallType, message: String? = nil) async {
-        guard raulandManager.isConnected else {
-            showToast("rauland_not_connected".localized, isError: true)
-            return
-        }
-        
-        let result = await raulandManager.sendCallRequest(callType, message: message)
-        
-        switch result {
-        case .success:
-            let successMessage = "\(callType.displayName) \("call_request_sent".localized)"
-            showToast(successMessage)
-        case .failure(let error):
-            showToast(error.localizedDescription, isError: true)
+        let request = RaulandCallRequest(
+            config: (raulandManager as? RaulandAPIManager)?.configuration ?? RaulandConfiguration.default,
+            callType: callType,
+            message: message
+        )
+        if raulandManager.isConnected {
+            let result = await raulandManager.sendCallRequest(callType, message: message)
+            switch result {
+            case .success:
+                showConfirmationBannerWithTimer(text: "help_on_the_way_confirmation".localized, seconds: 10)
+            case .failure(let error):
+                let errorMsg = ErrorHandler.shared.handle(error)
+                showToast(errorMsg, isError: true)
+                // Optionally, queue if failure is due to network
+            }
+        } else {
+            // Queue the request for later
+            CallRequestQueueManager.shared.append(request)
+            showToast("call_request_queued".localized, isError: false)
         }
     }
-    
+
+    /// Show a persistent confirmation banner with a countdown timer
+    func showConfirmationBannerWithTimer(text: String, seconds: Int) {
+        confirmationBannerText = text
+        confirmationBannerSeconds = seconds
+        showConfirmationBanner = true
+        confirmationBannerTimer?.invalidate()
+        confirmationBannerTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+            guard let self = self else { return }
+            if self.confirmationBannerSeconds > 1 {
+                self.confirmationBannerSeconds -= 1
+            } else {
+                self.showConfirmationBanner = false
+                timer.invalidate()
+            }
+        }
+    }
+
+    /// Call this when connection is restored
+    func sendQueuedCallRequests() async {
+        guard raulandManager.isConnected else { return }
+        var queue = CallRequestQueueManager.shared.loadQueue()
+        guard !queue.isEmpty else { return }
+        var sentCount = 0
+        var failedCount = 0
+        for req in queue {
+            let result = await raulandManager.sendCallRequest(req.callType, message: req.message)
+            switch result {
+            case .success:
+                sentCount += 1
+            case .failure:
+                failedCount += 1
+            }
+        }
+        CallRequestQueueManager.shared.clear()
+        if sentCount > 0 {
+            showToast("\(sentCount) \("call_requests_sent_after_reconnect".localized)")
+        }
+        if failedCount > 0 {
+            showToast("\(failedCount) \("call_requests_failed_after_reconnect".localized)", isError: true)
+        }
+    }
+
     /// Get connection status information
     func getConnectionStatus() -> String {
         if raulandManager.isConnected {

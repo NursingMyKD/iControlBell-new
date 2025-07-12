@@ -16,7 +16,6 @@ struct CallRequestGridView: View {
     // Dynamic layout properties using DeviceUtils
     private var columns: Int {
         DeviceUtils.adaptiveColumns(for: "callRequests")
-    }
     
     private var buttonHeight: CGFloat {
         DeviceUtils.dynamicSpacing(compact: 100, regular: 120, iPad: 140)
@@ -85,48 +84,46 @@ struct CallRequestGridView: View {
             // Simple haptic feedback
             let impact = UIImpactFeedbackGenerator(style: .medium)
             impact.impactOccurred()
-            
             // Play confirmation sound
             SoundManager.shared.playConfirmationSound()
-            
             // Map call request option to Rauland call type
             let raulandCallType = mapToRaulandCallType(option)
             let message = option.label(for: selectedLanguage)
-            
             // Send call request through Rauland API
             Task {
                 await appState.sendRaulandCallRequest(raulandCallType, message: message)
             }
-            
             // Success haptic
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 let success = UINotificationFeedbackGenerator()
                 success.notificationOccurred(.success)
             }
         }) {
-            VStack(spacing: isCompact ? 4 : 8) {
+            VStack(spacing: isCompact ? 10 : 18) {
                 Image(systemName: option.iconName)
-                    .font(.system(size: iconSize))
+                    .font(.system(size: iconSize + 14, weight: .heavy, design: .rounded))
                     .foregroundColor(.white)
-                    .frame(height: iconSize)
-                
+                    .frame(width: iconSize + 36, height: iconSize + 36)
+                    .background(Circle().fill(Color.accentColor))
+                    .shadow(color: Color.accentColor.opacity(0.22), radius: 10, x: 0, y: 5)
                 Text(option.label(for: selectedLanguage))
-                    .font(buttonFont)
-                    .fontWeight(.medium)
+                    .font(.system(size: isIPad ? 28 : (isCompact ? 18 : 22), weight: .heavy, design: .rounded))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
-                    .lineLimit(isCompact ? 2 : 3)
+                    .lineLimit(2)
                     .minimumScaleFactor(0.8)
+                    .padding(.top, 4)
+                    .shadow(color: Color.black.opacity(0.18), radius: 2, x: 0, y: 1)
             }
-            .padding(.vertical, isIPad ? 32 : (isCompact ? 16 : 24))
-            .padding(.horizontal, isIPad ? 20 : (isCompact ? 8 : 16))
+            .padding(.vertical, isIPad ? 36 : (isCompact ? 20 : 28))
+            .padding(.horizontal, isIPad ? 24 : (isCompact ? 12 : 20))
             .frame(maxWidth: .infinity)
-            .frame(height: buttonHeight)
+            .frame(height: buttonHeight + 24)
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: [
                         UIAccessibility.isDarkerSystemColorsEnabled ? 
-                            Color(red: 0.0, green: 0.5, blue: 0.6) : Color(red: 0.0, green: 0.7, blue: 0.7),
+                            Color(red: 0.0, green: 0.5, blue: 0.6) : Color.accentColor,
                         UIAccessibility.isDarkerSystemColorsEnabled ? 
                             Color(red: 0.0, green: 0.3, blue: 0.4) : Color(red: 0.0, green: 0.5, blue: 0.6)
                     ]),

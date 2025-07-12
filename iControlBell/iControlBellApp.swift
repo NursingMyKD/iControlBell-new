@@ -2,11 +2,14 @@
 // Main entry point for the iOS app using SwiftUI
 
 import SwiftUI
+
 //import SharedCode // Import your shared code module here
 
 @main
 struct iControlBellApp: App {
-    @StateObject private var appState = AppState()
+    // Inject RaulandAPIManager with a mock or real NetworkService
+    private static let injectedRaulandManager = RaulandAPIManager(networkService: MockNetworkService())
+    @StateObject private var appState = AppState(raulandManager: injectedRaulandManager)
     
     var body: some Scene {
         WindowGroup {

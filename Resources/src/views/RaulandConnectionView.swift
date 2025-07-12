@@ -415,9 +415,10 @@ struct HapticUtils {
 }
 
 #Preview {
+    let mockManager = RaulandAPIManager(networkService: MockNetworkService())
     VStack {
-        RaulandConnectionView(raulandManager: RaulandAPIManager.shared)
-            .environmentObject(AppState())
+        RaulandConnectionView(raulandManager: mockManager)
+            .environmentObject(AppState(raulandManager: mockManager))
     }
     .padding()
     .background(Color.adaptiveBackground)

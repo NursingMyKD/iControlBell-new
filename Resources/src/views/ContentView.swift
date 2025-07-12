@@ -4,6 +4,7 @@
 import SwiftUI
 import Foundation
 
+
 /// The main home screen for iControlBell, displaying logo, language selector, call requests, and soundboard.
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
@@ -31,16 +32,20 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Adaptive background
-                Color.adaptiveBackground
-                    .ignoresSafeArea()
-                
-                if isLandscape && !isIPad {
-                    // Landscape layout for iPhone
-                    landscapeLayout
-                } else {
-                    // Portrait layout for iPhone and all iPad orientations
-                    portraitLayout
+                Color.adaptiveBackground.ignoresSafeArea()
+                VStack(spacing: 0) {
+                    // Prominent connection status banner
+                    ConnectionStatusBanner(
+                        status: appState.getConnectionStatus(),
+                        isConnected: appState.raulandManager.isConnected,
+                        isConnecting: appState.raulandManager.connectionState == .connecting || appState.raulandManager.connectionState == .authenticating
+                    )
+                    .padding(.bottom, 4)
+                    if isLandscape && !isIPad {
+                        landscapeLayout
+                    } else {
+                        portraitLayout
+                    }
                 }
             }
             .navigationBarHidden(true)
@@ -51,15 +56,30 @@ struct ContentView: View {
                 HapticUtils.selection() // Haptic feedback for language change
             }
             .overlay(
-                Group {
+                ZStack(alignment: .top) {
+                    // Persistent confirmation banner
+                    if appState.showConfirmationBanner {
+                        ConfirmationBanner(text: appState.confirmationBannerText, seconds: appState.confirmationBannerSeconds)
+                            .zIndex(3)
+                            .padding(.top, 8)
+                            .transition(.move(edge: .top).combined(with: .opacity))
+                    }
+                    // Toast overlay
                     if let message = appState.toastMessage {
                         ToastView(message: message, isError: appState.toastIsError)
                             .zIndex(1)
                     }
+                    // Onboarding overlay
+                    if appState.showOnboarding {
+                        OnboardingOverlayView {
+                            appState.showOnboarding = false
+                        }
+                        .zIndex(2)
+                    }
                 }, alignment: .top
             )
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Prevents split view on iPad
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     // MARK: - Layout Variations
@@ -247,5 +267,6 @@ extension String {
 }
 
 #Preview {
-    ContentView().environmentObject(AppState())
+    let mockManager = RaulandAPIManager(networkService: MockNetworkService())
+    ContentView().environmentObject(AppState(raulandManager: mockManager))
 }

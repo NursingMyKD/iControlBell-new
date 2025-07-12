@@ -397,6 +397,7 @@ struct RaulandConfigurationHelpView: View {
 }
 
 #Preview {
+    let mockManager = RaulandAPIManager(networkService: MockNetworkService())
     RaulandConfigurationView()
-        .environmentObject(AppState())
+        .environmentObject(AppState(raulandManager: mockManager))
 }

@@ -26,14 +26,24 @@ protocol RaulandAPIManaging: AnyObject {
 /// Enhanced Rauland API Manager with healthcare-grade reliability
 @MainActor
 class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
-    static let shared = RaulandAPIManager()
-    
-    // MARK: - Placeholder Mode
-    private let isPlaceholderMode = true // Set to false when real API is available
-    
+    // Error handler for user-friendly, localized errors
+    private let errorHandler = ErrorHandler.shared
+    // Networking abstraction for real or mock API
+    private let networkService: NetworkService
+    static let shared = RaulandAPIManager(networkService: MockNetworkService())
+
     // MARK: - Core Properties
     private var configuration: RaulandConfiguration = .default
-    private var sessionToken: String?
+    private var sessionToken: String? {
+        get { KeychainHelper.shared.get("rauland_session_token") }
+        set {
+            if let token = newValue {
+                KeychainHelper.shared.set(token, forKey: "rauland_session_token")
+            } else {
+                KeychainHelper.shared.remove("rauland_session_token")
+            }
+        }
+    }
     private var sessionExpirationDate: Date?
     private var urlSession: URLSession
     private var networkMonitor: NWPathMonitor
@@ -53,22 +63,24 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     private let retryDelay: TimeInterval = 2.0
     
     // MARK: - Healthcare Audit
-    private var callHistory: [RaulandCallRequest] = []
+    private var callHistory: [RaulandCallRequest] = [] {
+        didSet {
+            AuditLogManager.shared.saveLog(callHistory)
+        }
+    }
     private let maxHistorySize = 100
     
-    override init() {
-        // Configure URLSession for healthcare compliance
+    init(networkService: NetworkService) {
+        // Load persisted call history
+        self.callHistory = AuditLogManager.shared.loadLog()
+        self.networkService = networkService
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30.0
         config.timeoutIntervalForResource = 60.0
         config.waitsForConnectivity = true
         self.urlSession = URLSession(configuration: config)
-        
-        // Initialize network monitoring
         self.networkMonitor = NWPathMonitor()
-        
         super.init()
-        
         startNetworkMonitoring()
     }
     
@@ -81,9 +93,12 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     
     func configure(with config: RaulandConfiguration) {
         self.configuration = config
+        // Store API key securely
+        KeychainHelper.shared.set(config.apiKey, forKey: "rauland_api_key")
         // Validate configuration (relaxed for placeholder mode)
         if config.facilityID.isEmpty {
-            handleHealthcareError(.invalidConfiguration, context: "Missing required configuration")
+            let errorMsg = errorHandler.handle(RaulandHealthcareError.invalidConfiguration, context: "Missing required configuration")
+            lastError = errorMsg
         }
     }
     
@@ -92,7 +107,8 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     func connect() async -> RaulandResult<Void> {
         guard configuration.facilityID.isEmpty == false else {
             let error = RaulandHealthcareError.invalidConfiguration
-            await handleHealthcareError(error, context: "Configuration not set")
+            let errorMsg = errorHandler.handle(error, context: "Configuration not set")
+            lastError = errorMsg
             return .failure(error)
         }
         
@@ -129,13 +145,13 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         sessionToken = mockAuthResponse.sessionToken
         sessionExpirationDate = mockAuthResponse.expiresAt
         facilityInfo = mockAuthResponse.facilityInfo
-        
+
         connectionState = .connected
         isConnected = true
         lastError = nil
         lastHealthcareError = nil
         retryCount = 0
-        
+
         logHealthcareEvent("PLACEHOLDER: Connection established to mock Rauland system", priority: .normal)
         return .success(())
     }
@@ -143,6 +159,7 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     func disconnect() {
         sessionToken = nil
         sessionExpirationDate = nil
+        KeychainHelper.shared.remove("rauland_api_key")
         facilityInfo = nil
         connectionState = .disconnected
         isConnected = false
@@ -152,20 +169,33 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         logHealthcareEvent("Connection disconnected", priority: .normal)
     }
     
-    // MARK: - Authentication (PLACEHOLDER - Not used in mock mode)
-    
+    // MARK: - Authentication (for real API, not used in placeholder)
+    // Example for future real API:
+    /*
     private func authenticate() async -> RaulandResult<RaulandAuthResponse> {
-        // This method is not used in placeholder mode
-        // When real API is available, implement actual authentication here
-        return .failure(.authenticationFailed)
+        connectionState = .authenticating
+        let authRequest = RaulandAuthRequest(
+            apiKey: configuration.apiKey,
+            deviceID: configuration.deviceID,
+            facilityID: configuration.facilityID
+        )
+        let endpoint = "\(configuration.baseURL)/api/v1/auth"
+        do {
+            let auth: RaulandAuthResponse = try await networkService.post(url: endpoint, body: authRequest, headers: nil)
+            return .success(auth)
+        } catch {
+            return .failure(.authenticationFailed)
+        }
     }
+    */
     
     // MARK: - Call Request Management
     
     func sendCallRequest(_ callType: RaulandCallType, message: String? = nil) async -> RaulandResult<Void> {
         guard isConnected, let sessionToken = sessionToken else {
             let error = RaulandHealthcareError.callRequestFailed
-            await handleHealthcareError(error, context: "Not connected to Rauland system")
+            let errorMsg = errorHandler.handle(error, context: "Not connected to Rauland system")
+            lastError = errorMsg
             return .failure(error)
         }
         
@@ -194,7 +224,8 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
             let error = callType == .emergency ? 
                 RaulandHealthcareError.emergencyCallFailed : 
                 RaulandHealthcareError.callRequestFailed
-            await handleHealthcareError(error, context: "PLACEHOLDER: Simulated call request failure")
+            let errorMsg = errorHandler.handle(error, context: "PLACEHOLDER: Simulated call request failure")
+            lastError = errorMsg
             return .failure(error)
         }
     }
@@ -220,18 +251,18 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         return .success(())
     }
     
-    // MARK: - Network Operations (PLACEHOLDER - Not used in mock mode)
-    
+    // MARK: - Network Operations (for real API, not used in placeholder)
+    // Example for future real API:
+    /*
     private func performRequest<T: Codable, U: Codable>(
         url: String,
-        method: String = "GET",
+        method: String = "POST",
         body: T? = nil,
         headers: [String: String]? = nil
-    ) async throws -> RaulandAPIResponse<U> {
-        // This method is not used in placeholder mode
-        // When real API is available, implement actual HTTP requests here
-        throw RaulandHealthcareError.serverUnavailable
+    ) async throws -> U {
+        return try await networkService.post(url: url, body: body, headers: headers)
     }
+    */
     
     // MARK: - Network Monitoring
     
@@ -299,6 +330,7 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         if callHistory.count > maxHistorySize {
             callHistory.removeFirst()
         }
+        AuditLogManager.shared.append(request)
     }
     
     private func logHealthcareEvent(_ message: String, priority: RaulandCallPriority) {
@@ -313,11 +345,12 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     // MARK: - Utility Methods
     
     func getCallHistory() -> [RaulandCallRequest] {
-        return callHistory
+        return AuditLogManager.shared.loadLog()
     }
     
     func clearCallHistory() {
         callHistory.removeAll()
+        AuditLogManager.shared.saveLog([])
         logHealthcareEvent("Call history cleared", priority: .low)
     }
     
