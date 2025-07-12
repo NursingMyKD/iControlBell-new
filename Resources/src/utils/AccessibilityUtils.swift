@@ -193,37 +193,4 @@ extension View {
     }
 }
 
-/// Haptic feedback utilities for accessibility
-struct HapticUtils {
-    
-    /// Provide haptic feedback for button taps
-    static func buttonTap() {
-        let impact = UIImpactFeedbackGenerator(style: .medium)
-        impact.impactOccurred()
-    }
-    
-    /// Provide haptic feedback for successful actions
-    static func success() {
-        let notification = UINotificationFeedbackGenerator()
-        notification.notificationOccurred(.success)
-    }
-    
-    /// Provide haptic feedback for errors
-    static func error() {
-        let notification = UINotificationFeedbackGenerator()
-        notification.notificationOccurred(.error)
-    }
-    
-    /// Provide haptic feedback for warnings
-    static func warning() {
-        let notification = UINotificationFeedbackGenerator()
-        notification.notificationOccurred(.warning)
-    }
-    
-    /// Light haptic feedback for selections
-    static func selection() {
-        let selection = UISelectionFeedbackGenerator()
-        selection.selectionChanged()
-    }
-}
 

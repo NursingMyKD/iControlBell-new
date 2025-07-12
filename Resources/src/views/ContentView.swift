@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject private var soundboardData = SoundboardData(language: .english)
     @StateObject private var callRequestData = CallRequestData(language: .english)
     @State private var showingSettings = false
+    @State private var connectionStatus: String = ""
     
     // Environment values for responsive design
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -36,7 +37,7 @@ struct ContentView: View {
                 VStack(spacing: 0) {
                     // Prominent connection status banner
                     ConnectionStatusBanner(
-                        status: appState.getConnectionStatus(),
+                        status: connectionStatus,
                         isConnected: appState.raulandManager.isConnected,
                         isConnecting: appState.raulandManager.connectionState == .connecting || appState.raulandManager.connectionState == .authenticating
                     )
@@ -54,6 +55,21 @@ struct ContentView: View {
                 soundboardData.updateLanguage(newLanguage)
                 callRequestData.updateLanguage(newLanguage)
                 HapticUtils.selection() // Haptic feedback for language change
+            }
+            .onAppear {
+                Task {
+                    connectionStatus = await appState.getConnectionStatus()
+                }
+            }
+            .onChange(of: appState.raulandManager.connectionState) { _ in
+                Task {
+                    connectionStatus = await appState.getConnectionStatus()
+                }
+            }
+            .onChange(of: appState.isRaulandConfigured) { _ in
+                Task {
+                    connectionStatus = await appState.getConnectionStatus()
+                }
             }
             .overlay(
                 ZStack(alignment: .top) {

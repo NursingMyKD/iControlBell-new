@@ -135,18 +135,6 @@ extension View {
 /// Color scheme utilities
 extension Color {
     /// Dynamic colors that adapt to device and appearance
-    static var adaptiveBackground: Color {
-        if DeviceUtils.isIPad {
-            return Color(.systemGroupedBackground)
-        } else {
-            return Color(.systemBackground)
-        }
-    }
-    
-    static var adaptiveSecondaryBackground: Color {
-        Color(.secondarySystemBackground)
-    }
-    
     static var adaptiveTertiary: Color {
         Color(.tertiarySystemBackground)
     }

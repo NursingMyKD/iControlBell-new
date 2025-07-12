@@ -283,31 +283,30 @@ struct RaulandConfigurationView: View {
     // MARK: - Actions
     
     private func saveConfiguration() {
-        appState.configureRauland(
-            baseURL: baseURL,
-            apiKey: apiKey,
-            deviceID: deviceID,
-            facilityID: facilityID,
-            roomNumber: roomNumber.isEmpty ? nil : roomNumber
-        )
-        
-        HapticUtils.notification(.success)
-        dismiss()
+        Task {
+            await appState.configureRauland(
+                baseURL: baseURL,
+                apiKey: apiKey,
+                deviceID: deviceID,
+                facilityID: facilityID,
+                roomNumber: roomNumber.isEmpty ? nil : roomNumber
+            )
+            HapticUtils.notification(.success)
+            dismiss()
+        }
     }
     
     private func testConfiguration() {
-        appState.configureRauland(
-            baseURL: baseURL,
-            apiKey: apiKey,
-            deviceID: deviceID,
-            facilityID: facilityID,
-            roomNumber: roomNumber.isEmpty ? nil : roomNumber
-        )
-        
         Task {
+            await appState.configureRauland(
+                baseURL: baseURL,
+                apiKey: apiKey,
+                deviceID: deviceID,
+                facilityID: facilityID,
+                roomNumber: roomNumber.isEmpty ? nil : roomNumber
+            )
             HapticUtils.impact(.medium)
             let result = await appState.raulandManager.connect()
-            
             switch result {
             case .success:
                 appState.showToast("rauland_test_successful".localized)

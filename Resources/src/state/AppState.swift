@@ -58,18 +58,19 @@ class AppState: ObservableObject {
         }
     }
     // Rauland Connectivity State
-    @Published var raulandManager: RaulandAPIManaging
+    @Published var raulandManager: RaulandAPIManager
     @Published var isRaulandConfigured: Bool = false
     @Published var facilityName: String = ""
-    /// Allow dependency injection of RaulandAPIManaging
-    init(raulandManager: RaulandAPIManaging = RaulandAPIManager.shared) {
+    /// Allow dependency injection of RaulandAPIManager
+    init(raulandManager: RaulandAPIManager = RaulandAPIManager.shared) {
         let onboardingComplete = UserDefaults.standard.bool(forKey: "onboardingComplete")
         self.showOnboarding = !onboardingComplete
         self.raulandManager = raulandManager
     }
 
     /// Configure Rauland connection with facility details
-    func configureRauland(baseURL: String, apiKey: String, deviceID: String, facilityID: String, roomNumber: String? = nil) {
+    @MainActor
+    func configureRauland(baseURL: String, apiKey: String, deviceID: String, facilityID: String, roomNumber: String? = nil) async {
         let config = RaulandConfiguration(
             baseURL: baseURL,
             apiKey: apiKey,
@@ -78,10 +79,8 @@ class AppState: ObservableObject {
             facilityID: facilityID,
             timeout: 30.0
         )
-        
-        raulandManager.configure(with: config)
+        await raulandManager.configure(with: config)
         isRaulandConfigured = !apiKey.isEmpty && !facilityID.isEmpty
-        
         if isRaulandConfigured {
             facilityName = facilityID // Will be updated with actual facility name on connection
             showToast("rauland_configured".localized)
@@ -96,7 +95,7 @@ class AppState: ObservableObject {
             callType: callType,
             message: message
         )
-        if raulandManager.isConnected {
+        if await raulandManager.isConnected {
             let result = await raulandManager.sendCallRequest(callType, message: message)
             switch result {
             case .success:
@@ -131,8 +130,9 @@ class AppState: ObservableObject {
     }
 
     /// Call this when connection is restored
+    @MainActor
     func sendQueuedCallRequests() async {
-        guard raulandManager.isConnected else { return }
+        guard await raulandManager.isConnected else { return }
         var queue = CallRequestQueueManager.shared.loadQueue()
         guard !queue.isEmpty else { return }
         var sentCount = 0
@@ -160,15 +160,16 @@ class AppState: ObservableObject {
     }
 
     /// Get connection status information
-    func getConnectionStatus() -> String {
-        if raulandManager.isConnected {
-            if let facilityInfo = raulandManager.facilityInfo {
+    @MainActor
+    func getConnectionStatus() async -> String {
+        if await raulandManager.isConnected {
+            if let facilityInfo = await raulandManager.facilityInfo {
                 return "\("rauland_connected_to".localized) \(facilityInfo.name)"
             } else {
                 return "rauland_status_connected".localized
             }
         } else if isRaulandConfigured {
-            return raulandManager.connectionState.displayName
+            return await raulandManager.connectionState.displayName
         } else {
             return "rauland_not_configured".localized
         }
