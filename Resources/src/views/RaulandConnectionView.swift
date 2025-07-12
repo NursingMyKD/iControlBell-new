@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 /// View showing Rauland Responder 5 connection status and controls
 struct RaulandConnectionView: View {
     @ObservedObject var raulandManager: RaulandAPIManager
@@ -46,7 +47,7 @@ struct RaulandConnectionView: View {
         .padding(containerPadding)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color.adaptiveCardBackground)
+                .background(Color.adaptiveCardBackground)
                 .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
         )
         .accessibilityElement(children: .contain)
@@ -67,7 +68,7 @@ struct RaulandConnectionView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text("rauland_connection_title".localized)
                     .font(titleFont)
-                    .fontWeight(.semibold)
+                    .font(.system(size: 17, weight: .semibold))
                     .foregroundColor(.primary)
                 
                 Text(raulandManager.connectionState.displayName)
@@ -123,7 +124,7 @@ struct RaulandConnectionView: View {
                 
                 Text(facilityInfo.name)
                     .font(bodyFont)
-                    .fontWeight(.medium)
+                    .font(.system(size: 15, weight: .medium))
                     .foregroundColor(.primary)
                 
                 Spacer()
@@ -148,7 +149,7 @@ struct RaulandConnectionView: View {
         .padding(.horizontal, 12)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.adaptiveSecondaryBackground)
+                .background(Color.adaptiveSecondaryBackground)
         )
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\("rauland_facility".localized): \(facilityInfo.name)")
@@ -178,14 +179,14 @@ struct RaulandConnectionView: View {
                         
                         Text("rauland_connect".localized)
                             .font(buttonFont)
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15, weight: .semibold))
                     }
                     .foregroundColor(.white)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 12)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.accentColor)
+                            .background(Color.accentColor)
                     )
                 }
                 .disabled(raulandManager.connectionState == .connecting || 
@@ -206,14 +207,14 @@ struct RaulandConnectionView: View {
                         
                         Text("rauland_disconnect".localized)
                             .font(buttonFont)
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15, weight: .semibold))
                     }
                     .foregroundColor(.white)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 12)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.red)
+                            .background(Color.red)
                     )
                 }
                 .accessibilityLabel("rauland_disconnect_button".localized)
@@ -242,7 +243,7 @@ struct RaulandConnectionView: View {
                         if !isCompact {
                             Text("rauland_refresh".localized)
                                 .font(buttonFont)
-                                .fontWeight(.semibold)
+                                .font(.system(size: 15, weight: .semibold))
                         }
                     }
                     .foregroundColor(.accentColor)
@@ -250,7 +251,10 @@ struct RaulandConnectionView: View {
                     .padding(.vertical, 12)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .strokeBorder(Color.accentColor, lineWidth: 1.5)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.accentColor, lineWidth: 1.5)
+                            )
                     )
                 }
                 .accessibilityLabel("rauland_refresh_button".localized)
@@ -277,8 +281,11 @@ struct RaulandConnectionView: View {
         .padding(.horizontal, 12)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.red.opacity(0.1))
-                .strokeBorder(Color.red.opacity(0.3), lineWidth: 1)
+                .background(Color.red.opacity(0.1))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.red.opacity(0.3), lineWidth: 1)
+                )
         )
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\("error".localized): \(error)")
@@ -313,7 +320,7 @@ struct RaulandConnectionView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("rauland_placeholder_mode".localized)
                         .font(.caption)
-                        .fontWeight(.semibold)
+                        .font(.system(size: 15, weight: .semibold))
                         .foregroundColor(.orange)
                     
                     Text("rauland_placeholder_demo_note".localized)
@@ -328,8 +335,11 @@ struct RaulandConnectionView: View {
             .padding(.vertical, 8)
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.orange.opacity(0.1))
-                    .strokeBorder(Color.orange.opacity(0.3), lineWidth: 1)
+                    .background(Color.orange.opacity(0.1))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.orange.opacity(0.3), lineWidth: 1)
+                    )
             )
             .accessibilityElement(children: .combine)
             .accessibilityLabel("rauland_placeholder_mode".localized)
@@ -385,35 +395,7 @@ struct RaulandConnectionView: View {
     }
 }
 
-// MARK: - Color Extensions
 
-extension Color {
-    static let adaptiveCardBackground = Color(UIColor.secondarySystemGroupedBackground)
-    static let adaptiveSecondaryBackground = Color(UIColor.tertiarySystemGroupedBackground)
-    static let adaptiveBackground = Color(UIColor.systemGroupedBackground)
-}
-
-// MARK: - Haptic Utilities
-
-struct HapticUtils {
-    static func impact(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
-        guard !AccessibilityUtils.prefersReducedMotion else { return }
-        let generator = UIImpactFeedbackGenerator(style: style)
-        generator.impactOccurred()
-    }
-    
-    static func selection() {
-        guard !AccessibilityUtils.prefersReducedMotion else { return }
-        let generator = UISelectionFeedbackGenerator()
-        generator.selectionChanged()
-    }
-    
-    static func notification(_ type: UINotificationFeedbackGenerator.FeedbackType) {
-        guard !AccessibilityUtils.prefersReducedMotion else { return }
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(type)
-    }
-}
 
 #Preview {
     let mockManager = RaulandAPIManager(networkService: MockNetworkService())

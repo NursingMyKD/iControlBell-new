@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 /// Configuration view for setting up Rauland Responder 5 connection
 struct RaulandConfigurationView: View {
     @EnvironmentObject var appState: AppState
@@ -66,7 +67,7 @@ struct RaulandConfigurationView: View {
                         saveConfiguration()
                     }
                     .disabled(!isConfigurationValid)
-                    .fontWeight(.semibold)
+                    .font(.system(size: 17, weight: .semibold))
                 }
             }
         }
@@ -87,7 +88,7 @@ struct RaulandConfigurationView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("rauland_configuration_header".localized)
                             .font(.headline)
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15, weight: .semibold))
                         
                         Text("rauland_configuration_description".localized)
                             .font(.caption)
@@ -106,7 +107,7 @@ struct RaulandConfigurationView: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text("rauland_placeholder_mode".localized)
                                 .font(.caption)
-                                .fontWeight(.semibold)
+                                .font(.system(size: 15, weight: .semibold))
                                 .foregroundColor(.orange)
                             
                             Text("rauland_placeholder_description".localized)
@@ -117,8 +118,11 @@ struct RaulandConfigurationView: View {
                     .padding(8)
                     .background(
                         RoundedRectangle(cornerRadius: 6)
-                            .fill(Color.orange.opacity(0.1))
-                            .strokeBorder(Color.orange.opacity(0.3), lineWidth: 1)
+                            .background(Color.orange.opacity(0.1))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 6)
+                                    .stroke(Color.orange.opacity(0.3), lineWidth: 1)
+                            )
                     )
                 }
                 
@@ -392,7 +396,7 @@ struct RaulandConfigurationHelpView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color.adaptiveCardBackground)
+                .background(Color.adaptiveCardBackground)
         )
     }
 }
