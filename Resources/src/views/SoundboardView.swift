@@ -21,11 +21,9 @@ struct SoundboardView: View {
     private var gridColumns: Int {
         DeviceUtils.adaptiveColumns(for: "soundboard")
     }
-    
     private var buttonHeight: CGFloat {
-        DeviceUtils.dynamicSpacing(compact: 80, regular: 100, iPad: 120)
+        DeviceUtils.dynamicSpacing(compact: 56, regular: 70, iPad: 90)
     }
-    
     private var titleFont: Font {
         DeviceUtils.dynamicFont(
             compact: .title3,
@@ -33,7 +31,6 @@ struct SoundboardView: View {
             iPad: .largeTitle
         )
     }
-    
     private var bodyFont: Font {
         DeviceUtils.dynamicFont(
             compact: .caption2,
@@ -41,7 +38,6 @@ struct SoundboardView: View {
             iPad: .body
         )
     }
-    
     private var buttonFont: Font {
         if isIPad {
             return .body
@@ -51,52 +47,45 @@ struct SoundboardView: View {
             return .caption
         }
     }
-    
     private var iconSize: CGFloat {
         if isIPad {
-            return 32
+            return 28
         } else if isCompact {
-            return 20
+            return 18
         } else {
-            return 24
+            return 20
         }
     }
-    
     private var horizontalPadding: CGFloat {
         if isIPad {
-            return 24
-        } else if isCompact {
             return 12
+        } else if isCompact {
+            return 6
         } else {
-            return 16
+            return 8
         }
     }
-    
     private var sectionSpacing: CGFloat {
         if isIPad {
-            return 32
-        } else if isCompact {
             return 16
+        } else if isCompact {
+            return 8
         } else {
-            return 24
+            return 12
         }
     }
     
     var body: some View {
         VStack(alignment: .leading, spacing: sectionSpacing) {
-            // Soundboard title and description
-            VStack(spacing: 16) {
+            // Soundboard title and description (only once)
+            VStack(spacing: 8) {
                 Text("soundboard_title".localized)
                     .font(titleFont)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
-                Text("soundboard_description".localized)
-                    .font(bodyFont)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
                 // Voice selector (simplified for now)
                 if !isCompact {
-                    VStack(spacing: 8) {
+                    VStack(spacing: 4) {
                         Text("Select Voice".localized)
                             .font(bodyFont)
                             .foregroundColor(.primary)
@@ -104,7 +93,7 @@ struct SoundboardView: View {
                             .font(bodyFont)
                             .foregroundColor(.secondary)
                             .padding(.horizontal, horizontalPadding)
-                            .padding(.vertical, 8)
+                            .padding(.vertical, 4)
                             .background(Color(.systemGray6))
                             .cornerRadius(8)
                     }
@@ -113,8 +102,8 @@ struct SoundboardView: View {
             // Category tabs
             if !categories.isEmpty {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: isIPad ? 20 : 12) {
-                        ForEach(0..<categories.count, id: \.self) { index in
+                    HStack(spacing: isIPad ? 10 : 6) {
+                        ForEach(0..<categories.count, id: \ .self) { index in
                             Button(action: {
                                 selectedCategoryIndex = index
                             }) {
@@ -123,12 +112,12 @@ struct SoundboardView: View {
                                     .fontWeight(.medium)
                                     .foregroundColor(selectedCategoryIndex == index ? .white : .primary)
                                     .padding(.horizontal, horizontalPadding)
-                                    .padding(.vertical, isIPad ? 12 : 8)
+                                    .padding(.vertical, isIPad ? 6 : 4)
                                     .background(
                                         selectedCategoryIndex == index ? 
                                         Color.accentColor : Color(.systemGray6)
                                     )
-                                    .cornerRadius(isIPad ? 12 : 8)
+                                    .cornerRadius(isIPad ? 8 : 6)
                             }
                             .buttonStyle(ScaleButtonStyle())
                         }
@@ -139,8 +128,8 @@ struct SoundboardView: View {
                 if categories.indices.contains(selectedCategoryIndex) {
                     let phrases = categories[selectedCategoryIndex].phrases[selectedLanguage.rawValue] ?? []
                     LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: isIPad ? 16 : 12), count: gridColumns), 
-                        spacing: isIPad ? 16 : 12
+                        columns: Array(repeating: GridItem(.flexible(), spacing: isIPad ? 8 : 4), count: gridColumns), 
+                        spacing: isIPad ? 8 : 4
                     ) {
                         ForEach(phrases, id: \.self) { phrase in
                             phraseButton(for: phrase)
@@ -189,8 +178,8 @@ struct SoundboardView: View {
                         .lineLimit(isCompact ? 2 : 3)
                         .minimumScaleFactor(0.7)
                 }
-                .padding(.vertical, isIPad ? 16 : (isCompact ? 8 : 12))
-                .padding(.horizontal, isIPad ? 12 : (isCompact ? 6 : 8))
+                .padding(.vertical, isIPad ? 6 : (isCompact ? 4 : 6))
+                .padding(.horizontal, isIPad ? 6 : (isCompact ? 4 : 6))
                 .frame(maxWidth: .infinity)
                 .frame(height: buttonHeight)
                 .background(
