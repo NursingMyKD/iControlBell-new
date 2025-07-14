@@ -77,6 +77,8 @@ struct CallRequestGridView: View {
                 .padding(.horizontal, horizontalPadding)
             }
         }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("call_requests_group_accessibility".localized)
     }
     
     @ViewBuilder

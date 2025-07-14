@@ -33,7 +33,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.adaptiveBackground.ignoresSafeArea()
+                // Use system background material for a modern look
+                Color(.systemBackground).ignoresSafeArea()
                 VStack(spacing: 0) {
                     // Prominent connection status banner
                     ConnectionStatusBanner(
@@ -115,13 +116,7 @@ struct ContentView: View {
                     .padding(.bottom, 12)
 
                 // Call Request Grid - visually grouped
-                VStack(spacing: 16) {
-                    Text("call_requests".localized)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 4)
+                GroupBox(label: Label("call_requests".localized, systemImage: "bell.fill").font(.title2).foregroundColor(.accentColor)) {
                     CallRequestGridView(
                         selectedLanguage: appState.selectedLanguage,
                         callRequests: callRequestData.options,
@@ -130,21 +125,11 @@ struct ContentView: View {
                     )
                     .environmentObject(appState)
                 }
+                .groupBoxStyle(DefaultGroupBoxStyle())
                 .padding(.vertical, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 18)
-                        .fill(Color.adaptiveCardBackground)
-                        .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
-                )
 
                 // Soundboard - visually grouped
-                VStack(spacing: 16) {
-                    Text("soundboard".localized)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primary)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 4)
+                GroupBox(label: Label("soundboard".localized, systemImage: "speaker.wave.2.fill").font(.title2).foregroundColor(.accentColor)) {
                     SoundboardView(
                         selectedLanguage: appState.selectedLanguage,
                         categories: soundboardData.categories,
@@ -152,12 +137,8 @@ struct ContentView: View {
                         isCompact: isCompact
                     )
                 }
+                .groupBoxStyle(DefaultGroupBoxStyle())
                 .padding(.vertical, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 18)
-                        .fill(Color.adaptiveCardBackground)
-                        .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
-                )
 
                 Spacer(minLength: 20)
             }
@@ -208,54 +189,44 @@ struct ContentView: View {
     private var headerSection: some View {
         VStack(spacing: headerSpacing) {
             // Logo and title with settings button
-            HStack {
+            HStack(alignment: .center) {
                 Spacer()
-                
                 VStack(spacing: 8) {
                     Image(systemName: "phone.fill")
-                        .font(.system(size: logoSize))
-                        .foregroundColor(.primary)
-                    
+                        .font(.system(size: logoSize, weight: .bold, design: .rounded))
+                        .foregroundColor(.accentColor)
+                        .accessibilityHidden(true)
                     Text("app_title".localized)
                         .font(titleFont)
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
+                        .accessibilityAddTraits(.isHeader)
                 }
-                
                 Spacer()
-                
                 // Settings button
                 Button(action: {
                     HapticUtils.selection()
                     showingSettings = true
                 }) {
-                    Image(systemName: "gear")
-                        .font(.system(size: 20))
-                        .foregroundColor(.secondary)
-                        .padding(8)
-                        .background(
-                            Circle()
-                                .fill(Color.adaptiveCardBackground)
-                                .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
-                        )
+                    Image(systemName: "gearshape.fill")
+                        .font(.system(size: 22, weight: .medium, design: .rounded))
+                        .foregroundColor(.accentColor)
                 }
+                .buttonStyle(.bordered)
                 .accessibilityLabel("settings".localized)
                 .accessibilityHint("double_tap_to_open_settings".localized)
             }
-            
             // Description
             Text("main_description".localized)
                 .font(bodyFont)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, isIPad ? 60 : 20)
-            
             // Language selector
             VStack(spacing: 8) {
                 Text("select_language".localized)
                     .font(bodyFont)
                     .foregroundColor(.primary)
-                
                 LanguageSelectorView(selectedLanguage: $appState.selectedLanguage)
             }
         }

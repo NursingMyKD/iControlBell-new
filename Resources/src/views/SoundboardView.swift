@@ -90,19 +90,16 @@ struct SoundboardView: View {
                     .font(titleFont)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
-                
                 Text("soundboard_description".localized)
                     .font(bodyFont)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
-                
                 // Voice selector (simplified for now)
                 if !isCompact {
                     VStack(spacing: 8) {
                         Text("Select Voice".localized)
                             .font(bodyFont)
                             .foregroundColor(.primary)
-                        
                         Text("\("Voice".localized) (\(selectedLanguage.rawValue.uppercased()))")
                             .font(bodyFont)
                             .foregroundColor(.secondary)
@@ -113,7 +110,6 @@ struct SoundboardView: View {
                     }
                 }
             }
-            
             // Category tabs
             if !categories.isEmpty {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -139,11 +135,9 @@ struct SoundboardView: View {
                     }
                     .padding(.horizontal, horizontalPadding)
                 }
-                
                 // Phrase buttons grid
                 if categories.indices.contains(selectedCategoryIndex) {
                     let phrases = categories[selectedCategoryIndex].phrases[selectedLanguage.rawValue] ?? []
-                    
                     LazyVGrid(
                         columns: Array(repeating: GridItem(.flexible(), spacing: isIPad ? 16 : 12), count: gridColumns), 
                         spacing: isIPad ? 16 : 12
@@ -160,7 +154,7 @@ struct SoundboardView: View {
                     Image(systemName: "speaker.slash.fill")
                         .font(.system(size: iconSize))
                         .foregroundColor(.secondary)
-                    
+                        .accessibilityHidden(true)
                     Text("no_categories_available".localized)
                         .font(bodyFont)
                         .foregroundColor(.secondary)
@@ -170,6 +164,8 @@ struct SoundboardView: View {
             }
         }
         .padding(.vertical)
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("soundboard_group_accessibility".localized)
     }
     
     @ViewBuilder
