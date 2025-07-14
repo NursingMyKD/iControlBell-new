@@ -121,104 +121,92 @@ struct SoundboardView: View {
                                     .padding(.vertical, isIPad ? 6 : 4)
                                     .background(
                                         selectedCategoryIndex == index ? 
-                                        Color.accentColor : Color(.systemGray6)
-                                    )
-                                    .cornerRadius(isIPad ? 8 : 6)
-                            }
-                            .buttonStyle(ScaleButtonStyle())
-                        }
-                    }
-                    .padding(.horizontal, horizontalPadding)
-                }
-                // Phrase buttons grid
-                if categories.indices.contains(selectedCategoryIndex) {
-                    let phrases = categories[selectedCategoryIndex].phrases[selectedLanguage.rawValue] ?? []
-                    LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: isIPad ? 8 : 4), count: gridColumns), 
-                        spacing: isIPad ? 8 : 4
-                    ) {
-                        ForEach(phrases, id: \.self) { phrase in
-                            phraseButton(for: phrase)
-                        }
-                    }
-                    .padding(.horizontal, horizontalPadding)
-                }
-            } else {
-                // Empty state
-                VStack(spacing: 16) {
-                    Image(systemName: "speaker.slash.fill")
-                        .font(.system(size: iconSize))
-                        .foregroundColor(.secondary)
-                        .accessibilityHidden(true)
-                    Text("no_categories_available".localized)
-                        .font(bodyFont)
-                        .foregroundColor(.secondary)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 40)
-            }
-        }
-        .padding(.vertical, 6)
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel("soundboard_group_accessibility".localized)
-    }
-    
-    @ViewBuilder
-    private func phraseButton(for phrase: String) -> some View {
-        HStack(spacing: 8) {
-            Button(action: {
-                let selection = UISelectionFeedbackGenerator()
-                selection.selectionChanged()
-                speak(phrase)
-private func speak(_ phrase: String, voiceIdentifier: String? = nil) {
-                VStack(spacing: isIPad ? 8 : 4) {
-                    Image(systemName: isSpeaking ? "speaker.wave.3.fill" : "speaker.wave.2.fill")
-                        .font(.system(size: iconSize))
-                        .foregroundColor(.primary)
-                        .frame(height: iconSize)
-                        .animation(.easeInOut(duration: 0.3), value: isSpeaking)
-                    Text(phrase)
-                        .font(buttonFont)
-                        .foregroundColor(.primary)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(isCompact ? 2 : 3)
-                        .minimumScaleFactor(0.7)
-                }
-                .padding(.vertical, isIPad ? 6 : (isCompact ? 4 : 6))
-                .padding(.horizontal, isIPad ? 6 : (isCompact ? 4 : 6))
-                .frame(maxWidth: .infinity)
-                .frame(height: buttonHeight)
-                .background(
-                    UIAccessibility.isDarkerSystemColorsEnabled ? 
-                        Color(.systemGray4) : Color(.systemGray6)
-                )
-                .cornerRadius(isIPad ? 16 : (isCompact ? 8 : 12))
-                .overlay(
-                    RoundedRectangle(cornerRadius: isIPad ? 16 : (isCompact ? 8 : 12))
-                        .stroke(
-                            isSpeaking ? Color.accentColor : Color.clear, 
-                            lineWidth: isSpeaking ? 3 : 0
-                        )
-                        .animation(.easeInOut(duration: 0.2), value: isSpeaking)
-                )
-            }
-            .frame(minWidth: max(buttonHeight, 44), minHeight: max(buttonHeight, 44))
-            .accessibilityLabel("\("soundboard_phrase_accessibility".localized): \(phrase)")
-            .accessibilityHint(isSpeaking ? "currently_speaking_accessibility".localized : "tap_to_speak_accessibility".localized)
-            .accessibilityIdentifier("sound_button_\(phrase.replacingOccurrences(of: " ", with: "_"))")
-            .accessibilityAddTraits(.isButton)
-            .buttonStyle(ScaleButtonStyle())
+struct SoundboardView: View {
+    var selectedLanguage: Language
+    var categories: [SoundboardCategory]
+    var isIPad: Bool
+    var isCompact: Bool
+    @State private var selectedCategoryIndex: Int = 0
+    @State private var isSpeaking = false
+    @State private var speechDelegate: SpeechDelegate?
+    @State private var speechSynth = AVSpeechSynthesizer()
+    @State private var isSpeakingEnglish = false
+    @State private var selectedVoiceIdentifier: String = AVSpeechSynthesisVoice.speechVoices().first?.identifier ?? ""
 
-            // English TTS button if not English
-            if selectedLanguage != .english, let englishPhrase = englishTranslation(for: phrase) {
-                Button(action: {
-                    let selection = UISelectionFeedbackGenerator()
-                    selection.selectionChanged()
-                    speakEnglish(englishPhrase)
-                }) {
-                    VStack(spacing: 2) {
-                        Image(systemName: isSpeakingEnglish ? "speaker.wave.3.fill" : "globe")
-                            .font(.system(size: iconSize - 2))
+    // Dynamic layout properties using DeviceUtils
+    private var gridColumns: Int {
+        DeviceUtils.adaptiveColumns(for: "soundboard")
+    }
+    private var buttonHeight: CGFloat {
+        DeviceUtils.dynamicSpacing(compact: 56, regular: 70, iPad: 90)
+    }
+    private var titleFont: Font {
+        DeviceUtils.dynamicFont(
+            compact: .title3,
+            regular: .title2,
+            iPad: .largeTitle
+        )
+    }
+    private var bodyFont: Font {
+        DeviceUtils.dynamicFont(
+            compact: .caption2,
+            regular: .caption,
+            iPad: .body
+        )
+    }
+    private var buttonFont: Font {
+        if isIPad {
+            return .body
+        } else if isCompact {
+            return .caption2
+        } else {
+            return .caption
+        }
+    }
+    private var iconSize: CGFloat {
+        if isIPad {
+            return 28
+        } else if isCompact {
+            return 18
+        } else {
+            return 20
+        }
+    }
+    private var horizontalPadding: CGFloat {
+        if isIPad {
+            return 12
+        } else if isCompact {
+            return 6
+        } else {
+            return 8
+        }
+    }
+    private var sectionSpacing: CGFloat {
+        if isIPad {
+            return 10
+        } else if isCompact {
+            return 5
+        } else {
+            return 8
+        }
+    }
+
+    var body: some View {
+        let voices = AVSpeechSynthesisVoice.speechVoices()
+        VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
+            if !isCompact && voices.count > 1 {
+                Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
+                    ForEach(voices, id: \.self) { voice in
+                        Text("\(voice.name) (\(voice.language))").tag(voice.identifier)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .frame(maxWidth: 320)
+                .padding(.horizontal, horizontalPadding)
+                .padding(.vertical, 4)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+            }
                             .foregroundColor(.accentColor)
                         Text("English")
                             .font(.caption2.weight(.bold))
