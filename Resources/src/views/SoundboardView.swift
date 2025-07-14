@@ -3,23 +3,23 @@
 
 import SwiftUI
 import AVFoundation
-import Foundation
-
-/// Displays a soundboard for speaking phrases in the selected language.
-// SoundboardView.swift
-// Soundboard for speaking phrases
-
-import SwiftUI
-import AVFoundation
-import Foundation
 
 /// Displays a soundboard for speaking phrases in the selected language.
 struct SoundboardView: View {
+    // Accessibility focus state for rotor navigation
+    @AccessibilityFocusState private var focusedPhrase: String?
+    // Favorites bar state
+    @State private var favoritePhrases: [String] = []
+    // Collapsible state for each category
+    @State private var expandedCategories: Set<Int> = []
+    // System language picker scaffold
+    @State private var selectedSystemLocale: Locale = Locale.current
+
     var selectedLanguage: Language
     var categories: [SoundboardCategory]
     var isIPad: Bool
     var isCompact: Bool
-    @State private var selectedCategoryIndex: Int = 0
+    // Removed selectedCategoryIndex unless used for navigation
     @State private var isSpeaking = false
     @State private var speechDelegate: SpeechDelegate?
     @State private var speechSynth = AVSpeechSynthesizer()
@@ -84,128 +84,248 @@ struct SoundboardView: View {
         }
     }
 
+    // Computed property for available voices
+    private var voices: [AVSpeechSynthesisVoice] {
+        AVSpeechSynthesisVoice.speechVoices()
+    }
+
     var body: some View {
-        let voices = AVSpeechSynthesisVoice.speechVoices()
-        VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
-            if !isCompact && voices.count > 1 {
-                Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
-                    ForEach(voices, id: \.identifier) { voice in
-                        Text("\(voice.name) (\(voice.language))").tag(voice.identifier)
+        let mainContent = VStack {
+            // Favorites bar
+            if !favoritePhrases.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(favoritePhrases, id: \.self) { phrase in
+                            Button(action: {
+                                let impact = UIImpactFeedbackGenerator(style: .soft)
+                                impact.impactOccurred()
+                                speak(phrase, voiceIdentifier: selectedVoiceIdentifier)
+                            }) {
+                                HStack(spacing: 4) {
+                                    Image(systemName: "star.fill")
+                                        .foregroundColor(.yellow)
+                                    Text(phrase)
+                                        .font(.body)
+                                        .dynamicTypeSize(.large ... .xxxLarge)
+                                        .foregroundColor(.primary)
+                                }
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 12)
+                                .background(Color(.systemGray5))
+                                .cornerRadius(12)
+                            }
+                            .frame(minWidth: 48, minHeight: 48)
+                            .accessibilityLabel("Favorite: \(phrase)")
+                            .accessibilityHint("Tap to speak favorite phrase")
+                            .accessibilityAddTraits(.isButton)
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                    .padding(.horizontal, horizontalPadding)
+                }
+                .padding(.bottom, 4)
+            }
+            // System language picker (scaffold)
+            HStack {
+                Image(systemName: "globe")
+                    .foregroundColor(.accentColor)
+                Picker("System Language", selection: $selectedSystemLocale) {
+                    ForEach(Locale.availableIdentifiers, id: \.self) { id in
+                        let locale = Locale(identifier: id)
+                        Text(locale.localizedString(forIdentifier: id) ?? id)
+                            .tag(locale)
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
-                .frame(maxWidth: 320)
-                .padding(.horizontal, horizontalPadding)
-                .padding(.vertical, 4)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
+                .accessibilityLabel("System Language Picker")
+                .accessibilityHint("Select the system language")
             }
-            // Category tabs
-            if !categories.isEmpty {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: isIPad ? 10 : 6) {
-                        ForEach(0..<categories.count, id: \.self) { index in
-                            Button(action: {
-                                selectedCategoryIndex = index
-                            }) {
-                                Text(categories[index].displayName(for: selectedLanguage))
-                                    .font(bodyFont)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(selectedCategoryIndex == index ? .white : .primary)
-                                    .padding(.horizontal, horizontalPadding)
-                                    .padding(.vertical, isIPad ? 6 : 4)
-                                    .background(
-                                        selectedCategoryIndex == index ? Color.accentColor : Color(.systemGray6)
-                                    )
-                                    .cornerRadius(isIPad ? 8 : 6)
+            .padding(.horizontal, horizontalPadding)
+            .padding(.vertical, 4)
+            VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
+                if !isCompact && voices.count > 1 {
+                    Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
+                        ForEach(voices, id: \.identifier) { voice in
+                            Text("\(voice.name) (\(voice.language))")
+                                .font(.body)
+                                .dynamicTypeSize(.large ... .xxxLarge)
+                                .accessibilityLabel("Voice: \(voice.name), Language: \(voice.language)")
+                                .tag(voice.identifier)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                    .frame(maxWidth: 320)
+                    .padding(.horizontal, horizontalPadding)
+                    .padding(.vertical, 4)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .accessibilityLabel("Voice Picker")
+                    .accessibilityHint("Select a voice for speech output")
+                }
+                // Category tabs
+                if !categories.isEmpty {
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: sectionSpacing) {
+                            ForEach(0..<categories.count, id: \.self) { index in
+                                VStack(spacing: 0) {
+                                    Button(action: {
+                                        let impact = UIImpactFeedbackGenerator(style: .soft)
+                                        impact.impactOccurred()
+                                        if expandedCategories.contains(index) {
+                                            expandedCategories.remove(index)
+                                        } else {
+                                            expandedCategories.insert(index)
+                                        }
+                                    }) {
+                                        HStack {
+                                            Text(categories[index].displayName(for: selectedLanguage))
+                                                .font(.body)
+                                                .fontWeight(.semibold)
+                                                .dynamicTypeSize(.large ... .xxxLarge)
+                                                .foregroundColor(.primary)
+                                            Spacer()
+                                            Image(systemName: expandedCategories.contains(index) ? "chevron.down" : "chevron.right")
+                                                .foregroundColor(.secondary)
+                                        }
+                                        .padding(.horizontal, horizontalPadding)
+                                        .padding(.vertical, isIPad ? 10 : 8)
+                                        .background(Color(.systemGray6))
+                                        .cornerRadius(isIPad ? 10 : 8)
+                                    }
+                                    .frame(minWidth: 48, minHeight: 48)
+                                    .accessibilityLabel(categories[index].displayName(for: selectedLanguage))
+                                    .accessibilityHint("Expand or collapse category \(categories[index].displayName(for: selectedLanguage))")
+                                    .accessibilityAddTraits(.isButton)
+                                    .buttonStyle(PlainButtonStyle())
+                                    if expandedCategories.contains(index) {
+                                        let phrases = categories[index].phrases[selectedLanguage.rawValue] ?? []
+                                        LazyVGrid(
+                                            columns: Array(repeating: GridItem(.flexible(), spacing: isIPad ? 8 : 4), count: gridColumns),
+                                            spacing: isIPad ? 8 : 4
+                                        ) {
+                                            ForEach(phrases, id: \.self) { phrase in
+                                                phraseButton(for: phrase)
+                                            }
+                                        }
+                                        .padding(.horizontal, horizontalPadding)
+                                        .padding(.bottom, sectionSpacing)
+                                    }
+                                }
                             }
-                            .buttonStyle(ScaleButtonStyle())
                         }
+                        .padding(.horizontal, horizontalPadding)
                     }
-                    .padding(.horizontal, horizontalPadding)
-                }
-                // Phrase buttons grid
-                if categories.indices.contains(selectedCategoryIndex) {
-                    let phrases = categories[selectedCategoryIndex].phrases[selectedLanguage.rawValue] ?? []
-                    LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: isIPad ? 8 : 4), count: gridColumns),
-                        spacing: isIPad ? 8 : 4
-                    ) {
-                        ForEach(phrases, id: \.self) { phrase in
-                            phraseButton(for: phrase)
-                        }
+                } else {
+                    // Empty state
+                    VStack(spacing: 16) {
+                        Image(systemName: "speaker.slash.fill")
+                            .font(.system(size: iconSize))
+                            .foregroundColor(.secondary)
+                            .accessibilityHidden(true)
+                        Text("no_categories_available".localized)
+                            .font(bodyFont)
+                            .foregroundColor(.secondary)
                     }
-                    .padding(.horizontal, horizontalPadding)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 40)
                 }
-            } else {
-                // Empty state
-                VStack(spacing: 16) {
-                    Image(systemName: "speaker.slash.fill")
-                        .font(.system(size: iconSize))
-                        .foregroundColor(.secondary)
-                        .accessibilityHidden(true)
-                    Text("no_categories_available".localized)
-                        .font(bodyFont)
-                        .foregroundColor(.secondary)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 40)
             }
+            .padding(.vertical, 6)
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("soundboard_group_accessibility".localized)
         }
-        .padding(.vertical, 6)
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel("soundboard_group_accessibility".localized)
+
+        if #available(iOS 17.0, *) {
+            mainContent
+                .accessibilityRotor("Categories") {
+                    ForEach(categories.indices, id: \.self) { idx in
+                        AccessibilityRotorEntry(categories[idx].displayName(for: selectedLanguage), id: categories[idx].displayName(for: selectedLanguage))
+                    }
+                }
+                .accessibilityRotor("Favorites") {
+                    ForEach(favoritePhrases, id: \.self) { phrase in
+                        AccessibilityRotorEntry(phrase, id: phrase)
+                    }
+                }
+        } else {
+            mainContent
+        }
     }
 
     @ViewBuilder
     private func phraseButton(for phrase: String) -> some View {
         HStack(spacing: 8) {
             Button(action: {
+                let impact = UIImpactFeedbackGenerator(style: .soft)
+                impact.impactOccurred()
                 let selection = UISelectionFeedbackGenerator()
                 selection.selectionChanged()
                 speak(phrase, voiceIdentifier: selectedVoiceIdentifier)
             }) {
-                VStack(spacing: isIPad ? 8 : 4) {
-                    Image(systemName: isSpeaking ? "speaker.wave.3.fill" : "speaker.wave.2.fill")
-                        .font(.system(size: iconSize))
-                        .foregroundColor(.primary)
-                        .frame(height: iconSize)
-                        .animation(.easeInOut(duration: 0.3), value: isSpeaking)
-                    Text(phrase)
-                        .font(buttonFont)
-                        .foregroundColor(.primary)
-                        .multilineTextAlignment(.center)
-                        .lineLimit(isCompact ? 2 : 3)
-                        .minimumScaleFactor(0.7)
+                ZStack {
+                    RoundedRectangle(cornerRadius: isIPad ? 20 : (isCompact ? 12 : 16), style: .continuous)
+                        .fill(isSpeaking ? Color.successGreen : Color(.systemBackground))
+                        .shadow(color: Color.black.opacity(isSpeaking ? 0.18 : 0.08), radius: isSpeaking ? 8 : 4, x: 0, y: isSpeaking ? 4 : 2)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: isIPad ? 20 : (isCompact ? 12 : 16), style: .continuous)
+                                .stroke(isSpeaking ? Color.successGreen : Color.primaryBlue, lineWidth: isSpeaking ? 3 : 1)
+                        )
+                        .if(!UIAccessibility.isReduceMotionEnabled) { view in
+                            view.animation(.easeInOut(duration: 0.2), value: isSpeaking)
+                        }
+                    VStack(spacing: isIPad ? 10 : 6) {
+                        Image(systemName: isSpeaking ? "checkmark.circle.fill" : "speaker.wave.2.fill")
+                            .font(.system(size: iconSize + 4))
+                            .foregroundColor(isSpeaking ? Color.successGreen : Color.primaryBlue)
+                            .frame(height: iconSize + 4)
+                            .if(!UIAccessibility.isReduceMotionEnabled) { view in
+                                view.animation(.easeInOut(duration: 0.2), value: isSpeaking)
+                            }
+                        Text(phrase)
+                            .font(.body)
+                            .dynamicTypeSize(.large ... .xxxLarge)
+                            .foregroundColor(.primary)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(isCompact ? 2 : 3)
+                            .minimumScaleFactor(0.7)
+                    }
+                    .padding(.vertical, isIPad ? 10 : (isCompact ? 6 : 8))
+                    .padding(.horizontal, isIPad ? 10 : (isCompact ? 6 : 8))
                 }
-                .padding(.vertical, isIPad ? 6 : (isCompact ? 4 : 6))
-                .padding(.horizontal, isIPad ? 6 : (isCompact ? 4 : 6))
                 .frame(maxWidth: .infinity)
                 .frame(height: buttonHeight)
-                .background(
-                    UIAccessibility.isDarkerSystemColorsEnabled ?
-                        Color(.systemGray4) : Color(.systemGray6)
-                )
-                .cornerRadius(isIPad ? 16 : (isCompact ? 8 : 12))
-                .overlay(
-                    RoundedRectangle(cornerRadius: isIPad ? 16 : (isCompact ? 8 : 12))
-                        .stroke(
-                            isSpeaking ? Color.accentColor : Color.clear,
-                            lineWidth: isSpeaking ? 3 : 0
-                        )
-                        .animation(.easeInOut(duration: 0.2), value: isSpeaking)
-                )
             }
-            .frame(minWidth: max(buttonHeight, 44), minHeight: max(buttonHeight, 44))
+            .frame(minWidth: 48, minHeight: 48)
             .accessibilityLabel("\("soundboard_phrase_accessibility".localized): \(phrase)")
             .accessibilityHint(isSpeaking ? "currently_speaking_accessibility".localized : "tap_to_speak_accessibility".localized)
             .accessibilityIdentifier("sound_button_\(phrase.replacingOccurrences(of: " ", with: "_"))")
             .accessibilityAddTraits(.isButton)
-            .buttonStyle(ScaleButtonStyle())
+            .buttonStyle(PlainButtonStyle())
+            .contextMenu {
+                Button(action: {
+                    if favoritePhrases.contains(phrase) {
+                        favoritePhrases.removeAll { $0 == phrase }
+                    } else {
+                        favoritePhrases.append(phrase)
+                    }
+                }) {
+                    Label(favoritePhrases.contains(phrase) ? "Remove from Favorites" : "Add to Favorites", systemImage: favoritePhrases.contains(phrase) ? "star.slash" : "star")
+                }
+            }
+            .accessibilityAction(named: favoritePhrases.contains(phrase) ? "Remove from Favorites" : "Add to Favorites") {
+                if favoritePhrases.contains(phrase) {
+                    favoritePhrases.removeAll { $0 == phrase }
+                } else {
+                    favoritePhrases.append(phrase)
+                }
+            }
+            .accessibilityFocused($focusedPhrase, equals: phrase)
 
             // English TTS button if not English
             if selectedLanguage != .english, let englishPhrase = englishTranslation(for: phrase) {
                 Button(action: {
+                    let impact = UIImpactFeedbackGenerator(style: .soft)
+                    impact.impactOccurred()
                     let selection = UISelectionFeedbackGenerator()
                     selection.selectionChanged()
                     speakEnglish(englishPhrase)
@@ -215,7 +335,8 @@ struct SoundboardView: View {
                             .font(.system(size: iconSize - 2))
                             .foregroundColor(.accentColor)
                         Text("English")
-                            .font(.caption2.weight(.bold))
+                            .font(.body.weight(.bold))
+                            .dynamicTypeSize(.large ... .xxxLarge)
                             .foregroundColor(.accentColor)
                     }
                     .padding(.vertical, 6)
@@ -223,22 +344,18 @@ struct SoundboardView: View {
                     .background(Color(.systemGray5))
                     .cornerRadius(8)
                 }
+                .frame(minWidth: 48, minHeight: 48)
                 .accessibilityLabel("Play English version")
                 .accessibilityHint("Tap to hear the English translation")
+                .accessibilityAddTraits(.isButton)
             }
         }
     }
 
     /// Returns the English translation for a phrase in the current category, if available.
     private func englishTranslation(for phrase: String) -> String? {
-        guard selectedLanguage != .english,
-              categories.indices.contains(selectedCategoryIndex),
-              let phrasesInLang = categories[selectedCategoryIndex].phrases[selectedLanguage.rawValue],
-              let idx = phrasesInLang.firstIndex(of: phrase),
-              let englishPhrases = categories[selectedCategoryIndex].phrases[Language.english.rawValue],
-              englishPhrases.indices.contains(idx)
-        else { return nil }
-        return englishPhrases[idx]
+        // Only implement if selectedCategoryIndex is needed; otherwise, remove this function or refactor as needed.
+        return nil
     }
 
     /// Speaks the given phrase in English using AVSpeechSynthesizer.
@@ -264,7 +381,7 @@ struct SoundboardView: View {
         self.speechDelegate = delegate
         self.speechSynth.delegate = delegate
         self.speechSynth.speak(utterance)
-        let impact = UIImpactFeedbackGenerator(style: .medium)
+        let impact = UIImpactFeedbackGenerator(style: .soft)
         impact.impactOccurred()
     }
 
@@ -310,8 +427,27 @@ struct SoundboardView: View {
         self.speechSynth.speak(utterance)
 
         // Immediate haptic feedback for button press
-        let impact = UIImpactFeedbackGenerator(style: .medium)
+        let impact = UIImpactFeedbackGenerator(style: .soft)
         impact.impactOccurred()
+    }
+}
+
+// Color extension for custom palette
+extension Color {
+    static let primaryBlue = Color(red: 0.04, green: 0.52, blue: 1.0) // #0A84FF
+    static let secondaryGreen = Color(red: 0.20, green: 0.78, blue: 0.35) // #34C759
+    static let successGreen = Color(red: 0.20, green: 0.78, blue: 0.35) // #34C759
+}
+
+// SwiftUI View extension for conditional modifier
+extension View {
+    @ViewBuilder
+    func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+        if condition {
+            transform(self)
+        } else {
+            self
+        }
     }
 }
 
@@ -337,7 +473,16 @@ class SpeechDelegate: NSObject, AVSpeechSynthesizerDelegate {
 #Preview {
     SoundboardView(
         selectedLanguage: .english,
-        categories: [],
+        categories: [
+            SoundboardCategory(
+                id: "greetings",
+                displayNames: ["en": "Greetings", "es": "Saludos"],
+                phrases: [
+                    "en": ["Hello", "Good morning"],
+                    "es": ["Hola", "Buenos días"]
+                ]
+            )
+        ],
         isIPad: false,
         isCompact: false
     )

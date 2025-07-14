@@ -9,17 +9,6 @@
 //
 
 import Foundation
-
-// AppState.swift
-// Global app state for iControlBell with Rauland Responder 5 connectivity
-//
-//  AppState.swift
-//  iControlBell
-//
-//  Created by shane stone on 7/6/25.
-//
-
-import Foundation
 import Combine
 import SwiftUI
 import os.log
@@ -62,6 +51,7 @@ class AppState: ObservableObject {
     @Published var isRaulandConfigured: Bool = false
     @Published var facilityName: String = ""
     /// Allow dependency injection of RaulandAPIManager
+    @MainActor
     init(raulandManager: RaulandAPIManager = RaulandAPIManager.shared) {
         let onboardingComplete = UserDefaults.standard.bool(forKey: "onboardingComplete")
         self.showOnboarding = !onboardingComplete
@@ -89,7 +79,7 @@ class AppState: ObservableObject {
 
     /// Send a call request through Rauland API
     func sendRaulandCallRequest(_ callType: RaulandCallType, message: String? = nil) async {
-        let config = await (raulandManager as? RaulandAPIManager)?.configuration ?? RaulandConfiguration.default
+        let config = await raulandManager.configuration
         let request = RaulandCallRequest(
             config: config,
             callType: callType,
@@ -133,7 +123,7 @@ class AppState: ObservableObject {
     @MainActor
     func sendQueuedCallRequests() async {
         guard await raulandManager.isConnected else { return }
-        var queue = CallRequestQueueManager.shared.loadQueue()
+        let queue = CallRequestQueueManager.shared.loadQueue()
         guard !queue.isEmpty else { return }
         var sentCount = 0
         var failedCount = 0
@@ -163,7 +153,7 @@ class AppState: ObservableObject {
     @MainActor
     func getConnectionStatus() async -> String {
         if await raulandManager.isConnected {
-            if let facilityInfo = await raulandManager.facilityInfo {
+            if let facilityInfo = raulandManager.facilityInfo {
                 return "\("rauland_connected_to".localized) \(facilityInfo.name)"
             } else {
                 return "rauland_status_connected".localized

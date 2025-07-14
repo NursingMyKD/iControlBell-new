@@ -10,6 +10,7 @@ import Combine
 import Network
 
 /// Protocol for Rauland API management, for testability and abstraction
+@MainActor
 protocol RaulandAPIManaging: AnyObject {
     var connectionState: RaulandConnectionState { get }
     var isConnected: Bool { get }
@@ -24,7 +25,6 @@ protocol RaulandAPIManaging: AnyObject {
 }
 
 /// Enhanced Rauland API Manager with healthcare-grade reliability
-@MainActor
 class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
     // Error handler for user-friendly, localized errors
     private let errorHandler = ErrorHandler.shared
@@ -45,9 +45,9 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         }
     }
     private var sessionExpirationDate: Date?
-    private var urlSession: URLSession
-    private var networkMonitor: NWPathMonitor
-    private var monitorQueue = DispatchQueue(label: "rauland.network.monitor")
+    private let urlSession: URLSession
+    private let networkMonitor: NWPathMonitor
+    private let monitorQueue = DispatchQueue(label: "rauland.network.monitor")
     
     // MARK: - Published State
     @Published var connectionState: RaulandConnectionState = .disconnected
@@ -169,26 +169,6 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         logHealthcareEvent("Connection disconnected", priority: .normal)
     }
     
-    // MARK: - Authentication (for real API, not used in placeholder)
-    // Example for future real API:
-    /*
-    private func authenticate() async -> RaulandResult<RaulandAuthResponse> {
-        connectionState = .authenticating
-        let authRequest = RaulandAuthRequest(
-            apiKey: configuration.apiKey,
-            deviceID: configuration.deviceID,
-            facilityID: configuration.facilityID
-        )
-        let endpoint = "\(configuration.baseURL)/api/v1/auth"
-        do {
-            let auth: RaulandAuthResponse = try await networkService.post(url: endpoint, body: authRequest, headers: nil)
-            return .success(auth)
-        } catch {
-            return .failure(.authenticationFailed)
-        }
-    }
-    */
-    
     // MARK: - Call Request Management
     
     func sendCallRequest(_ callType: RaulandCallType, message: String? = nil) async -> RaulandResult<Void> {
@@ -236,7 +216,7 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         // PLACEHOLDER MODE: Simulate session refresh
         guard isConnected else {
             let error = RaulandHealthcareError.authenticationFailed
-            await handleHealthcareError(error, context: "Cannot refresh session - not connected")
+            handleHealthcareError(error, context: "Cannot refresh session - not connected")
             return .failure(error)
         }
         
@@ -250,19 +230,6 @@ class RaulandAPIManager: NSObject, ObservableObject, RaulandAPIManaging {
         logHealthcareEvent("PLACEHOLDER: Session refreshed", priority: .normal)
         return .success(())
     }
-    
-    // MARK: - Network Operations (for real API, not used in placeholder)
-    // Example for future real API:
-    /*
-    private func performRequest<T: Codable, U: Codable>(
-        url: String,
-        method: String = "POST",
-        body: T? = nil,
-        headers: [String: String]? = nil
-    ) async throws -> U {
-        return try await networkService.post(url: url, body: body, headers: headers)
-    }
-    */
     
     // MARK: - Network Monitoring
     
