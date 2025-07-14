@@ -83,8 +83,9 @@ struct SoundboardView: View {
                     .font(titleFont)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
-                // Voice selector (simplified for now)
-                if !isCompact {
+                // Voice selector only if more than one voice is available
+                let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == selectedLanguage.rawValue }
+                if !isCompact && voices.count > 1 {
                     VStack(spacing: 4) {
                         Text("Select Voice".localized)
                             .font(bodyFont)
@@ -213,10 +214,10 @@ struct SoundboardView: View {
                     VStack(spacing: 2) {
                         Image(systemName: isSpeakingEnglish ? "speaker.wave.3.fill" : "globe")
                             .font(.system(size: iconSize - 2))
-                            .foregroundColor(.blue)
+                            .foregroundColor(.accentColor)
                         Text("English")
                             .font(.caption2.weight(.bold))
-                            .foregroundColor(.blue)
+                            .foregroundColor(.accentColor)
                     }
                     .padding(.vertical, 6)
                     .padding(.horizontal, 8)

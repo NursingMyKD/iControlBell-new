@@ -104,7 +104,7 @@ struct ContentView: View {
 
 
                 // Call Request Grid - visually grouped
-                GroupBox(label: Label("call_requests".localized, systemImage: "bell.fill").font(.title2).foregroundColor(.accentColor)) {
+                GroupBox(label: Label("Requests", systemImage: "bell.fill").font(.title2).foregroundColor(.accentColor)) {
                     CallRequestGridView(
                         selectedLanguage: appState.selectedLanguage,
                         callRequests: callRequestData.options,
