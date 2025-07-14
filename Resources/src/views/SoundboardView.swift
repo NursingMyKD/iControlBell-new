@@ -77,8 +77,20 @@ struct SoundboardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
-            // Soundboard title and description (only once)
-            // ...removed Soundboard label and voice selector...
+            // Voice selector dropdown only (label removed)
+            let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == selectedLanguage.rawValue }
+            if !isCompact && voices.count > 1 {
+                VStack(spacing: 4) {
+                    // Dropdown for voice selection (label removed)
+                    Text("\("Voice".localized) (\(selectedLanguage.rawValue.uppercased()))")
+                        .font(bodyFont)
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, horizontalPadding)
+                        .padding(.vertical, 4)
+                        .background(Color(.systemGray6))
+                        .cornerRadius(8)
+                }
+            }
             // Category tabs
             if !categories.isEmpty {
                 ScrollView(.horizontal, showsIndicators: false) {

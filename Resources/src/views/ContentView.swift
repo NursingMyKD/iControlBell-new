@@ -214,7 +214,8 @@ struct ContentView: View {
                 .accessibilityHint("double_tap_to_open_settings".localized)
             }
             // Description
-            // ...removed main_description and select_language UI...
+            // Language selector (label removed, dropdown only)
+            LanguageSelectorView(selectedLanguage: $appState.selectedLanguage)
         }
         .sheet(isPresented: $showingSettings) {
             RaulandConfigurationView()
