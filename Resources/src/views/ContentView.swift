@@ -33,17 +33,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                // Use system background material for a modern look
                 Color(.systemBackground).ignoresSafeArea()
                 VStack(spacing: 0) {
-                    // Prominent connection status banner
-                    ConnectionStatusBanner(
-                        status: connectionStatus,
-                        isConnected: appState.raulandManager.isConnected,
-                        isConnecting: appState.raulandManager.connectionState == .connecting || appState.raulandManager.connectionState == .authenticating
-                    )
-                    .padding(.top, 12)
-                    .padding(.bottom, 8)
                     // Main content
                     if isLandscape && !isIPad {
                         landscapeLayout
@@ -110,10 +101,7 @@ struct ContentView: View {
                 // Header Section
                 headerSection
 
-                // Rauland Connection Status
-                RaulandConnectionView(raulandManager: appState.raulandManager)
-                    .environmentObject(appState)
-                    .padding(.bottom, 12)
+
 
                 // Call Request Grid - visually grouped
                 GroupBox(label: Label("call_requests".localized, systemImage: "bell.fill").font(.title2).foregroundColor(.accentColor)) {
@@ -154,10 +142,6 @@ struct ContentView: View {
             VStack(spacing: 16) {
                 headerSection
                 
-                // Rauland Connection Status (compact view for landscape)
-                RaulandConnectionView(raulandManager: appState.raulandManager)
-                    .environmentObject(appState)
-                
                 Spacer()
             }
             .frame(maxWidth: .infinity)
@@ -188,8 +172,21 @@ struct ContentView: View {
     @ViewBuilder
     private var headerSection: some View {
         VStack(spacing: headerSpacing) {
-            // Logo and title with settings button
+            // Logo, title, status indicator, and settings button
             HStack(alignment: .center) {
+                // Small connectivity indicator
+                Circle()
+                    .frame(width: 14, height: 14)
+                    .foregroundColor(
+                        appState.raulandManager.connectionState == .connected ? .green :
+                        (appState.raulandManager.connectionState == .connecting || appState.raulandManager.connectionState == .authenticating ? .yellow : .red)
+                    )
+                    .overlay(
+                        Circle()
+                            .stroke(Color.primary.opacity(0.2), lineWidth: 1)
+                    )
+                    .accessibilityLabel(appState.raulandManager.connectionState == .connected ? "Connected" : (appState.raulandManager.connectionState == .connecting || appState.raulandManager.connectionState == .authenticating ? "Connecting" : "Disconnected"))
+                    .accessibilityHint("Connection status indicator")
                 Spacer()
                 VStack(spacing: 8) {
                     Image(systemName: "phone.fill")
