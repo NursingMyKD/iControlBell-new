@@ -1,0 +1,206 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.iControlBell-x86_64-unknown-linux-gnu-debug.module" : {
+      "executable" : "/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc",
+      "fileList" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources",
+      "importPath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "iControlBell",
+      "moduleOutputPath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule",
+      "objects" : [
+        "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-linux-gnu",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j2",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "iControlBell_main",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-g",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "icontrolbell_new",
+        "-Xcc",
+        "-fno-omit-frame-pointer"
+      ],
+      "outputFileMapPath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift"
+      ],
+      "tempsPath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "iControlBell" : [
+      "/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc",
+      "-module-name",
+      "iControlBell",
+      "-package-name",
+      "icontrolbell_new",
+      "-incremental",
+      "-c",
+      "/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift",
+      "-I",
+      "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules",
+      "-target",
+      "x86_64-unknown-linux-gnu",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j2",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "iControlBell_main",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-g",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "icontrolbell_new",
+      "-Xcc",
+      "-fno-omit-frame-pointer",
+      "-driver-use-frontend-path",
+      "/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "iControlBell" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift"
+        }
+      ],
+      "outputFilePath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources"
+    },
+    "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBell.swiftmodule.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o"
+        }
+      ],
+      "outputFilePath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList"
+    },
+    "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt"
+    }
+  }
+}

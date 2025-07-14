@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/master.swiftdeps"
+  },
+  "/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift": {
+    "dependencies": "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.d",
+    "object": "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o",
+    "swiftmodule": "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp~partial.swiftmodule",
+    "swift-dependencies": "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swiftdeps"
+  }
+}

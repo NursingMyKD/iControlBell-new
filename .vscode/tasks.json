@@ -4,12 +4,8 @@
 		{
 			"label": "Build iControlBell",
 			"type": "shell",
-			"command": "swift",
-			"args": [
-				"build",
-				"-c",
-				"debug"
-			],
+			"command": "xcodebuild -project iControlBell.xcodeproj -scheme iControlBell -destination 'platform=iOS Simulator,name=iPhone 15'",
+			"args": [],
 			"group": "build",
 			"problemMatcher": [
 				"$swiftc"

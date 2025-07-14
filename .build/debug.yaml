@@ -1,0 +1,73 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "iControlBell-x86_64-unknown-linux-gnu-debug.exe": ["<iControlBell-x86_64-unknown-linux-gnu-debug.exe>"]
+  "iControlBell-x86_64-unknown-linux-gnu-debug.module": ["<iControlBell-x86_64-unknown-linux-gnu-debug.module>"]
+  "main": ["<iControlBell-x86_64-unknown-linux-gnu-debug.exe>","<iControlBell-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<iControlBell-x86_64-unknown-linux-gnu-debug.exe>","<iControlBell-x86_64-unknown-linux-gnu-debug.module>"]
+default: "main"
+nodes:
+  "/workspaces/iControlBell-new/iControlBell/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBell.swiftmodule.o":
+    tool: shell
+    inputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule"]
+    outputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBell.swiftmodule.o"]
+    description: "Wrapping AST for iControlBell for debugging"
+    args: ["/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc","-modulewrap","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule","-o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBell.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift"]
+    outputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources"]
+    description: "Write auxiliary file /workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources"
+
+  "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBell.swiftmodule.o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o"]
+    outputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList"
+
+  "/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc"]
+    outputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt"
+
+  "<iControlBell-x86_64-unknown-linux-gnu-debug.exe>":
+    tool: phony
+    inputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell"]
+    outputs: ["<iControlBell-x86_64-unknown-linux-gnu-debug.exe>"]
+
+  "<iControlBell-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule"]
+    outputs: ["<iControlBell-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "C.iControlBell-x86_64-unknown-linux-gnu-debug.exe":
+    tool: shell
+    inputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBell.swiftmodule.o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList"]
+    outputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/iControlBell"
+    args: ["/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc","-L","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug","-o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell","-module-name","iControlBell","-emit-executable","-Xlinker","--defsym","-Xlinker","main=iControlBell_main","-Xlinker","-rpath=$ORIGIN","@/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu","-g"]
+
+  "C.iControlBell-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/workspaces/iControlBell-new/iControlBell/iControlBellApp.swift","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/swift-version--6548362C71F9ABAC.txt","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources"]
+    outputs: ["/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/iControlBellApp.swift.o","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule"]
+    description: "Compiling Swift Module 'iControlBell' (1 sources)"
+    args: ["/home/codespace/.local/share/swiftly/toolchains/6.1.2/usr/bin/swiftc","-module-name","iControlBell","-emit-dependencies","-emit-module","-emit-module-path","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules/iControlBell.swiftmodule","-output-file-map","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/output-file-map.json","-incremental","-c","@/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/iControlBell.build/sources","-I","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-enable-batch-mode","-index-store-path","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j2","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/workspaces/iControlBell-new/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","iControlBell_main","-parse-as-library","-color-diagnostics","-swift-version","5","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","icontrolbell_new","-Xcc","-fno-omit-frame-pointer"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/workspaces/iControlBell-new/iControlBell/","/workspaces/iControlBell-new/Package.swift","/workspaces/iControlBell-new/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
