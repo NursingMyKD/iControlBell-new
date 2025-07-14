@@ -89,7 +89,7 @@ struct SoundboardView: View {
         VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
             if !isCompact && voices.count > 1 {
                 Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
-                    ForEach(voices, id: \.self) { voice in
+                    ForEach(voices, id: \.identifier) { voice in
                         Text("\(voice.name) (\(voice.language))").tag(voice.identifier)
                     }
                 }
@@ -183,14 +183,14 @@ struct SoundboardView: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: buttonHeight)
                 .background(
-                    UIAccessibility.isDarkerSystemColorsEnabled ? 
+                    UIAccessibility.isDarkerSystemColorsEnabled ?
                         Color(.systemGray4) : Color(.systemGray6)
                 )
                 .cornerRadius(isIPad ? 16 : (isCompact ? 8 : 12))
                 .overlay(
                     RoundedRectangle(cornerRadius: isIPad ? 16 : (isCompact ? 8 : 12))
                         .stroke(
-                            isSpeaking ? Color.accentColor : Color.clear, 
+                            isSpeaking ? Color.accentColor : Color.clear,
                             lineWidth: isSpeaking ? 3 : 0
                         )
                         .animation(.easeInOut(duration: 0.2), value: isSpeaking)
@@ -315,180 +315,7 @@ struct SoundboardView: View {
     }
 }
 
-    // Dynamic layout properties using DeviceUtils
-    private var gridColumns: Int {
-        DeviceUtils.adaptiveColumns(for: "soundboard")
-    }
-    private var buttonHeight: CGFloat {
-        DeviceUtils.dynamicSpacing(compact: 56, regular: 70, iPad: 90)
-    }
-    private var titleFont: Font {
-        DeviceUtils.dynamicFont(
-            compact: .title3,
-            regular: .title2,
-            iPad: .largeTitle
-        )
-    }
-    private var bodyFont: Font {
-        DeviceUtils.dynamicFont(
-            compact: .caption2,
-            regular: .caption,
-            iPad: .body
-        )
-    }
-    private var buttonFont: Font {
-        if isIPad {
-            return .body
-        } else if isCompact {
-            return .caption2
-        } else {
-            return .caption
-        }
-    }
-    private var iconSize: CGFloat {
-        if isIPad {
-            return 28
-        } else if isCompact {
-            return 18
-        } else {
-            return 20
-        }
-    }
-    private var horizontalPadding: CGFloat {
-        if isIPad {
-            return 12
-        } else if isCompact {
-            return 6
-        } else {
-            return 8
-        }
-    }
-    private var sectionSpacing: CGFloat {
-        if isIPad {
-            return 10
-        } else if isCompact {
-            return 5
-        } else {
-            return 8
-        }
-    }
 
-    var body: some View {
-        let voices = AVSpeechSynthesisVoice.speechVoices()
-        VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
-            if !isCompact && voices.count > 1 {
-                Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
-                    ForEach(voices, id: \.self) { voice in
-                        Text("\(voice.name) (\(voice.language))").tag(voice.identifier)
-                    }
-                }
-                .pickerStyle(MenuPickerStyle())
-                .frame(maxWidth: 320)
-                .padding(.horizontal, horizontalPadding)
-                .padding(.vertical, 4)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-            }
-                            .foregroundColor(.accentColor)
-                        Text("English")
-                            .font(.caption2.weight(.bold))
-                            .foregroundColor(.accentColor)
-                    }
-                    .padding(.vertical, 6)
-                    .padding(.horizontal, 8)
-                    .background(Color(.systemGray5))
-                    .cornerRadius(8)
-                }
-                .accessibilityLabel("Play English version")
-                .accessibilityHint("Tap to hear the English translation")
-            }
-        }
-    }
-
-    /// Returns the English translation for a phrase in the current category, if available.
-    private func englishTranslation(for phrase: String) -> String? {
-        guard selectedLanguage != .english,
-              categories.indices.contains(selectedCategoryIndex),
-              let phrasesInLang = categories[selectedCategoryIndex].phrases[selectedLanguage.rawValue],
-              let idx = phrasesInLang.firstIndex(of: phrase),
-              let englishPhrases = categories[selectedCategoryIndex].phrases[Language.english.rawValue],
-              englishPhrases.indices.contains(idx)
-        else { return nil }
-        return englishPhrases[idx]
-    }
-
-    /// Speaks the given phrase in English using AVSpeechSynthesizer.
-    private func speakEnglish(_ phrase: String) {
-        if self.speechSynth.isSpeaking {
-            self.speechSynth.stopSpeaking(at: .immediate)
-            self.isSpeakingEnglish = false
-            return
-        }
-        self.isSpeakingEnglish = true
-        let utterance = AVSpeechUtterance(string: phrase)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en") ?? AVSpeechSynthesisVoice.speechVoices().first
-        utterance.rate = UIAccessibility.isVoiceOverRunning ? 0.4 : 0.5
-        utterance.volume = 1.0
-        utterance.pitchMultiplier = 1.0
-        let delegate = SpeechDelegate {
-            DispatchQueue.main.async {
-                self.isSpeakingEnglish = false
-                let success = UINotificationFeedbackGenerator()
-                success.notificationOccurred(.success)
-            }
-        }
-        self.speechDelegate = delegate
-        self.speechSynth.delegate = delegate
-        self.speechSynth.speak(utterance)
-        let impact = UIImpactFeedbackGenerator(style: .medium)
-        impact.impactOccurred()
-    }
-
-    /// Speaks the given phrase using AVSpeechSynthesizer.
-    private func speak(_ phrase: String) {
-        // Stop any current speech
-        if self.speechSynth.isSpeaking {
-            self.speechSynth.stopSpeaking(at: .immediate)
-            self.isSpeaking = false
-            return
-        }
-
-        self.isSpeaking = true
-        let utterance = AVSpeechUtterance(string: phrase)
-
-        // Try to get a voice for the selected language, fallback to system default
-        if let voice = AVSpeechSynthesisVoice(language: self.selectedLanguage.rawValue) {
-            utterance.voice = voice
-        } else {
-            // Fallback to English if selected language voice isn't available
-            utterance.voice = AVSpeechSynthesisVoice(language: "en") ?? AVSpeechSynthesisVoice.speechVoices().first
-        }
-
-        // Set speech properties for better healthcare use
-        utterance.rate = UIAccessibility.isVoiceOverRunning ? 0.4 : 0.5 // Slower for VoiceOver users
-        utterance.volume = 1.0
-        utterance.pitchMultiplier = 1.0
-
-        // Set up delegate to track speech completion
-        let delegate = SpeechDelegate {
-            DispatchQueue.main.async {
-                self.isSpeaking = false
-                // Success haptic feedback
-                let success = UINotificationFeedbackGenerator()
-                success.notificationOccurred(.success)
-            }
-        }
-        self.speechDelegate = delegate
-        self.speechSynth.delegate = delegate
-
-        self.speechSynth.speak(utterance)
-
-        // Immediate haptic feedback for button press
-        let impact = UIImpactFeedbackGenerator(style: .medium)
-        impact.impactOccurred()
-    }
-
-}
 
 // Helper class to handle speech synthesis delegate
 class SpeechDelegate: NSObject, AVSpeechSynthesizerDelegate {
@@ -509,7 +336,7 @@ class SpeechDelegate: NSObject, AVSpeechSynthesizerDelegate {
 
 #Preview {
     SoundboardView(
-        selectedLanguage: .english, 
+        selectedLanguage: .english,
         categories: [],
         isIPad: false,
         isCompact: false
