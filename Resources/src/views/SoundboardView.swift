@@ -20,10 +20,24 @@ struct SoundboardView: View {
     // Dynamic layout properties using DeviceUtils
     private var gridColumns: Int {
         DeviceUtils.adaptiveColumns(for: "soundboard")
+    @State private var selectedVoiceIdentifier: String = AVSpeechSynthesisVoice.speechVoices().first?.identifier ?? ""
     }
     private var buttonHeight: CGFloat {
         DeviceUtils.dynamicSpacing(compact: 56, regular: 70, iPad: 90)
-    }
+            let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == selectedLanguage.rawValue }
+            if !isCompact && voices.count > 1 {
+                Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
+                    ForEach(voices, id: \.self) { voice in
+                        Text(voice.name).tag(voice.identifier)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+                .frame(maxWidth: 220)
+                .padding(.horizontal, horizontalPadding)
+                .padding(.vertical, 4)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+            }
     private var titleFont: Font {
         DeviceUtils.dynamicFont(
             compact: .title3,
@@ -76,20 +90,20 @@ struct SoundboardView: View {
     }
     
     var body: some View {
+        let voices = AVSpeechSynthesisVoice.speechVoices()
         VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
-            // Voice selector dropdown only (label removed)
-            let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == selectedLanguage.rawValue }
             if !isCompact && voices.count > 1 {
-                VStack(spacing: 4) {
-                    // Dropdown for voice selection (label removed)
-                    Text("\("Voice".localized) (\(selectedLanguage.rawValue.uppercased()))")
-                        .font(bodyFont)
-                        .foregroundColor(.secondary)
-                        .padding(.horizontal, horizontalPadding)
-                        .padding(.vertical, 4)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(8)
+                Picker(selection: $selectedVoiceIdentifier, label: EmptyView()) {
+                    ForEach(voices, id: \ .self) { voice in
+                        Text("\(voice.name) (\(voice.language))").tag(voice.identifier)
+                    }
                 }
+                .pickerStyle(MenuPickerStyle())
+                .frame(maxWidth: 320)
+                .padding(.horizontal, horizontalPadding)
+                .padding(.vertical, 4)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
             }
             // Category tabs
             if !categories.isEmpty {
@@ -156,7 +170,7 @@ struct SoundboardView: View {
                 let selection = UISelectionFeedbackGenerator()
                 selection.selectionChanged()
                 speak(phrase)
-            }) {
+private func speak(_ phrase: String, voiceIdentifier: String? = nil) {
                 VStack(spacing: isIPad ? 8 : 4) {
                     Image(systemName: isSpeaking ? "speaker.wave.3.fill" : "speaker.wave.2.fill")
                         .font(.system(size: iconSize))

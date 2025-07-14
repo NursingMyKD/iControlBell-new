@@ -37,7 +37,7 @@ struct LanguageSelectorView: View {
         VStack(spacing: 8) {
             Picker("Language", selection: $selectedLanguage) {
                 ForEach(Language.allCases) { lang in
-                    Text(lang.displayName)
+                    Text("\(lang.rawValue) – \(lang.displayName)")
                         .font(pickerFont)
                         .tag(lang)
                 }
