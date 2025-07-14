@@ -97,7 +97,7 @@ struct ContentView: View {
     @ViewBuilder
     private var portraitLayout: some View {
         ScrollView {
-            VStack(spacing: dynamicSpacing) {
+            VStack(spacing: dynamicSpacing * 0.7) {
                 // Header Section
                 headerSection
 
@@ -137,7 +137,7 @@ struct ContentView: View {
     
     @ViewBuilder
     private var landscapeLayout: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 12) {
             // Left side - Header, Language, and Connection
             VStack(spacing: 16) {
                 headerSection
@@ -171,7 +171,7 @@ struct ContentView: View {
     
     @ViewBuilder
     private var headerSection: some View {
-        VStack(spacing: headerSpacing) {
+        VStack(spacing: headerSpacing * 0.7) {
             // Logo, title, status indicator, and settings button
             HStack(alignment: .center) {
                 // Small connectivity indicator
@@ -214,18 +214,7 @@ struct ContentView: View {
                 .accessibilityHint("double_tap_to_open_settings".localized)
             }
             // Description
-            Text("main_description".localized)
-                .font(bodyFont)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, isIPad ? 60 : 20)
-            // Language selector
-            VStack(spacing: 8) {
-                Text("select_language".localized)
-                    .font(bodyFont)
-                    .foregroundColor(.primary)
-                LanguageSelectorView(selectedLanguage: $appState.selectedLanguage)
-            }
+            // ...removed main_description and select_language UI...
         }
         .sheet(isPresented: $showingSettings) {
             RaulandConfigurationView()

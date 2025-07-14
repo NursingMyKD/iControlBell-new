@@ -67,39 +67,18 @@ struct SoundboardView: View {
     }
     private var sectionSpacing: CGFloat {
         if isIPad {
-            return 16
+            return 10
         } else if isCompact {
-            return 8
+            return 5
         } else {
-            return 12
+            return 8
         }
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: sectionSpacing) {
+        VStack(alignment: .leading, spacing: sectionSpacing * 0.8) {
             // Soundboard title and description (only once)
-            VStack(spacing: 8) {
-                Text("soundboard_title".localized)
-                    .font(titleFont)
-                    .fontWeight(.bold)
-                    .foregroundColor(.primary)
-                // Voice selector only if more than one voice is available
-                let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == selectedLanguage.rawValue }
-                if !isCompact && voices.count > 1 {
-                    VStack(spacing: 4) {
-                        Text("Select Voice".localized)
-                            .font(bodyFont)
-                            .foregroundColor(.primary)
-                        Text("\("Voice".localized) (\(selectedLanguage.rawValue.uppercased()))")
-                            .font(bodyFont)
-                            .foregroundColor(.secondary)
-                            .padding(.horizontal, horizontalPadding)
-                            .padding(.vertical, 4)
-                            .background(Color(.systemGray6))
-                            .cornerRadius(8)
-                    }
-                }
-            }
+            // ...removed Soundboard label and voice selector...
             // Category tabs
             if !categories.isEmpty {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -153,7 +132,7 @@ struct SoundboardView: View {
                 .padding(.vertical, 40)
             }
         }
-        .padding(.vertical)
+        .padding(.vertical, 6)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("soundboard_group_accessibility".localized)
     }
