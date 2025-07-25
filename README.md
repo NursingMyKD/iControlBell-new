@@ -1,61 +1,180 @@
 # iControlBell
 
-## Overview
-
-iControlBell is a modern, accessible call bell and communication app designed for hospital environments. It empowers patients to request assistance and communicate essential needs using intuitive touch or eye-tracking technology, supporting independence and safety for all users.
-
-## Mission
-
-Our mission is to provide every patient—regardless of physical ability—with a dignified, reliable, and easy way to communicate with care staff. iControlBell is built to meet the highest standards of accessibility, security, and clinical usability.
-
-## Key Features
-
-- **Accessible Communication:** Patients can request help or communicate needs using large, clearly labeled buttons and a multilingual soundboard.
-- **Eye-Tracking Support:** Designed for compatibility with eye-tracking devices, enabling hands-free operation for patients with limited mobility.
-- **Multilingual Soundboard:** Includes pre-set phrases in multiple languages, supporting diverse patient populations.
-- **Professional, Clean UI:** The interface is simple, uncluttered, and adheres to Apple’s Human Interface Guidelines for healthcare apps.
-- **Visual Connectivity Indicator:** A subtle colored symbol shows system connection status, minimizing distractions.
-- **Customizable Requests:** Staff can configure call request options to match hospital workflows.
-- **Secure and Private:** Patient data is protected using best practices for privacy and security. No sensitive information is stored or transmitted without explicit consent.
-- **Easy Integration:** Designed to work with hospital systems such as Rauland Responder 5, with modular architecture for future integrations.
-
-## Security & Privacy
-
-- All patient interactions are confidential and compliant with HIPAA and hospital privacy policies.
-- No personal health information is stored locally or transmitted externally.
-- The app uses secure connections for all network communications.
-
-## Installation & Setup
-
-1. **Requirements:**
-   - iPad or iPhone running iOS 15 or later
-   - Optional: Eye-tracking hardware (compatible devices)
-   - Network access for integration with nurse call systems
-2. **Installation:**
-   - Download and install iControlBell from the App Store or hospital MDM system.
-   - Open the app and follow the onboarding instructions.
-3. **Configuration:**
-   - Staff can access settings to configure call request options and language preferences.
-   - Integration with hospital systems can be set up by IT staff using the configuration menu.
-
-## Usage Guide
-
-- **For Patients:**
-  - Tap or gaze at the button that best describes your need (e.g., "Nurse Call," "Pain Assistance," "Restroom").
-  - Use the soundboard to speak preset phrases in your preferred language.
-  - A colored dot in the header shows system connection status (green: connected, yellow: connecting, red: disconnected).
-- **For Staff:**
-  - Review and respond to patient requests as they appear in the nurse call system.
-  - Use the settings menu to adjust options and review connection status.
-
-## Support & Contact
-
-For technical support, training, or integration assistance, please contact:
-
-- **Email:** support@icontrolbell.com
-- **Phone:** +1 (800) 555-1234
-- **Website:** [www.icontrolbell.com](https://www.icontrolbell.com)
+_Accessible, modular, and secure iOS-based call bell and communication app for clinical environments._
 
 ---
 
-*This app is intended for use in clinical environments and should be deployed in accordance with hospital IT and patient safety policies.*
+## 📖 Project Overview
+
+**iControlBell** is a patient-centered communication and nurse call application developed in Swift for iOS devices (iPad/iPhone). Built with accessibility, security, and clinical integration in mind, the app empowers patients—especially those with mobility or speech limitations—to request assistance using intuitive touch or eye-tracking input.
+
+The app is designed for modular integration with hospital systems (e.g., Rauland Responder 5), customizable workflows, and multilingual communication interfaces. It adheres to Apple’s Human Interface Guidelines for healthcare applications and supports assistive technologies such as Switch Control, Voice Control, and third-party eye-tracking devices.
+
+### Core Features
+- Accessible UI with large, clearly labeled buttons
+- Eye-tracking and switch control compatibility
+- Multilingual soundboard with preset clinical phrases
+- Visual system connectivity indicator
+- Configurable request routing for staff workflows
+- Secure, HIPAA-aligned architecture
+- Modular integration with nurse call systems
+
+---
+
+## 🖼 Screenshots
+
+> _Note: Add actual screenshots once available._
+
+- [Insert Screenshot: Main Patient Interface]
+- [Insert Screenshot: Eye-Tracking Configuration]
+- [Insert Screenshot: Admin Settings Panel]
+
+---
+
+## 🚀 Getting Started
+
+### System Requirements
+- **macOS:** Ventura 13.0 or later
+- **Xcode:** 15.0 or later
+- **iOS Deployment Target:** iOS 15.0+
+- **Swift:** 5.9+
+
+### Installation Instructions
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-org/icontrolbell-ios.git
+   cd icontrolbell-ios
+
+	2.	Install Dependencies (Swift Package Manager):
+Dependencies will auto-resolve via Xcode. Alternatively, run:
+
+xcodebuild -resolvePackageDependencies
+
+
+	3.	Environment Setup:
+	•	Copy .env.example to .env:
+
+cp .env.example .env
+
+
+	•	Set any API keys or configuration flags (if applicable).
+
+	4.	Open the Project:
+
+open iControlBell.xcodeproj
+
+
+
+⸻
+
+🛠 Build & Run Instructions
+	1.	Open iControlBell.xcodeproj in Xcode.
+	2.	Select a simulator (e.g., iPad Pro 11” or iPhone 14).
+	3.	Press ⌘ + R to build and run the app.
+	4.	Use the Scheme dropdown to switch between Debug, Release, or Testing environments.
+
+⸻
+
+🧱 Project Structure & Architecture
+
+iControlBell follows a modular MVVM (Model-View-ViewModel) architecture with coordinator pattern for navigation.
+
+iControlBell/
+├── App/                  # App lifecycle, entry points
+├── Core/                 # Global styles, constants, assets
+├── Features/             # Feature modules (CallBell, Soundboard, Settings)
+│   ├── View/
+│   ├── ViewModel/
+│   └── Model/
+├── Integration/          # Nurse call and device APIs
+├── Services/             # Networking, permissions, localization
+├── Resources/            # Localized strings, images, sounds
+├── Tests/                # Unit and UI test targets
+└── Utilities/            # Reusable helpers and extensions
+
+Major navigation is managed via a central AppCoordinator. UI is developed using a hybrid of SwiftUI and UIKit for compatibility and customization.
+
+⸻
+
+📦 Key Dependencies
+
+Dependency	Purpose
+SwiftUI/UIKit	Hybrid UI rendering for modern and legacy views
+Combine	Reactive state management and bindings
+Speech	System TTS for soundboard playback
+SwiftEntryKit	In-app alerts and toast messaging (optional)
+Firebase Crashlytics	Crash reporting and diagnostics
+SwiftyBeaver	Structured logging during development
+Lottie (optional)	Accessibility animations (pending)
+
+All packages are managed via Swift Package Manager (SPM).
+
+⸻
+
+✅ Testing
+
+Test Targets
+	•	iControlBellTests: Unit tests for business logic and view models
+	•	iControlBellUITests: UI and accessibility tests using XCUITest
+
+Running Tests
+
+In Xcode:
+	•	Navigate to the Test Navigator (⌘ + 6)
+	•	Click the play icon next to each test suite
+	•	Or run all tests via:
+
+xcodebuild test -scheme iControlBell -destination 'platform=iOS Simulator,name=iPhone 14'
+
+
+
+Code Coverage
+
+Enable code coverage in scheme settings:
+	•	Xcode → Product → Scheme → Test → “Gather coverage data”
+
+Code coverage reports can be integrated with CI and viewed using tools like Slather.
+
+⸻
+
+🔁 Continuous Integration (CI)
+
+iControlBell uses GitHub Actions for automated CI/CD.
+
+CI Workflow Includes:
+	•	SwiftLint static analysis
+	•	Dependency resolution check
+	•	Unit & UI test execution on simulators
+	•	Optional: Build artifact upload to TestFlight via Fastlane
+
+See .github/workflows/ci.yml for configuration.
+
+Bitrise/Jenkins pipelines can be adapted using fastlane/Fastfile.
+
+⸻
+
+🤝 Contributing
+
+We welcome contributions from internal and open-source collaborators.
+
+🧩 How to Contribute
+	1.	Fork this repository
+	2.	Create a new branch (feature/your-feature-name)
+	3.	Commit your changes with descriptive messages
+	4.	Push your branch and open a Pull Request (PR)
+	5.	Follow the PR checklist template
+
+🔧 Coding Standards
+	•	Follow Swift API Design Guidelines
+	•	Use 2-space indentation
+	•	Use PascalCase for types, camelCase for variables/functions
+	•	Prefer Combine or async/await for async code
+
+🐛 Reporting Issues
+
+Submit bug reports via GitHub Issues. Include device, OS version, and reproduction steps.
+
+⸻
+
+For technical inquiries or system integration questions, please contact support@icontrolbell.com.
